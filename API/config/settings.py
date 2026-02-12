@@ -1,0 +1,39 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+class Settings:
+    BASE_URL = os.getenv("BASE_URL")
+    REQUEST_TIMEOUT = float(os.getenv("REQUEST_TIMEOUT"))
+    TOKEN_REFRESH_INTERVAL = int(os.getenv("TOKEN_REFRESH_INTERVAL"))
+    #Admin
+    ADMIN_USERNAME = os.getenv("ADMIN_USERNAME")
+    ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD")
+    ADMIN_VALID_API_KEY = os.getenv("ADMIN_VALID_API_KEY")  # ← Maps to ADMIN_VALID_API_KEY from .env
+    ADMIN_INVALID_API_KEY = os.getenv("ADMIN_INVALID_API_KEY")  # ← Maps to ADMIN_INVALID_API_KEY from .env
+
+    #User
+    USER_USERNAME = os.getenv("USER_USERNAME")
+    USER_PASSWORD = os.getenv("USER_PASSWORD")
+    USER_VALID_API_KEY = os.getenv("USER_VALID_API_KEY")  # ← Maps to ADMIN_VALID_API_KEY from .env
+    USER_INVALID_API_KEY = os.getenv("USER_INVALID_API_KEY")  # ← Maps to ADMIN_INVALID_API_KEY from .env
+
+
+    # Service IDs
+    NMT_SERVICE_ID = os.getenv("NMT_SERVICE_ID")
+    ASR_SERVICE_ID = os.getenv("ASR_SERVICE_ID")
+    TTS_SERVICE_ID = os.getenv("TTS_SERVICE_ID")
+    TRANSLITERATION_SERVICE_ID = os.getenv("TRANSLITERATION_SERVICE_ID")
+    TEXT_LANGUAGE_DETECTION_SERVICE_ID = os.getenv("TEXT_LANGUAGE_DETECTION_SERVICE_ID")
+    SPEAKER_DIARIZATION_SERVICE_ID = os.getenv("SPEAKER_DIARIZATION_SERVICE_ID")
+    LANGUAGE_DIARIZATION_SERVICE_ID = os.getenv("LANGUAGE_DIARIZATION_SERVICE_ID")
+    AUDIO_LANGUAGE_DETECTION_SERVICE_ID = os.getenv("AUDIO_LANGUAGE_DETECTION_SERVICE_ID")
+    NER_SERVICE_ID = os.getenv("NER_SERVICE_ID")
+    OCR_SERVICE_ID = os.getenv("OCR_SERVICE_ID")
+    
+
+settings = Settings()
+
+
+
