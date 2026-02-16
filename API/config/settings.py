@@ -19,6 +19,18 @@ class Settings:
     USER_VALID_API_KEY = os.getenv("USER_VALID_API_KEY")  # ← Maps to ADMIN_VALID_API_KEY from .env
     USER_INVALID_API_KEY = os.getenv("USER_INVALID_API_KEY")  # ← Maps to ADMIN_INVALID_API_KEY from .env
 
+    # Guest Credentials
+    GUEST_USERNAME = os.getenv("GUEST_USERNAME")
+    GUEST_PASSWORD = os.getenv("GUEST_PASSWORD")
+    GUEST_VALID_API_KEY = os.getenv("GUEST_VALID_API_KEY")
+    GUEST_INVALID_API_KEY = os.getenv("GUEST_INVALID_API_KEY")
+
+    #Moderator Credentials
+    MODERATOR_USERNAME=os.getenv("MODERATOR_USERNAME")
+    MODERATOR_PASSWORD=os.getenv("MODERATOR_PASSWORD")
+    MODERATOR_VALID_API_KEY=os.getenv("MODERATOR_VALID_API_KEY")
+    MODERATOR_INVALID_API_KEY=os.getenv("MODERATOR_INVALID_API_KEY")
+
 
     # Service IDs
     NMT_SERVICE_ID = os.getenv("NMT_SERVICE_ID")
@@ -31,6 +43,9 @@ class Settings:
     AUDIO_LANGUAGE_DETECTION_SERVICE_ID = os.getenv("AUDIO_LANGUAGE_DETECTION_SERVICE_ID")
     NER_SERVICE_ID = os.getenv("NER_SERVICE_ID")
     OCR_SERVICE_ID = os.getenv("OCR_SERVICE_ID")
+
+    # Model Management Endpoints
+    MODEL_MANAGEMENT_LIST = os.getenv("MODEL_MANAGEMENT_LIST")
     
 
 settings = Settings()

@@ -588,7 +588,7 @@ class ServiceWithPayloads:
     def ner_from_sample():
         """Load NER payload with text from ner_sample.json"""
         return ServiceWithPayloads.ner()
-
+    
     @staticmethod
     def ocr_from_sample():
         """Load OCR payload with image from OCR_HINDI_JPEG.jpg"""

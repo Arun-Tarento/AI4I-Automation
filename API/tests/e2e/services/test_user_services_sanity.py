@@ -547,7 +547,6 @@ class TestUserServicesWithNoAPIKey:
     def test_nmt_services_with_no_api_key_User(self, user_client_with_no_api_key):
         """
         User : Test NMT service with no API key
-        Expected: 401/403 Forbidden with "API key not found"
         """
         endpoint = "/api/v1/nmt/inference"
         payload = ServiceWithPayloads.nmt_from_sample()
@@ -562,4 +561,197 @@ class TestUserServicesWithNoAPIKey:
         assert "detail" in data
         
         print(f"\n✅ USER NMT correctly blocked with no API key")
-        print(f"   Error: {data['detail']['message'], data['detail']['code'] }")
+        print(f"   Error: {data['detail']['message']}, {data['detail']['code']}")
+
+    def test_asr_service_with_no_api_key_User(self, user_client_with_no_api_key):
+        """
+        User : Test ASR service with no API key
+        """
+        endpoint = "/api/v1/asr/inference"
+        payload = ServiceWithPayloads.asr_from_sample()
+        
+        response = user_client_with_no_api_key.post(endpoint, json=payload)
+        
+        assert response.status_code in [401, 403], (
+            f"Expected 401/403, got {response.status_code}. Response: {response.text}"
+        )
+        
+        data = response.json()
+        assert "detail" in data
+        
+        print(f"\n✅ USER ASR correctly blocked with no API key")
+        #print(f"   Error: {data['detail']['message']}, {data['detail']['code']}")
+        print(f"   Error: {data['detail']}")
+        print(f"   Error: {data['detail']}")
+
+    def test_tts_service_with_no_api_key_User(self, user_client_with_no_api_key):
+        """
+        User : Test TTS service with no API key
+        """
+        endpoint = "/api/v1/tts/inference"
+        payload = ServiceWithPayloads.tts_from_sample()
+        
+        response = user_client_with_no_api_key.post(endpoint, json=payload)
+        
+        assert response.status_code in [401, 403], (
+            f"Expected 401/403, got {response.status_code}. Response: {response.text}"
+        )
+        
+        data = response.json()
+        assert "detail" in data
+        
+        print(f"\n✅ USER TTS correctly blocked with no API key")
+        #print(f"   Error: {data['detail']['message']}, {data['detail']['code']}")
+
+    def test_transliteration_service_with_no_api_key_User(self, user_client_with_no_api_key):
+        """
+        User : Test Transliteration service with no API key
+        """
+        endpoint = "/api/v1/transliteration/inference"
+        payload = ServiceWithPayloads.transliteration_from_sample()
+        
+        response = user_client_with_no_api_key.post(endpoint, json=payload)
+        
+        assert response.status_code in [401, 403], (
+            f"Expected 401/403, got {response.status_code}. Response: {response.text}"
+        )
+        
+        data = response.json()
+        assert "detail" in data
+        
+        print(f"\n✅ USER Transliteration correctly blocked with no API key")
+        print(f"   Error: {data['detail']['message']}, {data['detail']['code']}")
+
+    def test_text_language_detection_services_with_no_api_key_User(self, user_client_with_no_api_key):
+        """
+        User : Test Text Language Detection service with no API key
+        """
+        endpoint = "/api/v1/language-detection/inference"
+        payload = ServiceWithPayloads.text_language_detection_from_sample()
+        
+        response = user_client_with_no_api_key.post(endpoint, json=payload)
+        
+        assert response.status_code in [401, 403], (
+            f"Expected 401/403, got {response.status_code}. Response: {response.text}"
+        )
+        
+        data = response.json()
+        assert "detail" in data
+        
+        print(f"\n✅ USER Text Language Detection correctly blocked with no API key")
+        print(f"   Error: {data['detail']['message']}, {data['detail']['code']}")
+
+    def test_speaker_diarization_services_with_no_api_key_User(self, user_client_with_no_api_key):
+        """
+        User : Test Speaker Diarization service with no API key
+        """
+        endpoint = "/api/v1/speaker-diarization/inference"
+        payload = ServiceWithPayloads.speaker_diarization_from_sample()
+        
+        response = user_client_with_no_api_key.post(endpoint, json=payload)
+        
+        assert response.status_code in [401, 403], (
+            f"Expected 401/403, got {response.status_code}. Response: {response.text}"
+        )
+        
+        data = response.json()
+        assert "detail" in data
+        
+        print(f"\n✅ USER Speaker Diarization correctly blocked with no API key")
+        print(f"   Error: {data['detail']['message']}, {data['detail']['code']}")
+
+    def test_language_diarization_services_with_no_api_key_User(self, user_client_with_no_api_key):
+        """
+        User : Test Language Diarization service with no API key
+        """
+        endpoint = "/api/v1/language-diarization/inference"
+        payload = ServiceWithPayloads.language_diarization_from_sample()
+        
+        response = user_client_with_no_api_key.post(endpoint, json=payload)
+        
+        assert response.status_code in [401, 403], (
+            f"Expected 401/403, got {response.status_code}. Response: {response.text}"
+        )
+        
+        data = response.json()
+        assert "detail" in data
+        
+        print(f"\n✅ USER Language Diarization correctly blocked with no API key")
+        print(f"   Error: {data['detail']['message']}, {data['detail']['code']}")
+
+    def test_audio_language_detection_services_with_no_api_key_User(self, user_client_with_no_api_key):
+        """
+        User : Test Audio Language Detection service with no API key
+        """
+        endpoint = "/api/v1/audio-lang-detection/inference"
+        payload = ServiceWithPayloads.audio_language_detection_from_sample()
+        
+        response = user_client_with_no_api_key.post(endpoint, json=payload)
+        
+        assert response.status_code in [401, 403], (
+            f"Expected 401/403, got {response.status_code}. Response: {response.text}"
+        )
+        
+        data = response.json()
+        assert "detail" in data
+        
+        print(f"\n✅ USER Audio Language Detection correctly blocked with no API key")
+        print(f"   Error: {data['detail']['message']}, {data['detail']['code']}")
+
+    def test_ner_services_with_no_api_key_User(self, user_client_with_no_api_key):
+        """
+        User : Test NER service with no API key
+        """
+        endpoint = "/api/v1/ner/inference"
+        payload = ServiceWithPayloads.ner_from_sample()
+        
+        response = user_client_with_no_api_key.post(endpoint, json=payload)
+        
+        assert response.status_code in [401, 403], (
+            f"Expected 401/403, got {response.status_code}. Response: {response.text}"
+        )
+        
+        data = response.json()
+        assert "detail" in data
+        
+        print(f"\n✅ USER NER correctly blocked with no API key")
+        print(f"   Error: {data['detail']['message']}, {data['detail']['code']}")
+
+    def test_ocr_services_with_no_api_key_User(self, user_client_with_no_api_key):
+        """
+        User : Test OCR service with no API key
+        """
+        endpoint = "/api/v1/ocr/inference"
+        payload = ServiceWithPayloads.ocr_from_sample()
+        
+        response = user_client_with_no_api_key.post(endpoint, json=payload)
+        
+        assert response.status_code in [401, 403], (
+            f"Expected 401/403, got {response.status_code}. Response: {response.text}"
+        )
+        
+        data = response.json()
+        assert "detail" in data
+        
+        print(f"\n✅ USER OCR correctly blocked with no API key")
+        print(f"   Error: {data['detail']['message']}, {data['detail']['code']}")
+
+    def test_pipeline_services_with_no_api_key_User(self, user_client_with_no_api_key):
+        """
+        User : Test Pipeline service with no API key
+        """
+        endpoint = "/api/v1/pipeline/inference"
+        payload = ServiceWithPayloads.pipeline_from_sample()
+        
+        response = user_client_with_no_api_key.post(endpoint, json=payload)
+        
+        assert response.status_code in [401, 403], (
+            f"Expected 401/403, got {response.status_code}. Response: {response.text}"
+        )
+        
+        data = response.json()
+        assert "detail" in data
+        
+        print(f"\n✅ USER Pipeline correctly blocked with no API key")
+        #print(f"   Error: {data['detail']['message']}, {data['detail']['code']}")
+        print(f"   Error: {data['detail']}")

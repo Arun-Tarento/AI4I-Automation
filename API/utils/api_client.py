@@ -10,7 +10,7 @@ class APIClient:
         self.base_url = settings.BASE_URL  # ← Fixed: settings (lowercase)
         self.token_manager = token_manager
         self.api_key = api_key
-    
+         
     def _get_headers(self):
         """Build headers with both access token and API key"""
         headers = {
@@ -49,3 +49,5 @@ class APIClient:
             **kwargs
         )
         return response
+
+
