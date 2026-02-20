@@ -2,9 +2,18 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-
 class Settings:
+
+    # Environment identifier
+    ENVIRONMENT = os.getenv("ENVIRONMENT", "unknown")
     BASE_URL = os.getenv("BASE_URL")
+    
+    # Show which env is active
+    def __init__(self):
+        print(f"🌍 Environment: {self.ENVIRONMENT} ({self.BASE_URL})")
+
+
+    # BASE_URL = os.getenv("BASE_URL")
     REQUEST_TIMEOUT = float(os.getenv("REQUEST_TIMEOUT"))
     TOKEN_REFRESH_INTERVAL = int(os.getenv("TOKEN_REFRESH_INTERVAL"))
     #Admin
@@ -45,8 +54,25 @@ class Settings:
     OCR_SERVICE_ID = os.getenv("OCR_SERVICE_ID")
 
     # Model Management Endpoints
-    MODEL_MANAGEMENT_LIST = os.getenv("MODEL_MANAGEMENT_LIST")
+    MODEL_MANAGEMENT_LIST = os.getenv("MODEL_MANAGEMENT_LIST")    
+    MODEL_MANAGEMENT_CREATE=os.getenv("MODEL_MANAGEMENT_CREATE")
+    MODEL_MANAGEMENT_DELETE=os.getenv("MODEL_MANAGEMENT_DELETE")
+    MODEL_MANAGEMENT_UPDATE=os.getenv("MODEL_MANAGEMENT_UPDATE")
+    MODEL_MANAGEMENT_LIST_SERVICES=os.getenv("MODEL_MANAGEMENT_LIST_SERVICES")
+    MODEL_MANAGEMENT_GET_SERVICE_BY_SERVICEID=os.getenv("MODEL_MANAGEMENT_GET_SERVICE_BY_SERVICEID")
+    MODEL_MANAGEMENT_CREATE_SERVICES=os.getenv("MODEL_MANAGEMENT_CREATE_SERVICES")
+    MODEL_MANAGEMENT_UPDATE_SERVICES=os.getenv("MODEL_MANAGEMENT_UPDATE_SERVICES")
+    MODEL_MANAGEMENT_DELETE_SERVICES=os.getenv("MODEL_MANAGEMENT_DELETE_SERVICES")
+
     
+    #Multi tenant
+    MULTI_TENANT_LIST_SERVICES = os.getenv("MULTI_TENANT_LIST_SERVICES", "/api/v1/multi-tenant/list/services")
+    MULTI_TENANT_LIST_TENANTS = os.getenv("MULTI_TENANT_LIST_TENANTS", "/api/v1/multi-tenant/list/tenants")
+    MULTI_TENANT_LIST_USERS = os.getenv("MULTI_TENANT_LIST_USERS", "/api/v1/multi-tenant/list/users")
+    MULTI_TENANT_VIEW_USER = os.getenv("MULTI_TENANT_VIEW_USER", "/api/v1/multi-tenant/view/user")
+    MULTI_TENANT_VIEW_TENANT = os.getenv("MULTI_TENANT_VIEW_TENANT", "/api/v1/multi-tenant/view/tenant")
+    
+
 
 settings = Settings()
 

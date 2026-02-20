@@ -39,13 +39,41 @@ class APIClient:
         )
         return response
     
-    def post(self, endpoint: str, **kwargs):
+    def post(self, endpoint: str, extra_headers: dict = None, **kwargs):
         """POST request"""
         url = f"{self.base_url}{endpoint}"
+        headers = self._get_headers()
+    
+        if extra_headers:
+            headers.update(extra_headers)
         response = httpx.post(
             url, 
-            headers=self._get_headers(),  # ← Fixed: Call _get_headers() method
+            headers=headers,  # ← Fixed: Call _get_headers() method
             timeout=settings.REQUEST_TIMEOUT,  # ← Fixed: settings (lowercase)
+            **kwargs
+        )
+        return response
+
+
+    def delete(self, endpoint: str, **kwargs):
+        """DELETE request"""
+        url = f"{self.base_url}{endpoint}"
+        response = httpx.delete(
+            url,
+            headers=self._get_headers(),
+            timeout=settings.REQUEST_TIMEOUT,
+            **kwargs
+        )
+        return response
+        
+
+    def patch(self, endpoint: str, **kwargs):
+        """PATCH request"""
+        url = f"{self.base_url}{endpoint}"
+        response = httpx.patch(
+            url,
+            headers=self._get_headers(),
+            timeout=settings.REQUEST_TIMEOUT,
             **kwargs
         )
         return response

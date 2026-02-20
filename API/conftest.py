@@ -7,7 +7,8 @@ import pytest
 from utils.auth import login_and_get_token_manager
 from utils.api_client import APIClient
 from config.settings import settings
-
+from utils.services import ServiceWithPayloads
+import time
 
 # Add API directory to Python path so imports work
 
@@ -92,14 +93,52 @@ def moderator_token_manager():
     """
     Login once per test session for moderator role, with background token refresh 
     """
-    token_manager = login_and_get_token_manager(settings.GUEST_USERNAME, settings.GUEST_PASSWORD)
+    token_manager = login_and_get_token_manager(settings.MODERATOR_USERNAME, settings.MODERATOR_PASSWORD)
     yield token_manager
     token_manager.stop_background_refresh()
-
+    
+@pytest.fixture(scope="session")  # ← ADD THIS DECORATOR
 def moderator_client_with_valid_api_key(moderator_token_manager):
     """
     Authenticated API client for Moderator role with VALID API key
     """
-    return APIClient(guest_token_manager, api_key=settings.MODERATOR_VALID_API_KEY)
+    return APIClient(moderator_token_manager, api_key=settings.MODERATOR_VALID_API_KEY)
 
 
+#####################################################MODEL MANAGEMENT##########################################################
+@pytest.fixture(scope="class")
+def created_model(admin_client_with_valid_api_key):
+    ### Creates and returns a model for testing
+    endpoint_create = settings.MODEL_MANAGEMENT_CREATE
+    endpoint_list = settings.MODEL_MANAGEMENT_LIST
+    timestamp = int(time.time())
+    name = f"Test-Model-get-{timestamp}"
+    version = "1.0.0"
+    payload = ServiceWithPayloads.model_create_payload(
+        name=name,
+        version=version,
+        task_type="asr"
+    )
+
+    # Step 1: Create the model
+    response = admin_client_with_valid_api_key.post(endpoint_create, json=payload)
+    assert response.status_code in [200, 201], (
+        f"Setup failed: {response.text}"
+    )
+
+    # Step 2: Fetch it back by name to get the modelId
+    list_response = admin_client_with_valid_api_key.get(
+        endpoint_list, params={"model_name": name}
+    )
+    assert list_response.status_code == 200
+    models = list_response.json()
+    assert len(models) > 0, f"Could not find created model '{name}' in list"
+
+    model_id = models[0]["modelId"]
+
+    return {
+        "model_id": model_id,
+        "uuid": models[0]["uuid"], 
+        "name": name,
+        "version": version
+    }

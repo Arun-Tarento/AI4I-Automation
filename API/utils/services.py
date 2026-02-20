@@ -28,7 +28,7 @@ class ServiceWithPayloads:
 
 
     @staticmethod
-    def nmt(source_text=None, source_lang="hi", target_lang="ta", data_tracking=False):
+    def nmt(source_text=None, source_lang="hi", target_lang="ta", data_tracking=False, service_id=None):
         """
         NMT translation payload
          
@@ -55,12 +55,71 @@ class ServiceWithPayloads:
                     "sourceLanguage": source_lang,
                     "targetLanguage": target_lang
                 },
-                "serviceId": settings.NMT_SERVICE_ID
+                "serviceId": service_id if service_id else settings.NMT_SERVICE_ID
             },
             "controlConfig": {
                 "dataTracking": data_tracking
             }
         }
+
+    @staticmethod
+    def nmt_without_service_id(source_text=None, source_lang="hi", target_lang="ta", data_tracking=False):
+        """NMT payload without serviceId - for negative testing"""
+        if source_text is None:
+            sample_file = ServiceWithPayloads.NMT_SAMPLES_DIR / "nmt_sample.json"
+            with open(sample_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                source_text = data.get("input", "Sample text")
+        
+        return {
+            "input": [{"source": source_text}],
+            "config": {
+                "language": {
+                    "sourceLanguage": source_lang,
+                    "targetLanguage": target_lang
+                }
+                # serviceId intentionally omitted
+            },
+            "controlConfig": {
+                "dataTracking": data_tracking
+            }
+        }
+
+    @staticmethod
+    def nmt_with_context_aware(source_text=None, source_lang="hi", target_lang="ta", context="general", data_tracking=False, service_id=None):
+        """NMT payload with context aware - for Scenario 6
+        
+        Args:
+            context: Context value for LLM inference (e.g. "general", "medical", "legal")
+        """
+        if source_text is None:
+            sample_file = ServiceWithPayloads.NMT_SAMPLES_DIR / "nmt_sample.json"
+            with open(sample_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                source_text = data.get("input", "Sample text")
+        
+        config = {
+            "language": {
+                "sourceLanguage": source_lang,
+                "targetLanguage": target_lang
+            }
+        }
+        
+        if context is not None:
+            config["context"] = context
+        
+        if service_id:
+            config["serviceId"] = service_id
+
+        return {
+            "input": [{"source": source_text}],
+            "config": config,
+            "controlConfig": {
+                "dataTracking": data_tracking
+            }
+        }
+
+##############################################################################################################################################
 
     @staticmethod
     def asr(
@@ -543,10 +602,15 @@ class ServiceWithPayloads:
         }
         
         return payload
+
+
+############################################CONVENIENCE FROM_SAMPLE METHODS###############################################################
     @staticmethod
     def nmt_from_sample():
         """Load NMT payload with text from nmt_sample.json"""
         return ServiceWithPayloads.nmt()
+
+
     
     @staticmethod
     def asr_from_sample():
@@ -599,3 +663,266 @@ class ServiceWithPayloads:
         """Load Pipeline payload with audio from hindi_4s.wav"""
         return ServiceWithPayloads.pipeline()
 
+##################################################### MODEL MANAGEMENT ############################################################################
+    @staticmethod
+    def model_name(role_name: str, timestamp: int, task_type: str = None) -> str:
+        """
+            Generate a unique model name
+            Args:
+                role_name: Role name e.g. 'admin', 'moderator'
+                timestamp: Unix timestamp
+                task_type: Optional task type e.g. 'asr', 'nmt'
+            Returns:
+                str: Unique model name
+            """
+        if task_type:
+            return f"Test-Model-{task_type}-{role_name.lower()}-{timestamp}"
+        return f"Test-Model-{role_name.lower()}-{timestamp}"
+
+
+    @staticmethod
+    def model_create_payload(name: str, version: str, task_type: str = "asr") -> dict:
+        """
+        Model Management - Create Model payload
+
+        Args:
+            name: Model name (mandatory, must be unique with version)
+            version: Model version (mandatory, must be unique with name)
+            task_type: Task type - "asr", "nmt", or "tts" (default: "asr")
+
+        Returns:
+            dict: Create model payload
+        """
+        return {
+            "modelId": "Example/Example-1",
+            "version": version,
+            "name": name,
+            "description": "A sample model for demonstration purposes",
+            "refUrl": "https://github.com/example/example-model",
+            "task": {
+                "type": task_type
+            },
+            "languages": [
+                {
+                    "sourceLanguage": "hi",
+                    "sourceScriptCode": "Deva",
+                    "targetLanguage": "hi",
+                    "targetScriptCode": "Deva"
+                }
+            ],
+            "license": "mit",
+            "domain": ["general"],
+            "inferenceEndPoint": {
+                "schema": {
+                    "modelProcessingType": {
+                        "type": "batch"
+                    },
+                    "request": {
+                        "input": [{"audio": "base64_encoded_audio_string"}],
+                        "config": {
+                            "language": {"sourceLanguage": "hi"}
+                        }
+                    },
+                    "response": {
+                        "output": [{"transcript": "string"}]
+                    }
+                }
+            },
+            "benchmarks": [
+                {
+                    "benchmarkId": "example-benchmark-001",
+                    "name": "Example Benchmark",
+                    "description": "Sample benchmark for evaluation",
+                    "domain": "general",
+                    "createdOn": "2025-01-15T10:00:00.000Z",
+                    "languages": {
+                        "sourceLanguage": "hi",
+                        "targetLanguage": "hi"
+                    },
+                    "score": [{"metricName": "WER", "score": "7.5"}]
+                }
+            ],
+            "submitter": {
+                "name": "Example Organization",
+                "aboutMe": "An example organization",
+                "team": [
+                    {
+                        "name": "John Doe",
+                        "aboutMe": "Lead Researcher",
+                        "oauthId": {
+                            "oauthId": "1234567890",
+                            "provider": "google"
+                        }
+                    }
+                ]
+            }
+        }
+
+    @staticmethod
+    def model_create_payload_from_sample(role_name: str = "admin", 
+                                        task_type: str = "asr",
+                                        timestamp: int = None) -> dict:
+        import time
+        if timestamp is None:
+            timestamp = int(time.time())
+        return ServiceWithPayloads.model_create_payload(
+            name=ServiceWithPayloads.model_name(
+                role_name=role_name,
+                timestamp=timestamp,
+                task_type=task_type
+            ),
+            version="1.0.0",
+            task_type=task_type
+        )
+
+    @staticmethod
+    def model_update_payload(model_id: str, uuid: str, version: str, 
+                            task_type: str = "asr", 
+                            version_status: str = "ACTIVE",
+                            license: str = "MIT") -> dict:
+        """
+        Model Management - Update Model payload (PATCH)
+
+        Args:
+            model_id: Model ID to locate the model (mandatory)
+            uuid: Model UUID (mandatory)
+            version: Model version to locate the model (mandatory)
+            task_type: Task type (default: asr)
+            version_status: ACTIVE or DEPRECATED (default: ACTIVE)
+            license: Valid license string (default: MIT)
+
+        Returns:
+            dict: Update model payload
+        """
+        return {
+            "modelId": model_id,
+            "uuid": uuid,
+            "version": version,
+            "versionStatus": version_status,
+            "description": "A sample model for demonstration purposes",
+            "languages": [
+                {
+                    "sourceLanguage": "hi",
+                    "targetLanguage": "hi",
+                    "sourceScriptCode": "Deva",
+                    "targetScriptCode": "Deva"
+                }
+            ],
+            "domain": ["general"],
+            "submitter": {
+                "name": "Example Organization",
+                "aboutMe": "An example organization",
+                "team": [
+                    {
+                        "name": "John Doe",
+                        "aboutMe": "Lead Researcher",
+                        "oauthId": {
+                            "oauthId": "1234567890",
+                            "provider": "google"
+                        }
+                    }
+                ]
+            },
+            "license": license,
+            "inferenceEndPoint": {
+                "schema": {
+                    "modelProcessingType": {
+                        "type": "batch"
+                    },
+                    "model_name": None,
+                    "request": {
+                        "input": [{"audio": "base64_encoded_audio_string"}],
+                        "config": {
+                            "language": {"sourceLanguage": "hi"}
+                        }
+                    },
+                    "response": {
+                        "output": [{"transcript": "string"}]
+                    }
+                },
+                "endpoint": None,
+                "model_name": None,
+                "modelName": None,
+                "model": None
+            },
+            "source": "https://github.com/example/example-model",
+            "task": {
+                "type": task_type
+            }
+        }
+
+
+##########################################################################Services##########################################################################
+    @staticmethod
+    def service_name(prefix: str, role_name: str, timestamp: int) -> str:
+        """
+        Generate a unique service name compliant with alphanumeric + hyphens rule
+        Args:
+            prefix: Short descriptor e.g. 'svc', 'no-modelid', 'deprecated'
+            role_name: Role name e.g. 'admin', 'moderator'
+            timestamp: Unix timestamp
+        Returns:
+            str: Unique service name
+        """
+        return f"test-svc-{prefix}-{role_name.lower()}-{timestamp}"
+
+    @staticmethod
+    def service_create_payload(model_id: str,
+                                model_version: str,
+                                service_name: str,
+                                service_description: str = "Test service description",
+                                hardware_description: str = "Test hardware description",
+                                endpoint: str = "http://test-endpoint:8000",
+                                api_key: str = "test-api-key",
+                                is_published: bool = False) -> dict:
+        """
+        Model Management - Create Service payload
+
+        Args:
+            model_id: Model ID to link the service to (mandatory)
+            model_version: Model version (mandatory)
+            service_name: Name of the service - alphanumeric + hyphens only (mandatory)
+            service_description: Service description (mandatory)
+            hardware_description: Hardware description
+            endpoint: Service endpoint URL (mandatory)
+            api_key: API key for the service
+            is_published: Publish status (default: False)
+
+        Returns:
+            dict: Create service payload
+        """
+        return {
+            "name": service_name,
+            "serviceDescription": service_description,
+            "hardwareDescription": hardware_description,
+            "publishedOn": 0,
+            "modelId": model_id,
+            "modelVersion": model_version,
+            "endpoint": endpoint,
+            "api_key": api_key,
+            "isPublished": is_published
+        }
+
+    @staticmethod
+    def service_update_payload(service_id: str,
+                                service_description: str = "Updated service description",
+                                hardware_description: str = "Updated hardware description",
+                                is_published: bool = False) -> dict:
+        """
+        Model Management - Update Service payload (PATCH)
+
+        Args:
+            service_id: Service ID to locate the service (mandatory)
+            service_description: Updated service description
+            hardware_description: Updated hardware description
+            is_published: Publish/unpublish the service (default: False)
+
+        Returns:
+            dict: Update service payload
+        """
+        return {
+            "serviceId": service_id,
+            "serviceDescription": service_description,
+            "hardwareDescription": hardware_description,
+            "isPublished": is_published
+        }
