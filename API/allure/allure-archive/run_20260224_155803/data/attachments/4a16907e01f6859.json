@@ -1,0 +1,9 @@
+Status: 403
+
+{
+  "detail": {
+    "message": "Authorization error: Invalid API key",
+    "code": "AUTHORIZATION_ERROR",
+    "timestamp": 1771928894.4706404
+  }
+}

@@ -1,0 +1,20 @@
+
+✅ [MODERATOR] Model created: Test-Model-moderator-1771864457
+🔍 [MODERATOR] modelId: 3cbdf8ee31d92b9bf0af7aa3068273ff | version: 1.0.0
+✅ [MODERATOR] Service created: test-svc-pub-unpub-moderator-1771864457
+🔍 [MODERATOR] serviceId: 3e1c44ac764acce81d5e744492f3e73f
+
+============================================================
+🔍 Test: Publish and Unpublish Service - MODERATOR
+🔍 Endpoint: PATCH /api/v1/model-management/services
+🔍 serviceId: 3e1c44ac764acce81d5e744492f3e73f
+============================================================
+📊 Publish Status Code: 200
+📦 Publish Response: "Service '3e1c44ac764acce81d5e744492f3e73f' updated successfully."
+✅ [MODERATOR] Service published — isPublished=True verified
+📊 Unpublish Status Code: 200
+📦 Unpublish Response: "Service '3e1c44ac764acce81d5e744492f3e73f' updated successfully."
+✅ [MODERATOR] Service unpublished — isPublished=False verified
+============================================================
+
+🧹 [MODERATOR] Cleanup: Model 'Test-Model-moderator-1771864457' deleted

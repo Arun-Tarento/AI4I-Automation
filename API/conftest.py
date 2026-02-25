@@ -9,6 +9,7 @@ from utils.api_client import APIClient
 from config.settings import settings
 from utils.services import ServiceWithPayloads
 import time
+import os
 
 # Add API directory to Python path so imports work
 
@@ -142,3 +143,13 @@ def created_model(admin_client_with_valid_api_key):
         "name": name,
         "version": version
     }
+
+
+################################Exit####################################################
+def pytest_sessionfinish(session, exitstatus):
+    """Write environment info to Allure results after test run."""
+    os.makedirs("allure/allure-results", exist_ok=True)
+    with open("allure/allure-results/environment.properties", "w") as f:
+        f.write(f"Environment={settings.ENVIRONMENT}\n")
+        f.write(f"Base.URL={settings.BASE_URL}\n")
+        f.write(f"HTTP.Client=httpx\n")

@@ -1,0 +1,17 @@
+
+✅ [MODERATOR] Model created: Test-Model-moderator-1771864720
+🔍 [MODERATOR] modelId: 45be4b91eb5333239a14b314f3a6d1fb | version: 1.0.0
+✅ [MODERATOR] Service created: test-svc-upd-hw-moderator-1771864720
+🔍 [MODERATOR] serviceId: bb257b72b7261583f17c62109bef5e5f
+
+============================================================
+🔍 Test: Update Service hardwareDescription - MODERATOR
+🔍 Endpoint: PATCH /api/v1/model-management/services
+🔍 serviceId: bb257b72b7261583f17c62109bef5e5f
+============================================================
+📊 Status Code: 200
+📦 Response: "Service 'bb257b72b7261583f17c62109bef5e5f' updated successfully."
+✅ [MODERATOR] hardwareDescription updated and verified successfully
+============================================================
+
+🧹 [MODERATOR] Cleanup: Model 'Test-Model-moderator-1771864720' deleted

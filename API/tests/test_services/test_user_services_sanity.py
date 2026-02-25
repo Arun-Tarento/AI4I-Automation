@@ -282,46 +282,46 @@ class TestUserServicesWithValidAPIKey:
         
         response = user_client_with_valid_api_key.post(endpoint, json=payload)
         
-        # assert response.status_code == 200, (
-        #     f"Expected 200, got {response.status_code}. Response: {response.text}"
-        # )
+        assert response.status_code == 200, (
+            f"Expected 200, got {response.status_code}. Response: {response.text}"
+        )
         
         data = response.json()
         print(data)
-        # assert "pipelineResponse" in data
-        # assert len(data["pipelineResponse"]) == 3, "Expected 3 pipeline tasks"
+        assert "pipelineResponse" in data
+        assert len(data["pipelineResponse"]) == 3, "Expected 3 pipeline tasks"
         
-        # # Validate ASR task
-        # asr_task = data["pipelineResponse"][0]
-        # assert asr_task["taskType"] == "asr"
-        # assert "output" in asr_task
-        # assert len(asr_task["output"]) > 0
-        # assert "source" in asr_task["output"][0]
-        # asr_text = asr_task["output"][0]["source"]
+        # Validate ASR task
+        asr_task = data["pipelineResponse"][0]
+        assert asr_task["taskType"] == "asr"
+        assert "output" in asr_task
+        assert len(asr_task["output"]) > 0
+        assert "source" in asr_task["output"][0]
+        asr_text = asr_task["output"][0]["source"]
         
-        # # Validate Translation task
-        # translation_task = data["pipelineResponse"][1]
-        # assert translation_task["taskType"] == "translation"
-        # assert "output" in translation_task
-        # assert len(translation_task["output"]) > 0
-        # assert "source" in translation_task["output"][0]
-        # assert "target" in translation_task["output"][0]
-        # translated_text = translation_task["output"][0]["target"]
+        # Validate Translation task
+        translation_task = data["pipelineResponse"][1]
+        assert translation_task["taskType"] == "translation"
+        assert "output" in translation_task
+        assert len(translation_task["output"]) > 0
+        assert "source" in translation_task["output"][0]
+        assert "target" in translation_task["output"][0]
+        translated_text = translation_task["output"][0]["target"]
         
-        # # Validate TTS task
-        # tts_task = data["pipelineResponse"][2]
-        # assert tts_task["taskType"] == "tts"
-        # assert "audio" in tts_task or "output" in tts_task
+        # Validate TTS task
+        tts_task = data["pipelineResponse"][2]
+        assert tts_task["taskType"] == "tts"
+        assert "audio" in tts_task or "output" in tts_task
         
-        # # Check for audio content in either location
-        # if "audio" in tts_task and tts_task["audio"]:
-        #     assert "audioContent" in tts_task["audio"][0]
-        #     audio_content = tts_task["audio"][0]["audioContent"]
-        # elif "output" in tts_task and tts_task["output"]:
-        #     assert "audioContent" in tts_task["output"][0]
-        #     audio_content = tts_task["output"][0]["audioContent"]
-        # else:
-        #     raise AssertionError("No audio content found in TTS task")
+        # Check for audio content in either location
+        if "audio" in tts_task and tts_task["audio"]:
+            assert "audioContent" in tts_task["audio"][0]
+            audio_content = tts_task["audio"][0]["audioContent"]
+        elif "output" in tts_task and tts_task["output"]:
+            assert "audioContent" in tts_task["output"][0]
+            audio_content = tts_task["output"][0]["audioContent"]
+        else:
+            raise AssertionError("No audio content found in TTS task")
         
         print(f"\n✅ USER Pipeline (ASR → Translation → TTS):")
         print(f"   ASR: '{asr_text}'")
@@ -562,7 +562,7 @@ class TestUserServicesWithNoAPIKey:
         assert "detail" in data
         
         print(f"\n✅ USER NMT correctly blocked with no API key")
-        print(f"   Error: {data['detail']['message']}, {data['detail']['code']}")
+        print(f"   Error: {data['detail']['message']}, {data['detail']}")
 
     def test_asr_service_with_no_api_key_User(self, user_client_with_no_api_key):
         """
@@ -602,7 +602,7 @@ class TestUserServicesWithNoAPIKey:
         assert "detail" in data
         
         print(f"\n✅ USER TTS correctly blocked with no API key")
-        #print(f"   Error: {data['detail']['message']}, {data['detail']['code']}")
+        print(f"   Error: {data['detail']['message']}, {data['detail']}")
 
     def test_transliteration_service_with_no_api_key_User(self, user_client_with_no_api_key):
         """
@@ -621,7 +621,7 @@ class TestUserServicesWithNoAPIKey:
         assert "detail" in data
         
         print(f"\n✅ USER Transliteration correctly blocked with no API key")
-        print(f"   Error: {data['detail']['message']}, {data['detail']['code']}")
+        print(f"   Error: {data['detail']['message']}, {data['detail']}")
 
     def test_text_language_detection_services_with_no_api_key_User(self, user_client_with_no_api_key):
         """
@@ -640,7 +640,7 @@ class TestUserServicesWithNoAPIKey:
         assert "detail" in data
         
         print(f"\n✅ USER Text Language Detection correctly blocked with no API key")
-        print(f"   Error: {data['detail']['message']}, {data['detail']['code']}")
+        print(f"   Error: {data['detail']['message']}, {data['detail']}")
 
     def test_speaker_diarization_services_with_no_api_key_User(self, user_client_with_no_api_key):
         """
@@ -659,7 +659,7 @@ class TestUserServicesWithNoAPIKey:
         assert "detail" in data
         
         print(f"\n✅ USER Speaker Diarization correctly blocked with no API key")
-        print(f"   Error: {data['detail']['message']}, {data['detail']['code']}")
+        print(f"   Error: {data['detail']['message']}, {data['detail']}")
 
     def test_language_diarization_services_with_no_api_key_User(self, user_client_with_no_api_key):
         """
@@ -678,7 +678,7 @@ class TestUserServicesWithNoAPIKey:
         assert "detail" in data
         
         print(f"\n✅ USER Language Diarization correctly blocked with no API key")
-        print(f"   Error: {data['detail']['message']}, {data['detail']['code']}")
+        print(f"   Error: {data['detail']['message']}, {data['detail']}")
 
     def test_audio_language_detection_services_with_no_api_key_User(self, user_client_with_no_api_key):
         """
@@ -697,7 +697,7 @@ class TestUserServicesWithNoAPIKey:
         assert "detail" in data
         
         print(f"\n✅ USER Audio Language Detection correctly blocked with no API key")
-        print(f"   Error: {data['detail']['message']}, {data['detail']['code']}")
+        print(f"   Error: {data['detail']['message']}, {data['detail']}")
 
     def test_ner_services_with_no_api_key_User(self, user_client_with_no_api_key):
         """
@@ -716,7 +716,7 @@ class TestUserServicesWithNoAPIKey:
         assert "detail" in data
         
         print(f"\n✅ USER NER correctly blocked with no API key")
-        print(f"   Error: {data['detail']['message']}, {data['detail']['code']}")
+        print(f"   Error: {data['detail']['message']}, {data['detail']}")
 
     def test_ocr_services_with_no_api_key_User(self, user_client_with_no_api_key):
         """

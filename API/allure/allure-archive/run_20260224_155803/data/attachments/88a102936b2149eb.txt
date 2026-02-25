@@ -1,0 +1,2 @@
+
+✅ USER Audio Language Detection correctly blocked with no API key

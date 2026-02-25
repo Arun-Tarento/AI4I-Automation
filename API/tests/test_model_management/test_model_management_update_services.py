@@ -10,8 +10,10 @@ import pytest
 import time
 from config.settings import settings
 from utils.services import ServiceWithPayloads
+import allure
 
-
+@allure.feature("Model Management")
+@allure.story("Update Services")
 class TestModelManagementUpdateServices:
     """Test PATCH /api/v1/model-management/services across different roles"""
 
@@ -19,6 +21,8 @@ class TestModelManagementUpdateServices:
         "admin_client_with_valid_api_key",
         "moderator_client_with_valid_api_key"
     ])
+    @allure.severity(allure.severity_level.NORMAL)
+    @allure.title("Update service description — {role_client_fixture}")
     def test_update_service_description(self, role_client_fixture, request):
         """
         ADMIN & MODERATOR: Update serviceDescription of a service
@@ -146,7 +150,8 @@ class TestModelManagementUpdateServices:
                     print(f"⚠️  [{role_name}] Cleanup failed: {cleanup_response.text}")
 
 
-
+    @allure.severity(allure.severity_level.NORMAL)
+    @allure.title("Update service hardware description — {role_client_fixture}")
     @pytest.mark.parametrize("role_client_fixture", [
         "admin_client_with_valid_api_key",
         "moderator_client_with_valid_api_key"
@@ -277,7 +282,8 @@ class TestModelManagementUpdateServices:
                 else:
                     print(f"⚠️  [{role_name}] Cleanup failed: {cleanup_response.text}")
 
-
+    @allure.severity(allure.severity_level.CRITICAL)
+    @allure.title("Publish and unpublish service — {role_client_fixture}")
     @pytest.mark.business_case
     @pytest.mark.parametrize("role_client_fixture", [
         "admin_client_with_valid_api_key",
@@ -442,7 +448,8 @@ class TestModelManagementUpdateServices:
                     print(f"⚠️  [{role_name}] Cleanup failed: {cleanup_response.text}")
 
 
-
+    @allure.severity(allure.severity_level.MINOR)
+    @allure.title("Update service with invalid serviceId — {role_client_fixture}")
     @pytest.mark.parametrize("role_client_fixture", [
         "admin_client_with_valid_api_key",
         "moderator_client_with_valid_api_key"
@@ -489,6 +496,9 @@ class TestModelManagementUpdateServices:
         print(f"✅ [{role_name}] API correctly returned 404 for invalid serviceId")
         print(f"{'='*60}\n")
 
+
+    @allure.severity(allure.severity_level.MINOR)
+    @allure.title("Unauthorized roles cannot update service — {role_client_fixture}")
     @pytest.mark.rbac
     @pytest.mark.parametrize("role_client_fixture", [
         "user_client_with_valid_api_key",
@@ -528,7 +538,11 @@ class TestModelManagementUpdateServices:
         print(f"✅ [{role_name}] Correctly denied access (Status: {response.status_code})")
         print(f"{'='*60}\n")
 
-
+    
+    
+    @allure.severity(allure.severity_level.CRITICAL)
+    @allure.issue("BR-08", "API allows publishing service with deprecated model")
+    @allure.title("Cannot publish service with deprecated model — {role_client_fixture}")
     @pytest.mark.business_case
     @pytest.mark.parametrize("role_client_fixture", [
         "admin_client_with_valid_api_key",

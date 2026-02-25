@@ -1,0 +1,2 @@
+2026-02-24 11:52:40.937 | INFO     | utils.auth:_login:31 - 🔍 Login URL: https://dev.ai4inclusion.org/api/v1/auth/login
+2026-02-24 11:52:40.937 | INFO     | utils.auth:_login:32 - 🔍 Password: ************

@@ -1,0 +1,11 @@
+✓ Background token refresh started
+
+============================================================
+🔍 Test: Update Service - USER (Should be DENIED)
+🔍 Endpoint: PATCH /api/v1/model-management/services
+============================================================
+📊 Status Code: 401
+📦 Response: {"detail":{"message":"API key not found","code":"AUTHENTICATION_ERROR","timestamp":1771914160.9149237,"details":null}}
+✅ [USER] Correctly denied access (Status: 401)
+============================================================
+

@@ -1,5 +1,7 @@
 import httpx
 from config.settings import settings
+import allure
+import json
 
 class APIClient:
     """
@@ -27,6 +29,38 @@ class APIClient:
             headers["X-API-Key"] = self.api_key  # ← Fixed: Use X-API-Key header
         
         return headers
+
+    def _attach_to_allure(self, response: httpx.Response, method: str):
+        """Attach full request and response details to the Allure report."""
+
+        # --- REQUEST ---
+        request = response.request
+         # Request body (may be empty for GET/DELETE)
+        try:
+            request_body = json.loads(request.content)
+            request_body_str = json.dumps(request_body, indent=2)
+
+        except Exception:
+            request_body_str = request.content.decode("utf-8", errors="ignore") or "(no body)"
+
+        allure.attach(
+            body=f"{method} {request.url}\n\n{request_body_str}",
+            name=f"Request — {method}",
+            attachment_type=allure.attachment_type.JSON,
+        )
+
+        # --- RESPONSE ---
+        try:
+            response_body = json.dumps(response.json(), indent=2)
+        except Exception:
+            response_body = response.text or "(no body)"
+
+        allure.attach(
+            body=f"Status: {response.status_code}\n\n{response_body}",
+            name=f"Response — {response.status_code}",
+            attachment_type=allure.attachment_type.JSON,
+        )
+
     
     def get(self, endpoint: str, **kwargs):
         """GET request"""
@@ -37,6 +71,7 @@ class APIClient:
             timeout=settings.REQUEST_TIMEOUT,  # ← Fixed: settings (lowercase)
             **kwargs
         )
+        self._attach_to_allure(response, "GET")
         return response
     
     def post(self, endpoint: str, extra_headers: dict = None, **kwargs):
@@ -52,6 +87,7 @@ class APIClient:
             timeout=settings.REQUEST_TIMEOUT,  # ← Fixed: settings (lowercase)
             **kwargs
         )
+        self._attach_to_allure(response, "POST")
         return response
 
 
@@ -64,6 +100,7 @@ class APIClient:
             timeout=settings.REQUEST_TIMEOUT,
             **kwargs
         )
+        self._attach_to_allure(response, "DELETE")
         return response
         
 
@@ -76,6 +113,7 @@ class APIClient:
             timeout=settings.REQUEST_TIMEOUT,
             **kwargs
         )
+        self._attach_to_allure(response, "PATCH")
         return response
 
 

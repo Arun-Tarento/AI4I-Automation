@@ -1,0 +1,68 @@
+[
+  {
+    "data": {
+      "failed": 4,
+      "broken": 0,
+      "skipped": 0,
+      "passed": 8,
+      "unknown": 0,
+      "total": 12
+    },
+    "buildOrder": 1
+  },
+  {
+    "buildOrder": 1,
+    "data": {
+      "failed": 4,
+      "broken": 0,
+      "skipped": 0,
+      "passed": 8,
+      "unknown": 0,
+      "total": 12
+    }
+  },
+  {
+    "buildOrder": 1,
+    "data": {
+      "failed": 4,
+      "broken": 0,
+      "skipped": 0,
+      "passed": 8,
+      "unknown": 0,
+      "total": 12
+    }
+  },
+  {
+    "buildOrder": 2,
+    "data": {
+      "failed": 4,
+      "broken": 0,
+      "skipped": 0,
+      "passed": 8,
+      "unknown": 0,
+      "total": 12
+    }
+  },
+  {
+    "buildOrder": 4,
+    "data": {
+      "failed": 4,
+      "broken": 0,
+      "skipped": 0,
+      "passed": 8,
+      "unknown": 0,
+      "total": 12
+    }
+  },
+  {
+    "buildOrder": 6,
+    "data": {
+      "failed": 4,
+      "broken": 0,
+      "skipped": 0,
+      "passed": 8,
+      "unknown": 0,
+      "total": 12
+    }
+  }
+]

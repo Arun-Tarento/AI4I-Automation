@@ -1,0 +1,19 @@
+POST https://dev.ai4inclusion.org/api/v1/nmt/inference
+
+{
+  "input": [
+    {
+      "source": "Sample text"
+    }
+  ],
+  "config": {
+    "language": {
+      "sourceLanguage": "hi",
+      "targetLanguage": "ta"
+    },
+    "serviceId": "nmt"
+  },
+  "controlConfig": {
+    "dataTracking": false
+  }
+}

@@ -1,0 +1,3 @@
+
+✅ USER NER correctly blocked with invalid key
+   Error: {'message': 'Authorization error: Invalid API key', 'code': 'AUTHORIZATION_ERROR', 'timestamp': 1771928904.4606764}

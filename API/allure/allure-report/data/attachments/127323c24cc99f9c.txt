@@ -1,0 +1,4 @@
+
+✅ USER Pipeline correctly blocked with no API key
+   Error: {'error': 'API_KEY_MISSING', 'message': 'API key is required to access this service.'}
+✓ Background token refresh stopped

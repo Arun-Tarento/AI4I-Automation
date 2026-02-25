@@ -1,0 +1,3 @@
+
+✅ USER ASR correctly blocked with invalid key
+   Error: {'message': 'Authorization error: Invalid API key', 'code': 'AUTHORIZATION_ERROR'}

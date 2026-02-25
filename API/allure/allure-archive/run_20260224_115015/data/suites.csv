@@ -1,0 +1,100 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Feb 24 11:50:37 IST 2026","Tue Feb 24 11:50:38 IST 2026","653","tests.test_services","test_user_services_sanity","TestUserServicesWithInvalidAPIKey","","","test_ner_services_with_invalid_api_key_User","
+        User : Test NER service with invalid API key
+        "
+"broken","Tue Feb 24 11:50:48 IST 2026","Tue Feb 24 11:50:48 IST 2026","415","tests.test_services","test_user_services_sanity","TestUserServicesWithNoAPIKey","","","test_language_diarization_services_with_no_api_key_User","
+        User : Test Language Diarization service with no API key
+        "
+"passed","Tue Feb 24 11:50:32 IST 2026","Tue Feb 24 11:50:32 IST 2026","591","tests.test_services","test_user_services_sanity","TestUserServicesWithInvalidAPIKey","","","test_nmt_services_with_invalid_api_key_User","
+        User : Test NMT service with invalid API key
+        "
+"failed","Tue Feb 24 11:50:50 IST 2026","Tue Feb 24 11:50:51 IST 2026","565","tests.test_services","test_user_services_sanity","TestUserServicesWithNoAPIKey","","","test_pipeline_services_with_no_api_key_User","
+        User : Test Pipeline service with no API key
+        "
+"broken","Tue Feb 24 11:50:46 IST 2026","Tue Feb 24 11:50:47 IST 2026","467","tests.test_services","test_user_services_sanity","TestUserServicesWithNoAPIKey","","","test_text_language_detection_services_with_no_api_key_User","
+        User : Test Text Language Detection service with no API key
+        "
+"passed","Tue Feb 24 11:50:45 IST 2026","Tue Feb 24 11:50:45 IST 2026","597","tests.test_services","test_user_services_sanity","TestUserServicesWithNoAPIKey","","","test_asr_service_with_no_api_key_User","
+        User : Test ASR service with no API key
+        "
+"failed","Tue Feb 24 11:50:28 IST 2026","Tue Feb 24 11:50:29 IST 2026","724","tests.test_services","test_user_services_sanity","TestUserServicesWithValidAPIKey","","","test_language_diarization_services_with_valid_api_key_User","
+        User : Test Language Diarization service with valid API key
+        "
+"failed","Tue Feb 24 11:50:21 IST 2026","Tue Feb 24 11:50:21 IST 2026","740","tests.test_services","test_user_services_sanity","TestUserServicesWithValidAPIKey","","","test_nmt_services_with_valid_api_key_User","
+        User : Test NMT service with valid API key
+        "
+"broken","Tue Feb 24 11:50:47 IST 2026","Tue Feb 24 11:50:48 IST 2026","706","tests.test_services","test_user_services_sanity","TestUserServicesWithNoAPIKey","","","test_speaker_diarization_services_with_no_api_key_User","
+        User : Test Speaker Diarization service with no API key
+        "
+"broken","Tue Feb 24 11:50:48 IST 2026","Tue Feb 24 11:50:49 IST 2026","592","tests.test_services","test_user_services_sanity","TestUserServicesWithNoAPIKey","","","test_audio_language_detection_services_with_no_api_key_User","
+        User : Test Audio Language Detection service with no API key
+        "
+"failed","Tue Feb 24 11:50:22 IST 2026","Tue Feb 24 11:50:26 IST 2026","3586","tests.test_services","test_user_services_sanity","TestUserServicesWithValidAPIKey","","","test_transliteration_service_with_valid_api_key_User","
+        User : Test Transliteration service with valid API key
+        "
+"failed","Tue Feb 24 11:50:29 IST 2026","Tue Feb 24 11:50:29 IST 2026","854","tests.test_services","test_user_services_sanity","TestUserServicesWithValidAPIKey","","","test_audio_language_detection_services_with_valid_api_key_User","
+        User : Test Audio Language Detection service with valid API key
+        "
+"failed","Tue Feb 24 11:50:22 IST 2026","Tue Feb 24 11:50:22 IST 2026","398","tests.test_services","test_user_services_sanity","TestUserServicesWithValidAPIKey","","","test_tts_service_with_valid_api_key_User","
+        User : Test TTS service with valid API key
+        "
+"passed","Tue Feb 24 11:50:49 IST 2026","Tue Feb 24 11:50:50 IST 2026","829","tests.test_services","test_user_services_sanity","TestUserServicesWithNoAPIKey","","","test_ocr_services_with_no_api_key_User","
+        User : Test OCR service with no API key
+        "
+"passed","Tue Feb 24 11:50:45 IST 2026","Tue Feb 24 11:50:46 IST 2026","407","tests.test_services","test_user_services_sanity","TestUserServicesWithNoAPIKey","","","test_tts_service_with_no_api_key_User","
+        User : Test TTS service with no API key
+        "
+"passed","Tue Feb 24 11:50:35 IST 2026","Tue Feb 24 11:50:35 IST 2026","650","tests.test_services","test_user_services_sanity","TestUserServicesWithInvalidAPIKey","","","test_speaker_diarization_services_with_invalid_api_key_User","
+        User : Test Speaker Diarization service with invalid API key
+        "
+"passed","Tue Feb 24 11:50:33 IST 2026","Tue Feb 24 11:50:34 IST 2026","777","tests.test_services","test_user_services_sanity","TestUserServicesWithInvalidAPIKey","","","test_transliteration_service_with_invalid_api_key_User","
+        User : Test Transliteration service with invalid API key
+        "
+"failed","Tue Feb 24 11:50:21 IST 2026","Tue Feb 24 11:50:22 IST 2026","597","tests.test_services","test_user_services_sanity","TestUserServicesWithValidAPIKey","","","test_asr_service_with_valid_api_key_User","
+        User : Test ASR service with valid API key
+        "
+"broken","Tue Feb 24 11:50:49 IST 2026","Tue Feb 24 11:50:49 IST 2026","854","tests.test_services","test_user_services_sanity","TestUserServicesWithNoAPIKey","","","test_ner_services_with_no_api_key_User","
+        User : Test NER service with no API key
+        "
+"failed","Tue Feb 24 11:50:30 IST 2026","Tue Feb 24 11:50:31 IST 2026","938","tests.test_services","test_user_services_sanity","TestUserServicesWithValidAPIKey","","","test_ocr_services_with_valid_api_key_User","
+        User : Test OCR service with valid API key
+        "
+"passed","Tue Feb 24 11:50:32 IST 2026","Tue Feb 24 11:50:33 IST 2026","582","tests.test_services","test_user_services_sanity","TestUserServicesWithInvalidAPIKey","","","test_asr_service_with_invalid_api_key_User","
+        User : Test ASR service with invalid API key
+        "
+"failed","Tue Feb 24 11:50:39 IST 2026","Tue Feb 24 11:50:39 IST 2026","559","tests.test_services","test_user_services_sanity","TestUserServicesWithInvalidAPIKey","","","test_pipeline_services_with_invalid_api_key_User","
+        User : Test Pipeline service with invalid API key
+        "
+"passed","Tue Feb 24 11:50:34 IST 2026","Tue Feb 24 11:50:35 IST 2026","600","tests.test_services","test_user_services_sanity","TestUserServicesWithInvalidAPIKey","","","test_text_language_detection_services_with_invalid_api_key_User","
+        User : Test Text Language Detection service with invalid API key
+        "
+"passed","Tue Feb 24 11:50:38 IST 2026","Tue Feb 24 11:50:39 IST 2026","1222","tests.test_services","test_user_services_sanity","TestUserServicesWithInvalidAPIKey","","","test_ocr_services_with_invalid_api_key_User","
+        User : Test OCR service with invalid API key
+        "
+"broken","Tue Feb 24 11:50:31 IST 2026","Tue Feb 24 11:50:32 IST 2026","344","tests.test_services","test_user_services_sanity","TestUserServicesWithValidAPIKey","","","test_pipeline_services_with_valid_api_key_User","
+        User : Test Pipeline service with valid API key (ASR → Translation → TTS)
+        "
+"passed","Tue Feb 24 11:50:33 IST 2026","Tue Feb 24 11:50:33 IST 2026","319","tests.test_services","test_user_services_sanity","TestUserServicesWithInvalidAPIKey","","","test_tts_service_with_invalid_api_key_User","
+        User : Test TTS service with invalid API key
+        "
+"failed","Tue Feb 24 11:50:27 IST 2026","Tue Feb 24 11:50:28 IST 2026","828","tests.test_services","test_user_services_sanity","TestUserServicesWithValidAPIKey","","","test_speaker_diarization_services_with_valid_api_key_User","
+        User : Test Speaker Diarization service with valid API key
+        "
+"failed","Tue Feb 24 11:50:29 IST 2026","Tue Feb 24 11:50:30 IST 2026","1058","tests.test_services","test_user_services_sanity","TestUserServicesWithValidAPIKey","","","test_ner_services_with_valid_api_key_User","
+        User : Test NER service with valid API key
+        "
+"passed","Tue Feb 24 11:50:36 IST 2026","Tue Feb 24 11:50:37 IST 2026","819","tests.test_services","test_user_services_sanity","TestUserServicesWithInvalidAPIKey","","","test_audio_language_detection_services_with_invalid_api_key_User","
+        User : Test Audio Language Detection service with invalid API key
+        "
+"broken","Tue Feb 24 11:50:39 IST 2026","Tue Feb 24 11:50:44 IST 2026","5084","tests.test_services","test_user_services_sanity","TestUserServicesWithNoAPIKey","","","test_nmt_services_with_no_api_key_User","
+        User : Test NMT service with no API key
+        "
+"broken","Tue Feb 24 11:50:46 IST 2026","Tue Feb 24 11:50:46 IST 2026","891","tests.test_services","test_user_services_sanity","TestUserServicesWithNoAPIKey","","","test_transliteration_service_with_no_api_key_User","
+        User : Test Transliteration service with no API key
+        "
+"failed","Tue Feb 24 11:50:26 IST 2026","Tue Feb 24 11:50:27 IST 2026","983","tests.test_services","test_user_services_sanity","TestUserServicesWithValidAPIKey","","","test_text_language_detection_services_with_valid_api_key_User","
+        User : Test Text Language Detection service with valid API key
+        "
+"passed","Tue Feb 24 11:50:35 IST 2026","Tue Feb 24 11:50:36 IST 2026","792","tests.test_services","test_user_services_sanity","TestUserServicesWithInvalidAPIKey","","","test_language_diarization_services_with_invalid_api_key_User","
+        User : Test Language Diarization service with invalid API key
+        "

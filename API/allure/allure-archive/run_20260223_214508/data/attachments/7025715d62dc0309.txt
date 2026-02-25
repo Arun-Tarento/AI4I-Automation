@@ -1,0 +1,18 @@
+✓ Background token refresh started
+
+✅ [MODERATOR] Model created: Test-Model-moderator-1771863097
+🔍 [MODERATOR] modelId: ff1bfffa0214934368c66288ff43d936 | version: 1.0.0
+✅ [MODERATOR] Service created: test-svc-upd-desc-moderator-1771863097
+🔍 [MODERATOR] serviceId: 5dbd2876243207ce43c7235223896e70
+
+============================================================
+🔍 Test: Update Service Description - MODERATOR
+🔍 Endpoint: PATCH /api/v1/model-management/services
+🔍 serviceId: 5dbd2876243207ce43c7235223896e70
+============================================================
+📊 Status Code: 200
+📦 Response: "Service '5dbd2876243207ce43c7235223896e70' updated successfully."
+✅ [MODERATOR] serviceDescription updated and verified successfully
+============================================================
+
+🧹 [MODERATOR] Cleanup: Model 'Test-Model-moderator-1771863097' deleted

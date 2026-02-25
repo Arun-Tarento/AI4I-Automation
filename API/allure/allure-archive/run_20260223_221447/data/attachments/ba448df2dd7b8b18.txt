@@ -1,0 +1,20 @@
+
+✅ [ADMIN] Model created: Test-Model-admin-1771865085
+🔍 [ADMIN] modelId: 1d6e20df97d6778058a71614eae62438 | version: 1.0.0
+✅ [ADMIN] Service created: test-svc-pub-unpub-admin-1771865085
+🔍 [ADMIN] serviceId: d6e113cb9adb43ece332ffbe6abb8ba9
+
+============================================================
+🔍 Test: Publish and Unpublish Service - ADMIN
+🔍 Endpoint: PATCH /api/v1/model-management/services
+🔍 serviceId: d6e113cb9adb43ece332ffbe6abb8ba9
+============================================================
+📊 Publish Status Code: 200
+📦 Publish Response: "Service 'd6e113cb9adb43ece332ffbe6abb8ba9' updated successfully."
+✅ [ADMIN] Service published — isPublished=True verified
+📊 Unpublish Status Code: 200
+📦 Unpublish Response: "Service 'd6e113cb9adb43ece332ffbe6abb8ba9' updated successfully."
+✅ [ADMIN] Service unpublished — isPublished=False verified
+============================================================
+
+🧹 [ADMIN] Cleanup: Model 'Test-Model-admin-1771865085' deleted

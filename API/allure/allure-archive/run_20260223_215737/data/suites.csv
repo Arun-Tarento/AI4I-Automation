@@ -1,0 +1,57 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"failed","Mon Feb 23 21:57:54 IST 2026","Mon Feb 23 21:58:10 IST 2026","15736","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Unauthorized roles cannot update service — user_client_with_valid_api_key","
+        USER & GUEST: Attempt to update a service (should be denied)
+        Expected: 401 Unauthorized or 403 Forbidden
+        "
+"failed","Mon Feb 23 21:58:02 IST 2026","Mon Feb 23 21:58:04 IST 2026","1589","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Cannot publish service with deprecated model — moderator_client_with_valid_api_key","
+        BUSINESS RULE: Cannot publish a service when its associated model is deprecated
+        Flow: Create model → create service → deprecate model → attempt publish service → expect 400/422/409
+        Expected: 400/422/409 with error details
+        "
+"failed","Mon Feb 23 21:58:01 IST 2026","Mon Feb 23 21:58:02 IST 2026","1634","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Cannot publish service with deprecated model — admin_client_with_valid_api_key","
+        BUSINESS RULE: Cannot publish a service when its associated model is deprecated
+        Flow: Create model → create service → deprecate model → attempt publish service → expect 400/422/409
+        Expected: 400/422/409 with error details
+        "
+"passed","Mon Feb 23 21:57:37 IST 2026","Mon Feb 23 21:57:44 IST 2026","6557","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Update service description — admin_client_with_valid_api_key","
+        ADMIN & MODERATOR: Update serviceDescription of a service
+        Flow: Create model → create service → fetch serviceId → patch → verify
+        Expected: 200 with success message and updated serviceDescription
+        "
+"passed","Mon Feb 23 21:57:44 IST 2026","Mon Feb 23 21:57:48 IST 2026","4260","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Update service description — moderator_client_with_valid_api_key","
+        ADMIN & MODERATOR: Update serviceDescription of a service
+        Flow: Create model → create service → fetch serviceId → patch → verify
+        Expected: 200 with success message and updated serviceDescription
+        "
+"passed","Mon Feb 23 21:57:51 IST 2026","Mon Feb 23 21:58:05 IST 2026","14316","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Publish and unpublish service — admin_client_with_valid_api_key","
+        ADMIN & MODERATOR: Publish then unpublish a service
+        Flow: Create model → create service → publish → verify → unpublish → verify → cleanup
+        Expected: 200 with correct isPublished state after each update
+        "
+"passed","Mon Feb 23 21:57:49 IST 2026","Mon Feb 23 21:57:51 IST 2026","1293","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Update service hardware description — moderator_client_with_valid_api_key","
+        ADMIN & MODERATOR: Update hardwareDescription of a service
+        Flow: Create model → create service → fetch serviceId → patch → verify
+        Expected: 200 with success message and updated hardwareDescription
+        "
+"passed","Mon Feb 23 21:58:05 IST 2026","Mon Feb 23 21:57:54 IST 2026","-11013","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Publish and unpublish service — moderator_client_with_valid_api_key","
+        ADMIN & MODERATOR: Publish then unpublish a service
+        Flow: Create model → create service → publish → verify → unpublish → verify → cleanup
+        Expected: 200 with correct isPublished state after each update
+        "
+"failed","Mon Feb 23 21:58:10 IST 2026","Mon Feb 23 21:58:01 IST 2026","-9566","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Unauthorized roles cannot update service — guest_client_with_valid_api_key","
+        USER & GUEST: Attempt to update a service (should be denied)
+        Expected: 401 Unauthorized or 403 Forbidden
+        "
+"passed","Mon Feb 23 21:57:54 IST 2026","Mon Feb 23 21:57:54 IST 2026","164","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Update service with invalid serviceId — moderator_client_with_valid_api_key","
+        ADMIN & MODERATOR: Update a service with invalid/non-existent serviceId
+        Expected: 404 Not Found
+        "
+"passed","Mon Feb 23 21:57:48 IST 2026","Mon Feb 23 21:57:49 IST 2026","1308","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Update service hardware description — admin_client_with_valid_api_key","
+        ADMIN & MODERATOR: Update hardwareDescription of a service
+        Flow: Create model → create service → fetch serviceId → patch → verify
+        Expected: 200 with success message and updated hardwareDescription
+        "
+"passed","Mon Feb 23 21:57:54 IST 2026","Mon Feb 23 21:57:54 IST 2026","165","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Update service with invalid serviceId — admin_client_with_valid_api_key","
+        ADMIN & MODERATOR: Update a service with invalid/non-existent serviceId
+        Expected: 404 Not Found
+        "

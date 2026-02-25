@@ -1,0 +1,8 @@
+Status: 401
+
+{
+  "detail": {
+    "error": "API_KEY_MISSING",
+    "message": "API key is required to access this service."
+  }
+}
