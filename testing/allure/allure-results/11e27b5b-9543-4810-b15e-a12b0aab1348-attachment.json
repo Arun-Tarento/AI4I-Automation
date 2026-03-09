@@ -1,0 +1,9 @@
+Status: 400
+
+{
+  "detail": {
+    "message": "Model name cannot be updated. Model ID is derived from name and version. Create a new model version with the new name instead.",
+    "code": "HTTP_ERROR",
+    "timestamp": 1773034548.8118706
+  }
+}

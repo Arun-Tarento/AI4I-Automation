@@ -1,0 +1,76 @@
+Status: 200
+
+[
+  {
+    "modelId": "8c015e198ea28ee92a56cee65fd5bde5",
+    "uuid": "7e326430-7a79-4cbd-b7d6-3e8d4eded0a8",
+    "name": "Test-Model-language-diarization-admin-1773034520",
+    "version": "1.0.0",
+    "versionStatus": "ACTIVE",
+    "versionStatusUpdatedAt": "2026-03-09T05:35:19.709143+00:00",
+    "description": "A sample model for demonstration purposes",
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "domain": [
+      "general"
+    ],
+    "submitter": {
+      "name": "Example Organization",
+      "aboutMe": "An example organization",
+      "team": [
+        {
+          "name": "John Doe",
+          "aboutMe": "Lead Researcher",
+          "oauthId": {
+            "oauthId": "1234567890",
+            "provider": "google"
+          }
+        }
+      ]
+    },
+    "license": "MIT",
+    "inferenceEndPoint": {
+      "schema": {
+        "modelProcessingType": {
+          "type": "batch"
+        },
+        "model_name": null,
+        "request": {
+          "input": [
+            {
+              "audio": "base64_encoded_audio_string"
+            }
+          ],
+          "config": {
+            "language": {
+              "sourceLanguage": "hi"
+            }
+          }
+        },
+        "response": {
+          "output": [
+            {
+              "transcript": "string"
+            }
+          ]
+        }
+      },
+      "endpoint": null,
+      "model_name": null,
+      "modelName": null,
+      "model": null
+    },
+    "source": "https://github.com/example/example-model",
+    "task": {
+      "type": "language-diarization"
+    },
+    "createdBy": "5",
+    "updatedBy": null
+  }
+]

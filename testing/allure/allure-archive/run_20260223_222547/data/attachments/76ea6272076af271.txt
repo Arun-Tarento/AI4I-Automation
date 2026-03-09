@@ -1,0 +1,18 @@
+✓ Background token refresh started
+
+✅ [ADMIN] Model created: Test-Model-admin-1771865763
+🔍 [ADMIN] modelId: 0f1707284399938181bdc9d854fe1a2f | version: 1.0.0
+✅ [ADMIN] Service created: test-svc-upd-desc-admin-1771865763
+🔍 [ADMIN] serviceId: 74c28e6e368ca271cb0d79678f9e1f7e
+
+============================================================
+🔍 Test: Update Service Description - ADMIN
+🔍 Endpoint: PATCH /api/v1/model-management/services
+🔍 serviceId: 74c28e6e368ca271cb0d79678f9e1f7e
+============================================================
+📊 Status Code: 200
+📦 Response: "Service '74c28e6e368ca271cb0d79678f9e1f7e' updated successfully."
+✅ [ADMIN] serviceDescription updated and verified successfully
+============================================================
+
+🧹 [ADMIN] Cleanup: Model 'Test-Model-admin-1771865763' deleted

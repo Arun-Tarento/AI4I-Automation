@@ -1,0 +1,3 @@
+
+✅ USER Transliteration correctly blocked with invalid key
+   Error: {'error': 'AUTHORIZATION_ERROR', 'message': 'Invalid API key'}

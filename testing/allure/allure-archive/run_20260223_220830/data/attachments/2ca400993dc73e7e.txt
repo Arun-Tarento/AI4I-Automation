@@ -1,0 +1,11 @@
+
+============================================================
+🔍 Test: Update Service with Invalid serviceId - ADMIN
+🔍 Endpoint: PATCH /api/v1/model-management/services
+🔍 serviceId: invalid-service-id-000000
+============================================================
+📊 Status Code: 404
+📦 Response: {"detail":{"message":"Service not found in database","code":"HTTP_ERROR","timestamp":1771864724.5416956}}
+✅ [ADMIN] API correctly returned 404 for invalid serviceId
+============================================================
+

@@ -1,0 +1,16 @@
+
+✅ [ADMIN] Model created: Test-Model-admin-1773034524
+🔍 [ADMIN] modelId: a7acaca8f43defd10f09910521ebd9c6 | version: 1.0.0
+✅ [ADMIN] Service created: test-svc-del-admin-1773034524
+🔍 [ADMIN] service uuid: 9cc0b92c-765f-46bb-a3ae-4445723fa3d1
+
+============================================================
+🔍 Test: Delete Service with Valid uuid - ADMIN
+🔍 Endpoint: DELETE /api/v1/model-management/services/9cc0b92c-765f-46bb-a3ae-4445723fa3d1
+============================================================
+📊 Status Code: 200
+📦 Response: "Service '9cc0b92c-765f-46bb-a3ae-4445723fa3d1' deleted successfully."
+✅ [ADMIN] Service 'test-svc-del-admin-1773034524' deleted successfully
+============================================================
+
+🧹 [ADMIN] Cleanup: Model 'Test-Model-admin-1773034524' deleted

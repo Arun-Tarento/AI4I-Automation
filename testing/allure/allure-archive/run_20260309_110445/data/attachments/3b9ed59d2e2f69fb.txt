@@ -1,0 +1,9 @@
+
+============================================================
+🔍 Test: List Models Filtered by task_type - ADMIN
+🔍 Endpoint: /api/v1/model-management/models
+🔍 Filter: task_type = tts
+============================================================
+📊 Status Code: 200
+📦 Total Models with task_type 'tts': 4
+✅ ADMIN successfully filtered by task_type

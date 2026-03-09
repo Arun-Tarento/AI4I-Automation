@@ -1,0 +1,17 @@
+
+✅ [ADMIN] Model created: Test-Model-admin-1773034559
+🔍 [ADMIN] modelId: 9cb8a03eb978593f5e502c4c703a8a4c | version: 1.0.0
+✅ [ADMIN] Service created: test-svc-upd-hw-admin-1773034559
+🔍 [ADMIN] serviceId: 546596b8283e3e0b8b47b4c343647d01
+
+============================================================
+🔍 Test: Update Service hardwareDescription - ADMIN
+🔍 Endpoint: PATCH /api/v1/model-management/services
+🔍 serviceId: 546596b8283e3e0b8b47b4c343647d01
+============================================================
+📊 Status Code: 200
+📦 Response: "Service '546596b8283e3e0b8b47b4c343647d01' updated successfully."
+✅ [ADMIN] hardwareDescription updated and verified successfully
+============================================================
+
+🧹 [ADMIN] Cleanup: Model 'Test-Model-admin-1773034559' deleted

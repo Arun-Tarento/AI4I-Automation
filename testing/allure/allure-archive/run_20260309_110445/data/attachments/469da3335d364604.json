@@ -1,0 +1,601 @@
+Status: 200
+
+[
+  {
+    "serviceId": "9a2dc96e3e2fb4d306c2215dc23ef0d1",
+    "uuid": "17aa96d0-6e30-44a3-b3c5-b35443a7a67b",
+    "name": "NMT-3-En-Hi",
+    "serviceDescription": "http://13.200.133.97:8000",
+    "hardwareDescription": "Default hardware",
+    "publishedOn": 1772776054,
+    "modelId": "609635402ae81fbfa83e361b830a9fa3",
+    "endpoint": "http://13.200.133.97:8000",
+    "api_key": null,
+    "healthStatus": {
+      "status": "active",
+      "lastUpdated": "2026-03-06T05:47:34.281Z"
+    },
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": true,
+    "publishedAt": "2026-03-06T05:48:17",
+    "unpublishedAt": null,
+    "createdBy": "1",
+    "updatedBy": "1",
+    "task": {
+      "type": "nmt"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "en",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "9c83f67d7ef78dab765b7640cad6103d",
+    "uuid": "aa2ab48c-471b-4d12-9417-e20005ab3a17",
+    "name": "NMT-Service-En-Hi",
+    "serviceDescription": "http://13.200.133.97:8000",
+    "hardwareDescription": "Default hardware",
+    "publishedOn": 1772774536,
+    "modelId": "243a24681ccf1ec9633e617af7c3b8c6",
+    "endpoint": "http://13.200.133.97:8000",
+    "api_key": null,
+    "healthStatus": {
+      "status": "active",
+      "lastUpdated": "2026-03-06T05:22:16.284Z"
+    },
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": true,
+    "publishedAt": "2026-03-06T05:27:38",
+    "unpublishedAt": null,
+    "createdBy": "1",
+    "updatedBy": "1",
+    "task": {
+      "type": "nmt"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "a6d108812ed320612b0071c74ee02889",
+    "uuid": "9d9e87f9-12c6-4264-b0c6-b93b8b594015",
+    "name": "ASR-Hindi-Prod-1",
+    "serviceDescription": "TESTING -V",
+    "hardwareDescription": "Default hardware",
+    "publishedOn": 1772696577,
+    "modelId": "3e9fe864d2bc307ed272ead85cd3f2b2",
+    "endpoint": "http://13.200.133.97:5000",
+    "api_key": null,
+    "healthStatus": {
+      "status": "active",
+      "lastUpdated": "2026-03-05T07:42:57.849Z"
+    },
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": true,
+    "publishedAt": "2026-03-05T07:44:07",
+    "unpublishedAt": null,
+    "createdBy": "1",
+    "updatedBy": "1",
+    "task": {
+      "type": "asr"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "76cae1cff94cd4b3d60a5a394b9ed6ac",
+    "uuid": "6e3019ae-8c99-4f7d-b945-64174e53b074",
+    "name": "SMR-NMT-En-Hi-1",
+    "serviceDescription": "http://13.200.133.97:8000",
+    "hardwareDescription": "Default hardware",
+    "publishedOn": 1772111560,
+    "modelId": "4323daa678edb5d3925cf0cb6d04fa54",
+    "endpoint": "http://13.200.133.97:8000",
+    "api_key": null,
+    "healthStatus": {
+      "status": "healthy",
+      "lastUpdated": "2026-02-26T13:12:40.353Z"
+    },
+    "benchmarks": null,
+    "policy": {
+      "cost": "tier_1",
+      "domain": "medical",
+      "latency": "high",
+      "accuracy": "standard",
+      "complexity": "HIGH"
+    },
+    "isPublished": true,
+    "publishedAt": "2026-02-26T13:13:14",
+    "unpublishedAt": null,
+    "createdBy": "1",
+    "updatedBy": "1",
+    "task": {
+      "type": "nmt"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "en",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "modelVersion": "v1",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "d77e6d6ab2e2626c6c54567f065fdbc7",
+    "uuid": "5f5b3ee7-72c9-441e-ae82-14670c0fb109",
+    "name": "nmt-en-hi-prod",
+    "serviceDescription": "Production NMT service for English-Hindi translation. UPDATE ENDPOINT to your actual service URL.",
+    "hardwareDescription": "GPU: NVIDIA A10, RAM: 32GB",
+    "publishedOn": 1772089081411,
+    "modelId": "30484f50e39b41580c0e158559a695ed",
+    "endpoint": "http://13.200.133.97:8000",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": null,
+    "policy": {
+      "cost": "tier_1",
+      "domain": "casual",
+      "latency": "high",
+      "accuracy": "standard",
+      "complexity": "LOW"
+    },
+    "isPublished": true,
+    "publishedAt": "2026-02-26T18:11:45",
+    "unpublishedAt": "2026-02-26T18:16:03",
+    "createdBy": null,
+    "updatedBy": "1",
+    "task": {
+      "type": "nmt"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "en",
+        "targetLanguage": "hi"
+      },
+      {
+        "sourceLanguage": "en",
+        "targetLanguage": "ml"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "7e238587bc7335ec4e59c602377ff12d",
+    "uuid": "3c8603df-1ae0-4eff-99fa-490ab56c1d90",
+    "name": "ner-indic-prod",
+    "serviceDescription": "Production NER service for Indic languages. UPDATE ENDPOINT to your actual service URL.",
+    "hardwareDescription": "CPU: 8 cores, RAM: 16GB",
+    "publishedOn": 1772089081411,
+    "modelId": "b63aa37a16d540b88c9beb896942bc77",
+    "endpoint": "http://65.1.35.3:8300",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": true,
+    "publishedAt": "2026-02-26T07:06:44",
+    "unpublishedAt": null,
+    "createdBy": null,
+    "updatedBy": "1",
+    "task": {
+      "type": "ner"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi"
+      },
+      {
+        "sourceLanguage": "en"
+      },
+      {
+        "sourceLanguage": "ta"
+      },
+      {
+        "sourceLanguage": "te"
+      },
+      {
+        "sourceLanguage": "bn"
+      },
+      {
+        "sourceLanguage": "mr"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "5b81f1d9636e9e8e0f02e8192786baf2",
+    "uuid": "c68f6cbc-9e40-483b-bba7-84d0263244db",
+    "name": "ocr-indic-prod",
+    "serviceDescription": "Production OCR service for Indic scripts. UPDATE ENDPOINT to your actual service URL.",
+    "hardwareDescription": "GPU: NVIDIA T4, RAM: 16GB",
+    "publishedOn": 1772089081411,
+    "modelId": "e8651266764de251a37ad1835756249a",
+    "endpoint": "http://65.1.35.3:8400",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": true,
+    "publishedAt": "2026-02-26T07:06:35",
+    "unpublishedAt": null,
+    "createdBy": null,
+    "updatedBy": "1",
+    "task": {
+      "type": "ocr"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi"
+      },
+      {
+        "sourceLanguage": "ta"
+      },
+      {
+        "sourceLanguage": "te"
+      },
+      {
+        "sourceLanguage": "bn"
+      },
+      {
+        "sourceLanguage": "mr"
+      },
+      {
+        "sourceLanguage": "gu"
+      },
+      {
+        "sourceLanguage": "kn"
+      },
+      {
+        "sourceLanguage": "ml"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "644e57e579126fd533b8a16d828164b1",
+    "uuid": "7840fd25-3db0-4a25-a73b-0c819e5af999",
+    "name": "langdetect-prod",
+    "serviceDescription": "Production Language Detection service. UPDATE ENDPOINT to your actual service URL.",
+    "hardwareDescription": "CPU: 4 cores, RAM: 8GB",
+    "publishedOn": 1772089081411,
+    "modelId": "8b14e2bb7284f09ebde636f7db180c72",
+    "endpoint": "http://65.1.35.3:8000",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": true,
+    "publishedAt": "2026-02-26T07:06:33",
+    "unpublishedAt": null,
+    "createdBy": null,
+    "updatedBy": "1",
+    "task": {
+      "type": "language-detection"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi"
+      },
+      {
+        "sourceLanguage": "en"
+      },
+      {
+        "sourceLanguage": "ta"
+      },
+      {
+        "sourceLanguage": "te"
+      },
+      {
+        "sourceLanguage": "bn"
+      },
+      {
+        "sourceLanguage": "mr"
+      },
+      {
+        "sourceLanguage": "gu"
+      },
+      {
+        "sourceLanguage": "kn"
+      },
+      {
+        "sourceLanguage": "ml"
+      },
+      {
+        "sourceLanguage": "pa"
+      },
+      {
+        "sourceLanguage": "or"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "196a94b49716aed75494b301a892633c",
+    "uuid": "9a1c210b-8200-4393-b953-25979da8e8e2",
+    "name": "audio-langdetect-prod",
+    "serviceDescription": "Production Audio Language Detection service. UPDATE ENDPOINT to your actual service URL.",
+    "hardwareDescription": "GPU: NVIDIA T4, RAM: 16GB",
+    "publishedOn": 1772089081411,
+    "modelId": "7875cacf5609363c7c2d54c680b6d3a5",
+    "endpoint": "http://65.1.35.3:8100",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": true,
+    "publishedAt": "2026-02-26T07:06:34",
+    "unpublishedAt": null,
+    "createdBy": null,
+    "updatedBy": "1",
+    "task": {
+      "type": "audio-lang-detection"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi"
+      },
+      {
+        "sourceLanguage": "en"
+      },
+      {
+        "sourceLanguage": "ta"
+      },
+      {
+        "sourceLanguage": "te"
+      },
+      {
+        "sourceLanguage": "bn"
+      },
+      {
+        "sourceLanguage": "mr"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "2adb996c86527ddb0883cf562555c4cd",
+    "uuid": "6629bf12-e147-4d60-a519-83a0c3db2e33",
+    "name": "lang-diarize-prod",
+    "serviceDescription": "Production Language Diarization service. UPDATE ENDPOINT to your actual service URL.",
+    "hardwareDescription": "GPU: NVIDIA T4, RAM: 16GB",
+    "publishedOn": 1772089081411,
+    "modelId": "8e8bb1eb753561351e0f94f1d1d6ba5a",
+    "endpoint": "http://65.1.35.3:8600",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": true,
+    "publishedAt": "2026-02-26T07:06:42",
+    "unpublishedAt": null,
+    "createdBy": null,
+    "updatedBy": "1",
+    "task": {
+      "type": "language-diarization"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi"
+      },
+      {
+        "sourceLanguage": "en"
+      },
+      {
+        "sourceLanguage": "ta"
+      },
+      {
+        "sourceLanguage": "te"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "5a497c6ae8a8fa90ed974c8cbfb50cf5",
+    "uuid": "8859d683-a521-40fe-9604-7d3d13f6a614",
+    "name": "llm-indic-prod",
+    "serviceDescription": "Production LLM service for Indic languages. UPDATE ENDPOINT to your actual service URL.",
+    "hardwareDescription": "GPU: NVIDIA A100, RAM: 80GB",
+    "publishedOn": 1772089081411,
+    "modelId": "5687cf02bcd87aeafa35f732adca5afb",
+    "endpoint": "http://52.200.236.126:8001",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": true,
+    "publishedAt": "2026-02-26T07:06:32",
+    "unpublishedAt": null,
+    "createdBy": null,
+    "updatedBy": "1",
+    "task": {
+      "type": "llm"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi"
+      },
+      {
+        "sourceLanguage": "en"
+      },
+      {
+        "sourceLanguage": "ta"
+      },
+      {
+        "sourceLanguage": "te"
+      },
+      {
+        "sourceLanguage": "bn"
+      },
+      {
+        "sourceLanguage": "mr"
+      },
+      {
+        "sourceLanguage": "gu"
+      },
+      {
+        "sourceLanguage": "kn"
+      },
+      {
+        "sourceLanguage": "ml"
+      },
+      {
+        "sourceLanguage": "pa"
+      },
+      {
+        "sourceLanguage": "or"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "ed119f4240bb2d684f2d42c00c7bdd46",
+    "uuid": "b8100b48-262a-4698-a125-ce562644a616",
+    "name": "xlit-indic-prod",
+    "serviceDescription": "Production Transliteration service. UPDATE ENDPOINT to your actual service URL.",
+    "hardwareDescription": "CPU: 8 cores, RAM: 16GB",
+    "publishedOn": 1772089081411,
+    "modelId": "bc1ea76c4ca1f5eb3705629ebd16cbb4",
+    "endpoint": "http://65.1.35.3:8200",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": true,
+    "publishedAt": "2026-03-03T05:49:12",
+    "unpublishedAt": null,
+    "createdBy": null,
+    "updatedBy": "1",
+    "task": {
+      "type": "transliteration"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi"
+      },
+      {
+        "sourceLanguage": "ta"
+      },
+      {
+        "sourceLanguage": "te"
+      },
+      {
+        "sourceLanguage": "bn"
+      },
+      {
+        "sourceLanguage": "mr"
+      },
+      {
+        "sourceLanguage": "gu"
+      },
+      {
+        "sourceLanguage": "kn"
+      },
+      {
+        "sourceLanguage": "ml"
+      },
+      {
+        "sourceLanguage": "pa"
+      },
+      {
+        "sourceLanguage": "or"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "318dbeb281ed8756113361dbd1fbe8db",
+    "uuid": "bb2e03b7-7b98-466d-ad4b-24ae23e9e84f",
+    "name": "asr-hindi-prod",
+    "serviceDescription": "Production ASR service for Hindi. UPDATE ENDPOINT to your actual service URL.",
+    "hardwareDescription": "GPU: NVIDIA T4, RAM: 16GB",
+    "publishedOn": 1772089081411,
+    "modelId": "d0b591a6610efd6b96cf78ff89a45ddf",
+    "endpoint": "http://13.200.133.97:5000",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": true,
+    "publishedAt": "2026-02-26T07:06:30",
+    "unpublishedAt": null,
+    "createdBy": null,
+    "updatedBy": "1",
+    "task": {
+      "type": "asr"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi"
+      },
+      {
+        "sourceLanguage": "en"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "dc4c139b3e3a4b80702e816774ac810a",
+    "uuid": "36230062-2e32-4a20-b77c-a51a46f2e8bb",
+    "name": "tts-hindi-prod",
+    "serviceDescription": "Production TTS service for Hindi. UPDATE ENDPOINT to your actual service URL.",
+    "hardwareDescription": "GPU: NVIDIA T4, RAM: 16GB",
+    "publishedOn": 1772089081411,
+    "modelId": "36d4bb3a6f18062bcae017e0af91c220",
+    "endpoint": "http://13.200.133.97:9000",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": true,
+    "publishedAt": "2026-02-26T07:06:36",
+    "unpublishedAt": null,
+    "createdBy": null,
+    "updatedBy": "1",
+    "task": {
+      "type": "tts"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  }
+]

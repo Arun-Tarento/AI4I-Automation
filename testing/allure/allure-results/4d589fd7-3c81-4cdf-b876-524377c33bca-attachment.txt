@@ -1,0 +1,11 @@
+
+============================================================
+🔍 Test: Create Model with Valid Payload - ADMIN
+🔍 Endpoint: POST /api/v1/model-management/models
+🔍 name: Test-Model-nmt-admin-1773034489 | version: 1.0.0 | task_type: nmt
+============================================================
+📊 Status Code: 200
+📦 Response: "Model 'Test-Model-nmt-admin-1773034489' (ID: 0febcdd1f20370ae93c0e355e935270e) created successfully."
+✅ [ADMIN] Model 'Test-Model-nmt-admin-1773034489' created successfully
+============================================================
+

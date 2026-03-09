@@ -1,0 +1,13 @@
+
+✅ [ADMIN] Model created: Test-Model-admin-1773034512
+🔍 [ADMIN] modelId: fe3aa72a66dc0398740b3447909ff7df | uuid: c6e7c341-1ca4-4f3f-b594-20d947c8d537
+✅ [ADMIN] Model deprecated successfully
+
+============================================================
+🔍 Test: Create Service with Deprecated Model - ADMIN
+🔍 Endpoint: POST /api/v1/model-management/services
+🔍 modelId: fe3aa72a66dc0398740b3447909ff7df | versionStatus: DEPRECATED
+============================================================
+📊 Status Code: 200
+📦 Response: "Service 'test-svc-deprecated-admin-1773034512' (ID: dd7f440ae7b58a78de01d683ffae2d9f) created successfully."
+🧹 [ADMIN] Cleanup: Model 'Test-Model-admin-1773034512' deleted

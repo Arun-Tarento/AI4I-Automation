@@ -1,0 +1,13 @@
+
+✅ [ADMIN] Model created: Test-Model-ocr-admin-1773034516 | task_type: ocr
+🔍 [ADMIN] uuid: b6ef58a7-bace-41cf-8e22-ad970b1091c6
+
+============================================================
+🔍 Test: Delete Model - ADMIN | task_type: ocr
+🔍 Endpoint: DELETE /api/v1/model-management/models/b6ef58a7-bace-41cf-8e22-ad970b1091c6
+============================================================
+📊 Status Code: 200
+📦 Response: "Model 'b6ef58a7-bace-41cf-8e22-ad970b1091c6' deleted successfully."
+✅ [ADMIN] Model 'Test-Model-ocr-admin-1773034516' with task_type 'ocr' deleted successfully
+============================================================
+

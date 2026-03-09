@@ -1,0 +1,20 @@
+
+✅ [MODERATOR] Model created: Test-Model-moderator-1771865314
+🔍 [MODERATOR] modelId: 53f3caf38f3ff126509cc6e2c13513d2 | version: 1.0.0
+✅ [MODERATOR] Service created (unpublished): test-svc-dep-pub-moderator-1771865314
+🔍 [MODERATOR] serviceId: 4fbdf507262595b705acd1737f6322f1
+✅ [MODERATOR] Model deprecated successfully
+
+============================================================
+🔍 Business Rule: Cannot Publish Service with Deprecated Model - MODERATOR
+🔍 Endpoint: PATCH /api/v1/model-management/services
+🔍 serviceId: 4fbdf507262595b705acd1737f6322f1 | model versionStatus: DEPRECATED
+============================================================
+📊 Status Code: 200
+📦 Response: "Service '4fbdf507262595b705acd1737f6322f1' updated successfully."
+🧹 [MODERATOR] Cleanup: Service unpublished
+🧹 [MODERATOR] Cleanup: Model 'Test-Model-moderator-1771865314' deleted
+✓ Background token refresh stopped
+✓ Background token refresh stopped
+✓ Background token refresh stopped
+✓ Background token refresh stopped

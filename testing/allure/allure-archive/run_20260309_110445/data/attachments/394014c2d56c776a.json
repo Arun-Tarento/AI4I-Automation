@@ -1,0 +1,13 @@
+POST https://sandbox.ai4inclusion.org/api/v1/model-management/services
+
+{
+  "name": "test-svc-tts-admin-1773034498",
+  "serviceDescription": "Test service description",
+  "hardwareDescription": "Test hardware description",
+  "publishedOn": 0,
+  "modelId": "2d6a22b8e2a050e5eb6f9cdb4beea0b6",
+  "modelVersion": "1.0.0",
+  "endpoint": "http://test-endpoint:8000",
+  "api_key": "test-api-key",
+  "isPublished": false
+}

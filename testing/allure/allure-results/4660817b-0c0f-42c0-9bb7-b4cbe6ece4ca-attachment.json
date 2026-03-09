@@ -1,0 +1,9 @@
+Status: 400
+
+{
+  "detail": {
+    "message": "Model with name 'Test-Model-admin-1773034491' and version '1.0.0' already exists.",
+    "code": "HTTP_ERROR",
+    "timestamp": 1773034490.509978
+  }
+}

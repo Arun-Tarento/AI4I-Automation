@@ -1,0 +1,13 @@
+POST https://sandbox.ai4inclusion.org/api/v1/model-management/services
+
+{
+  "name": "test-svc-dep-pub-moderator-1771864937",
+  "serviceDescription": "Test service description",
+  "hardwareDescription": "Test hardware description",
+  "publishedOn": 0,
+  "modelId": "548bc7fdcb8e3b1ce091fcbc3e50d0f2",
+  "modelVersion": "1.0.0",
+  "endpoint": "http://test-endpoint:8000",
+  "api_key": "test-api-key",
+  "isPublished": false
+}

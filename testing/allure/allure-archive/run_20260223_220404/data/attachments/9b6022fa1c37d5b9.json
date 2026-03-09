@@ -1,0 +1,8 @@
+PATCH https://sandbox.ai4inclusion.org/api/v1/model-management/services
+
+{
+  "serviceId": "1b1452344a796fb7cd8a43cf193c4da5",
+  "serviceDescription": "Updated service description",
+  "hardwareDescription": "Updated hardware description",
+  "isPublished": false
+}

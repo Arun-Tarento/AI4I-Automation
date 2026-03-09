@@ -1,0 +1,13 @@
+
+✅ [ADMIN] Model created: Test-Model-audio-lang-detection-admin-1773034521 | task_type: audio-lang-detection
+🔍 [ADMIN] uuid: 40186d32-16fa-4ea0-aaf2-063776d0b4d7
+
+============================================================
+🔍 Test: Delete Model - ADMIN | task_type: audio-lang-detection
+🔍 Endpoint: DELETE /api/v1/model-management/models/40186d32-16fa-4ea0-aaf2-063776d0b4d7
+============================================================
+📊 Status Code: 200
+📦 Response: "Model '40186d32-16fa-4ea0-aaf2-063776d0b4d7' deleted successfully."
+✅ [ADMIN] Model 'Test-Model-audio-lang-detection-admin-1773034521' with task_type 'audio-lang-detection' deleted successfully
+============================================================
+

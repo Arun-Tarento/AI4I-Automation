@@ -1,0 +1,3 @@
+
+✅ USER Speaker Diarization correctly blocked with invalid key
+   Error: {'error': 'AUTHORIZATION_ERROR', 'message': 'API key does not belong to the authenticated user'}

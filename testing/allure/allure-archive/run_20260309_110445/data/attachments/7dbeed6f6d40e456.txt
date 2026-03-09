@@ -1,0 +1,2 @@
+2026-03-09 11:04:56.009 | INFO     | utils.auth:_login:31 - 🔍 Login URL: https://sandbox.ai4inclusion.org/api/v1/auth/login
+2026-03-09 11:04:56.009 | INFO     | utils.auth:_login:32 - 🔍 Password: ************

@@ -1,0 +1,10 @@
+Status: 403
+
+{
+  "detail": {
+    "message": "Only ADMIN or MODERATOR roles can perform this operation.",
+    "code": "HTTP_ERROR",
+    "timestamp": 1773034494.2174883,
+    "details": "PERMISSION_DENIED"
+  }
+}

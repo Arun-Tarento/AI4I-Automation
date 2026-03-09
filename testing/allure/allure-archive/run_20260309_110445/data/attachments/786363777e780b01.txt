@@ -1,0 +1,10 @@
+
+============================================================
+🔍 Test: Delete Model - USER (Should be DENIED)
+🔍 Endpoint: DELETE /api/v1/model-management/models/49dc87d2-676f-4ae2-9981-8a1ef9dfeeb7
+============================================================
+📊 Status Code: 403
+📦 Response: {"detail":{"message":"Only ADMIN or MODERATOR roles can perform this operation.","code":"HTTP_ERROR","timestamp":1773034522.5254593,"details":"PERMISSION_DENIED"}}
+✅ [USER] Correctly denied access (Status: 403)
+============================================================
+

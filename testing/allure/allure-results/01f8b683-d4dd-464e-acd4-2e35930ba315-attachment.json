@@ -1,0 +1,14 @@
+Status: 422
+
+{
+  "detail": [
+    {
+      "loc": [
+        "body",
+        "endpoint"
+      ],
+      "msg": "Field required",
+      "type": "missing"
+    }
+  ]
+}

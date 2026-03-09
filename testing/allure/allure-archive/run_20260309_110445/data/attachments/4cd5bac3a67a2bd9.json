@@ -1,0 +1,70 @@
+PATCH https://sandbox.ai4inclusion.org/api/v1/model-management/models
+
+{
+  "modelId": "cfce8b82c7b0f38dfad1bda799ff2f6e",
+  "uuid": "0e6262b8-43ce-4b0b-a1ee-16ae7fe7e2f5",
+  "version": "1.0.0",
+  "versionStatus": "ACTIVE",
+  "description": "A sample model for demonstration purposes",
+  "languages": [
+    {
+      "sourceLanguage": "hi",
+      "targetLanguage": "hi",
+      "sourceScriptCode": "Deva",
+      "targetScriptCode": "Deva"
+    }
+  ],
+  "domain": [
+    "general"
+  ],
+  "submitter": {
+    "name": "Example Organization",
+    "aboutMe": "An example organization",
+    "team": [
+      {
+        "name": "John Doe",
+        "aboutMe": "Lead Researcher",
+        "oauthId": {
+          "oauthId": "1234567890",
+          "provider": "google"
+        }
+      }
+    ]
+  },
+  "license": "MIT",
+  "inferenceEndPoint": {
+    "schema": {
+      "modelProcessingType": {
+        "type": "batch"
+      },
+      "model_name": null,
+      "request": {
+        "input": [
+          {
+            "audio": "base64_encoded_audio_string"
+          }
+        ],
+        "config": {
+          "language": {
+            "sourceLanguage": "hi"
+          }
+        }
+      },
+      "response": {
+        "output": [
+          {
+            "transcript": "string"
+          }
+        ]
+      }
+    },
+    "endpoint": null,
+    "model_name": null,
+    "modelName": null,
+    "model": null
+  },
+  "source": "https://github.com/example/example-model",
+  "task": {
+    "type": "ASR"
+  }
+}

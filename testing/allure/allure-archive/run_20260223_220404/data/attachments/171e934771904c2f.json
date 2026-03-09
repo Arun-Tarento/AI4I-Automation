@@ -1,0 +1,3 @@
+GET https://sandbox.ai4inclusion.org/api/v1/model-management/models?model_name=Test-Model-moderator-1771864452
+
+(no body)

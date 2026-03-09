@@ -1,0 +1,15 @@
+
+✅ [ADMIN] Model created: Test-Model-admin-1773034541
+🔍 [ADMIN] modelId: a4e1b1308e7d7b3d182daf62ca553b71 | uuid: 77511dcf-96c2-4479-96f6-ef2a823fc47f
+✅ [ADMIN] Model deprecated successfully
+
+============================================================
+🔍 Test: Update Model Status back to ACTIVE - ADMIN
+🔍 Endpoint: PATCH /api/v1/model-management/models
+============================================================
+📊 Status Code: 200
+📦 Response: "Model 'a4e1b1308e7d7b3d182daf62ca553b71' updated successfully."
+✅ [ADMIN] Model status updated back to ACTIVE successfully
+============================================================
+
+🧹 [ADMIN] Cleanup: Model 'Test-Model-admin-1773034541' deleted

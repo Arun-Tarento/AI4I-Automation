@@ -1,0 +1,60 @@
+Status: 200
+
+[
+  {
+    "serviceId": "ed119f4240bb2d684f2d42c00c7bdd46",
+    "uuid": "b8100b48-262a-4698-a125-ce562644a616",
+    "name": "xlit-indic-prod",
+    "serviceDescription": "Production Transliteration service. UPDATE ENDPOINT to your actual service URL.",
+    "hardwareDescription": "CPU: 8 cores, RAM: 16GB",
+    "publishedOn": 1772089081411,
+    "modelId": "bc1ea76c4ca1f5eb3705629ebd16cbb4",
+    "endpoint": "http://65.1.35.3:8200",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": true,
+    "publishedAt": "2026-03-03T05:49:12",
+    "unpublishedAt": null,
+    "createdBy": null,
+    "updatedBy": "1",
+    "task": {
+      "type": "transliteration"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi"
+      },
+      {
+        "sourceLanguage": "ta"
+      },
+      {
+        "sourceLanguage": "te"
+      },
+      {
+        "sourceLanguage": "bn"
+      },
+      {
+        "sourceLanguage": "mr"
+      },
+      {
+        "sourceLanguage": "gu"
+      },
+      {
+        "sourceLanguage": "kn"
+      },
+      {
+        "sourceLanguage": "ml"
+      },
+      {
+        "sourceLanguage": "pa"
+      },
+      {
+        "sourceLanguage": "or"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  }
+]

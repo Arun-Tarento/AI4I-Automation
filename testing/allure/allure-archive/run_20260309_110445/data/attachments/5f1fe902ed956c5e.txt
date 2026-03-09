@@ -1,0 +1,6 @@
+
+============================================================
+🔍 Test: List Models Access - USER (Should be DENIED)
+🔍 Endpoint: /api/v1/model-management/models
+============================================================
+📊 Status Code: 200

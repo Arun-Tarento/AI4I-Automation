@@ -1,0 +1,8 @@
+PATCH https://sandbox.ai4inclusion.org/api/v1/model-management/services
+
+{
+  "serviceId": "invalid-service-id-000000",
+  "serviceDescription": "This should not update",
+  "hardwareDescription": "This should not update",
+  "isPublished": false
+}

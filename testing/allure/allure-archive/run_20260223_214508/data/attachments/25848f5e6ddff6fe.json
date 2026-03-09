@@ -1,0 +1,110 @@
+Status: 200
+
+{
+  "serviceId": "44dda5c10683883a73ae19b195c5cdac",
+  "uuid": "1e3a3420-934b-4d1d-82d2-33e418103bdd",
+  "name": "test-svc-upd-hw-moderator-1771863099",
+  "serviceDescription": "Updated service description",
+  "hardwareDescription": "Updated hardware by MODERATOR at 1771863099",
+  "publishedOn": 1771863100,
+  "modelId": "dec0dbc07e80007c7f97b848cb1c3e8e",
+  "endpoint": "http://test-endpoint:8000",
+  "api_key": null,
+  "healthStatus": null,
+  "benchmarks": null,
+  "isPublished": false,
+  "publishedAt": null,
+  "unpublishedAt": "2026-02-23T16:11:40",
+  "createdBy": "63",
+  "updatedBy": "63",
+  "model": {
+    "version": "1.0.0",
+    "versionStatus": "ACTIVE",
+    "submittedOn": 1771863099,
+    "updatedOn": null,
+    "name": "Test-Model-moderator-1771863099",
+    "description": "A sample model for demonstration purposes",
+    "refUrl": "https://github.com/example/example-model",
+    "task": {
+      "type": "asr"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "license": "MIT",
+    "domain": [
+      "general"
+    ],
+    "inferenceEndPoint": {
+      "model": null,
+      "schema": {
+        "request": {
+          "input": [
+            {
+              "audio": "base64_encoded_audio_string"
+            }
+          ],
+          "config": {
+            "language": {
+              "sourceLanguage": "hi"
+            }
+          }
+        },
+        "response": {
+          "output": [
+            {
+              "transcript": "string"
+            }
+          ]
+        },
+        "model_name": null,
+        "modelProcessingType": {
+          "type": "batch"
+        }
+      },
+      "endpoint": null,
+      "modelName": null,
+      "model_name": null
+    },
+    "benchmarks": [
+      {
+        "name": "Example Benchmark",
+        "score": [
+          {
+            "score": "7.5",
+            "metricName": "WER"
+          }
+        ],
+        "domain": "general",
+        "createdOn": "2025-01-15T10:00:00Z",
+        "languages": {
+          "sourceLanguage": "hi",
+          "targetLanguage": "hi"
+        },
+        "benchmarkId": "example-benchmark-001",
+        "description": "Sample benchmark for evaluation"
+      }
+    ],
+    "submitter": {
+      "name": "Example Organization",
+      "team": [
+        {
+          "name": "John Doe",
+          "aboutMe": "Lead Researcher",
+          "oauthId": {
+            "oauthId": "1234567890",
+            "provider": "google"
+          }
+        }
+      ],
+      "aboutMe": "An example organization"
+    }
+  },
+  "key_usage": [],
+  "total_usage": 0
+}

@@ -1,0 +1,13 @@
+
+✅ [ADMIN] Model created: Test-Model-nmt-admin-1773034514 | task_type: nmt
+🔍 [ADMIN] uuid: 1101dd2f-2fd1-480a-abe5-973cf370aba0
+
+============================================================
+🔍 Test: Delete Model - ADMIN | task_type: nmt
+🔍 Endpoint: DELETE /api/v1/model-management/models/1101dd2f-2fd1-480a-abe5-973cf370aba0
+============================================================
+📊 Status Code: 200
+📦 Response: "Model '1101dd2f-2fd1-480a-abe5-973cf370aba0' deleted successfully."
+✅ [ADMIN] Model 'Test-Model-nmt-admin-1773034514' with task_type 'nmt' deleted successfully
+============================================================
+

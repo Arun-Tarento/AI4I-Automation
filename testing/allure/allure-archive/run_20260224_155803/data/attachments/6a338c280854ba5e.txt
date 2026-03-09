@@ -1,0 +1,2 @@
+
+✅ USER Language Diarization correctly blocked with no API key

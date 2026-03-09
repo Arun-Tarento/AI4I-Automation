@@ -1,0 +1,76 @@
+Status: 200
+
+[
+  {
+    "modelId": "83c518b35d1c1a6e3f1981caa8ea16ac",
+    "uuid": "b6ef58a7-bace-41cf-8e22-ad970b1091c6",
+    "name": "Test-Model-ocr-admin-1773034516",
+    "version": "1.0.0",
+    "versionStatus": "ACTIVE",
+    "versionStatusUpdatedAt": "2026-03-09T05:35:16.013949+00:00",
+    "description": "A sample model for demonstration purposes",
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "domain": [
+      "general"
+    ],
+    "submitter": {
+      "name": "Example Organization",
+      "aboutMe": "An example organization",
+      "team": [
+        {
+          "name": "John Doe",
+          "aboutMe": "Lead Researcher",
+          "oauthId": {
+            "oauthId": "1234567890",
+            "provider": "google"
+          }
+        }
+      ]
+    },
+    "license": "MIT",
+    "inferenceEndPoint": {
+      "schema": {
+        "modelProcessingType": {
+          "type": "batch"
+        },
+        "model_name": null,
+        "request": {
+          "input": [
+            {
+              "audio": "base64_encoded_audio_string"
+            }
+          ],
+          "config": {
+            "language": {
+              "sourceLanguage": "hi"
+            }
+          }
+        },
+        "response": {
+          "output": [
+            {
+              "transcript": "string"
+            }
+          ]
+        }
+      },
+      "endpoint": null,
+      "model_name": null,
+      "modelName": null,
+      "model": null
+    },
+    "source": "https://github.com/example/example-model",
+    "task": {
+      "type": "ocr"
+    },
+    "createdBy": "5",
+    "updatedBy": null
+  }
+]

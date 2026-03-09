@@ -1,0 +1,6 @@
+
+============================================================
+🔍 Test: List Services - USER (Should be DENIED)
+🔍 Endpoint: GET /api/v1/model-management/services
+============================================================
+📊 Status Code: 200

@@ -1,0 +1,11 @@
+
+============================================================
+🔍 Test: Create Model with Valid Payload - ADMIN
+🔍 Endpoint: POST /api/v1/model-management/models
+🔍 name: Test-Model-tts-admin-1773034490 | version: 1.0.0 | task_type: tts
+============================================================
+📊 Status Code: 200
+📦 Response: "Model 'Test-Model-tts-admin-1773034490' (ID: 7d6ebcfb17885f609d96cb103e396418) created successfully."
+✅ [ADMIN] Model 'Test-Model-tts-admin-1773034490' created successfully
+============================================================
+

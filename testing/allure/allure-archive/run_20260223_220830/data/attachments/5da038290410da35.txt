@@ -1,0 +1,3 @@
+2026-02-23 22:08:44.733 | INFO     | utils.auth:_login:31 - 🔍 Login URL: https://sandbox.ai4inclusion.org/api/v1/auth/login
+2026-02-23 22:08:44.733 | INFO     | utils.auth:_login:32 - 🔍 Password: ************
+2026-02-23 22:08:47.612 | INFO     | utils.auth:_login:40 - ✓ Login successful. Token expires in 900s

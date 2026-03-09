@@ -1,0 +1,1066 @@
+Status: 200
+
+[
+  {
+    "modelId": "d0b591a6610efd6b96cf78ff89a45ddf",
+    "uuid": "f1478084-4374-4d7f-a5ba-d689dd9e8dfe",
+    "name": "asr_am_ensemble",
+    "version": "1.0.0",
+    "versionStatus": "ACTIVE",
+    "versionStatusUpdatedAt": "2026-02-26T06:58:01.411240+00:00",
+    "description": "Automatic Speech Recognition model for Hindi language using Conformer architecture. UPDATE ENDPOINT before use.",
+    "languages": [
+      {
+        "sourceLanguage": "hi"
+      },
+      {
+        "sourceLanguage": "en"
+      }
+    ],
+    "domain": [
+      "general",
+      "conversational"
+    ],
+    "submitter": {
+      "name": "AI4Bharat",
+      "aboutMe": "AI research organization",
+      "team": [
+        {
+          "name": "Admin",
+          "aboutMe": null,
+          "oauthId": null
+        }
+      ]
+    },
+    "license": "Apache-2.0",
+    "inferenceEndPoint": {
+      "schema": {
+        "modelProcessingType": {
+          "type": "asr"
+        },
+        "model_name": "asr_am_ensemble",
+        "request": {},
+        "response": {}
+      },
+      "endpoint": null,
+      "model_name": null,
+      "modelName": null,
+      "model": null,
+      "callbackUrl": "http://localhost:8001/asr/v1/recognize"
+    },
+    "source": null,
+    "task": {
+      "type": "asr"
+    },
+    "createdBy": null,
+    "updatedBy": null
+  },
+  {
+    "modelId": "37d41fc2dbd9e2089a34e822ba37f76b",
+    "uuid": "5b7cd64f-5eaa-401f-bc5b-26c9e98c23b2",
+    "name": "Test-Model-get-1773034528",
+    "version": "1.0.0",
+    "versionStatus": "ACTIVE",
+    "versionStatusUpdatedAt": "2026-03-09T05:35:26.611200+00:00",
+    "description": "A sample model for demonstration purposes",
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "domain": [
+      "general"
+    ],
+    "submitter": {
+      "name": "Example Organization",
+      "aboutMe": "An example organization",
+      "team": [
+        {
+          "name": "John Doe",
+          "aboutMe": "Lead Researcher",
+          "oauthId": {
+            "oauthId": "1234567890",
+            "provider": "google"
+          }
+        }
+      ]
+    },
+    "license": "MIT",
+    "inferenceEndPoint": {
+      "schema": {
+        "modelProcessingType": {
+          "type": "batch"
+        },
+        "model_name": null,
+        "request": {
+          "input": [
+            {
+              "audio": "base64_encoded_audio_string"
+            }
+          ],
+          "config": {
+            "language": {
+              "sourceLanguage": "hi"
+            }
+          }
+        },
+        "response": {
+          "output": [
+            {
+              "transcript": "string"
+            }
+          ]
+        }
+      },
+      "endpoint": null,
+      "model_name": null,
+      "modelName": null,
+      "model": null
+    },
+    "source": "https://github.com/example/example-model",
+    "task": {
+      "type": "asr"
+    },
+    "createdBy": "5",
+    "updatedBy": null
+  },
+  {
+    "modelId": "23f98dc5a07a5f075b344ec861cf4abc",
+    "uuid": "49dc87d2-676f-4ae2-9981-8a1ef9dfeeb7",
+    "name": "Test-Model-get-1773034523",
+    "version": "1.0.0",
+    "versionStatus": "ACTIVE",
+    "versionStatusUpdatedAt": "2026-03-09T05:35:22.205119+00:00",
+    "description": "A sample model for demonstration purposes",
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "domain": [
+      "general"
+    ],
+    "submitter": {
+      "name": "Example Organization",
+      "aboutMe": "An example organization",
+      "team": [
+        {
+          "name": "John Doe",
+          "aboutMe": "Lead Researcher",
+          "oauthId": {
+            "oauthId": "1234567890",
+            "provider": "google"
+          }
+        }
+      ]
+    },
+    "license": "MIT",
+    "inferenceEndPoint": {
+      "schema": {
+        "modelProcessingType": {
+          "type": "batch"
+        },
+        "model_name": null,
+        "request": {
+          "input": [
+            {
+              "audio": "base64_encoded_audio_string"
+            }
+          ],
+          "config": {
+            "language": {
+              "sourceLanguage": "hi"
+            }
+          }
+        },
+        "response": {
+          "output": [
+            {
+              "transcript": "string"
+            }
+          ]
+        }
+      },
+      "endpoint": null,
+      "model_name": null,
+      "modelName": null,
+      "model": null
+    },
+    "source": "https://github.com/example/example-model",
+    "task": {
+      "type": "asr"
+    },
+    "createdBy": "5",
+    "updatedBy": null
+  },
+  {
+    "modelId": "2adfd622837c4fc2ac23d0e46e3c37d4",
+    "uuid": "f291d258-0a82-4ce0-8032-57e90d21faa3",
+    "name": "Test-Model-admin-1773034491",
+    "version": "1.0.0",
+    "versionStatus": "ACTIVE",
+    "versionStatusUpdatedAt": "2026-03-09T05:34:50.214573+00:00",
+    "description": "A sample model for demonstration purposes",
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "domain": [
+      "general"
+    ],
+    "submitter": {
+      "name": "Example Organization",
+      "aboutMe": "An example organization",
+      "team": [
+        {
+          "name": "John Doe",
+          "aboutMe": "Lead Researcher",
+          "oauthId": {
+            "oauthId": "1234567890",
+            "provider": "google"
+          }
+        }
+      ]
+    },
+    "license": "MIT",
+    "inferenceEndPoint": {
+      "schema": {
+        "modelProcessingType": {
+          "type": "batch"
+        },
+        "model_name": null,
+        "request": {
+          "input": [
+            {
+              "audio": "base64_encoded_audio_string"
+            }
+          ],
+          "config": {
+            "language": {
+              "sourceLanguage": "hi"
+            }
+          }
+        },
+        "response": {
+          "output": [
+            {
+              "transcript": "string"
+            }
+          ]
+        }
+      },
+      "endpoint": null,
+      "model_name": null,
+      "modelName": null,
+      "model": null
+    },
+    "source": "https://github.com/example/example-model",
+    "task": {
+      "type": "asr"
+    },
+    "createdBy": "5",
+    "updatedBy": null
+  },
+  {
+    "modelId": "c70c166d6b5a7913356220a89c862edc",
+    "uuid": "b763f227-2145-476e-affd-e5b5b533cebe",
+    "name": "Test-Model-asr-admin-1773034489",
+    "version": "1.0.0",
+    "versionStatus": "ACTIVE",
+    "versionStatusUpdatedAt": "2026-03-09T05:34:48.319377+00:00",
+    "description": "A sample model for demonstration purposes",
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "domain": [
+      "general"
+    ],
+    "submitter": {
+      "name": "Example Organization",
+      "aboutMe": "An example organization",
+      "team": [
+        {
+          "name": "John Doe",
+          "aboutMe": "Lead Researcher",
+          "oauthId": {
+            "oauthId": "1234567890",
+            "provider": "google"
+          }
+        }
+      ]
+    },
+    "license": "MIT",
+    "inferenceEndPoint": {
+      "schema": {
+        "modelProcessingType": {
+          "type": "batch"
+        },
+        "model_name": null,
+        "request": {
+          "input": [
+            {
+              "audio": "base64_encoded_audio_string"
+            }
+          ],
+          "config": {
+            "language": {
+              "sourceLanguage": "hi"
+            }
+          }
+        },
+        "response": {
+          "output": [
+            {
+              "transcript": "string"
+            }
+          ]
+        }
+      },
+      "endpoint": null,
+      "model_name": null,
+      "modelName": null,
+      "model": null
+    },
+    "source": "https://github.com/example/example-model",
+    "task": {
+      "type": "asr"
+    },
+    "createdBy": "5",
+    "updatedBy": null
+  },
+  {
+    "modelId": "f5d214cdd1c153508220bd0dc356b606",
+    "uuid": "a4a660e9-d152-4c76-8995-d1db6d4808ad",
+    "name": "Test-Model-get-1773034392",
+    "version": "1.0.0",
+    "versionStatus": "ACTIVE",
+    "versionStatusUpdatedAt": "2026-03-09T05:33:12.009984+00:00",
+    "description": "A sample model for demonstration purposes",
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "domain": [
+      "general"
+    ],
+    "submitter": {
+      "name": "Example Organization",
+      "aboutMe": "An example organization",
+      "team": [
+        {
+          "name": "John Doe",
+          "aboutMe": "Lead Researcher",
+          "oauthId": {
+            "oauthId": "1234567890",
+            "provider": "google"
+          }
+        }
+      ]
+    },
+    "license": "MIT",
+    "inferenceEndPoint": {
+      "schema": {
+        "modelProcessingType": {
+          "type": "batch"
+        },
+        "model_name": null,
+        "request": {
+          "input": [
+            {
+              "audio": "base64_encoded_audio_string"
+            }
+          ],
+          "config": {
+            "language": {
+              "sourceLanguage": "hi"
+            }
+          }
+        },
+        "response": {
+          "output": [
+            {
+              "transcript": "string"
+            }
+          ]
+        }
+      },
+      "endpoint": null,
+      "model_name": null,
+      "modelName": null,
+      "model": null
+    },
+    "source": "https://github.com/example/example-model",
+    "task": {
+      "type": "asr"
+    },
+    "createdBy": "5",
+    "updatedBy": null
+  },
+  {
+    "modelId": "e8c04d9b3743d1d959417e0a2cccc4f7",
+    "uuid": "509d0e11-e7ce-423a-9444-c27b25123852",
+    "name": "Test-Model-get-1773034387",
+    "version": "1.0.0",
+    "versionStatus": "ACTIVE",
+    "versionStatusUpdatedAt": "2026-03-09T05:33:07.409047+00:00",
+    "description": "A sample model for demonstration purposes",
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "domain": [
+      "general"
+    ],
+    "submitter": {
+      "name": "Example Organization",
+      "aboutMe": "An example organization",
+      "team": [
+        {
+          "name": "John Doe",
+          "aboutMe": "Lead Researcher",
+          "oauthId": {
+            "oauthId": "1234567890",
+            "provider": "google"
+          }
+        }
+      ]
+    },
+    "license": "MIT",
+    "inferenceEndPoint": {
+      "schema": {
+        "modelProcessingType": {
+          "type": "batch"
+        },
+        "model_name": null,
+        "request": {
+          "input": [
+            {
+              "audio": "base64_encoded_audio_string"
+            }
+          ],
+          "config": {
+            "language": {
+              "sourceLanguage": "hi"
+            }
+          }
+        },
+        "response": {
+          "output": [
+            {
+              "transcript": "string"
+            }
+          ]
+        }
+      },
+      "endpoint": null,
+      "model_name": null,
+      "modelName": null,
+      "model": null
+    },
+    "source": "https://github.com/example/example-model",
+    "task": {
+      "type": "asr"
+    },
+    "createdBy": "5",
+    "updatedBy": null
+  },
+  {
+    "modelId": "52f19381fb82417845f5307827eb03f9",
+    "uuid": "9bbe3951-7f40-456f-813c-6c7b09514ab3",
+    "name": "Test-Model-admin-1773034355",
+    "version": "1.0.0",
+    "versionStatus": "ACTIVE",
+    "versionStatusUpdatedAt": "2026-03-09T05:32:35.113735+00:00",
+    "description": "A sample model for demonstration purposes",
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "domain": [
+      "general"
+    ],
+    "submitter": {
+      "name": "Example Organization",
+      "aboutMe": "An example organization",
+      "team": [
+        {
+          "name": "John Doe",
+          "aboutMe": "Lead Researcher",
+          "oauthId": {
+            "oauthId": "1234567890",
+            "provider": "google"
+          }
+        }
+      ]
+    },
+    "license": "MIT",
+    "inferenceEndPoint": {
+      "schema": {
+        "modelProcessingType": {
+          "type": "batch"
+        },
+        "model_name": null,
+        "request": {
+          "input": [
+            {
+              "audio": "base64_encoded_audio_string"
+            }
+          ],
+          "config": {
+            "language": {
+              "sourceLanguage": "hi"
+            }
+          }
+        },
+        "response": {
+          "output": [
+            {
+              "transcript": "string"
+            }
+          ]
+        }
+      },
+      "endpoint": null,
+      "model_name": null,
+      "modelName": null,
+      "model": null
+    },
+    "source": "https://github.com/example/example-model",
+    "task": {
+      "type": "asr"
+    },
+    "createdBy": "5",
+    "updatedBy": null
+  },
+  {
+    "modelId": "05b0f45bc07e8517920271f2e8a5cd62",
+    "uuid": "40c4387e-bc9e-4c2b-9608-122037be3ca2",
+    "name": "Test-Model-asr-admin-1773034352",
+    "version": "1.0.0",
+    "versionStatus": "ACTIVE",
+    "versionStatusUpdatedAt": "2026-03-09T05:32:33.411246+00:00",
+    "description": "A sample model for demonstration purposes",
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "domain": [
+      "general"
+    ],
+    "submitter": {
+      "name": "Example Organization",
+      "aboutMe": "An example organization",
+      "team": [
+        {
+          "name": "John Doe",
+          "aboutMe": "Lead Researcher",
+          "oauthId": {
+            "oauthId": "1234567890",
+            "provider": "google"
+          }
+        }
+      ]
+    },
+    "license": "MIT",
+    "inferenceEndPoint": {
+      "schema": {
+        "modelProcessingType": {
+          "type": "batch"
+        },
+        "model_name": null,
+        "request": {
+          "input": [
+            {
+              "audio": "base64_encoded_audio_string"
+            }
+          ],
+          "config": {
+            "language": {
+              "sourceLanguage": "hi"
+            }
+          }
+        },
+        "response": {
+          "output": [
+            {
+              "transcript": "string"
+            }
+          ]
+        }
+      },
+      "endpoint": null,
+      "model_name": null,
+      "modelName": null,
+      "model": null
+    },
+    "source": "https://github.com/example/example-model",
+    "task": {
+      "type": "asr"
+    },
+    "createdBy": "5",
+    "updatedBy": null
+  },
+  {
+    "modelId": "399e689c800f5e408b7e4ad80311c419",
+    "uuid": "7ff919aa-7204-491a-a732-d672a58f3a2f",
+    "name": "NMT-1-model",
+    "version": "1.0.0",
+    "versionStatus": "DEPRECATED",
+    "versionStatusUpdatedAt": "2026-03-06T05:17:00.065434+00:00",
+    "description": "A sample model for demonstration purposes",
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "domain": [
+      "general"
+    ],
+    "submitter": {
+      "name": "Example Organization",
+      "aboutMe": "An example organization",
+      "team": [
+        {
+          "name": "John Doe",
+          "aboutMe": "Lead Researcher",
+          "oauthId": {
+            "oauthId": "1234567890",
+            "provider": "google"
+          }
+        }
+      ]
+    },
+    "license": "MIT",
+    "inferenceEndPoint": {
+      "schema": {
+        "modelProcessingType": {
+          "type": "batch"
+        },
+        "model_name": null,
+        "request": {
+          "input": [
+            {
+              "audio": "base64_encoded_audio_string"
+            }
+          ],
+          "config": {
+            "language": {
+              "sourceLanguage": "hi"
+            }
+          }
+        },
+        "response": {
+          "output": [
+            {
+              "transcript": "string"
+            }
+          ]
+        }
+      },
+      "endpoint": null,
+      "model_name": null,
+      "modelName": null,
+      "model": null
+    },
+    "source": "https://github.com/example/example-model",
+    "task": {
+      "type": "asr"
+    },
+    "createdBy": "1",
+    "updatedBy": "1"
+  },
+  {
+    "modelId": "3e9fe864d2bc307ed272ead85cd3f2b2",
+    "uuid": "8026db67-3729-4437-899a-5792b8d8af12",
+    "name": "example-model",
+    "version": "1.0.0",
+    "versionStatus": "ACTIVE",
+    "versionStatusUpdatedAt": "2026-03-05T07:26:23.998699+00:00",
+    "description": "A sample model for demonstration purposes",
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "domain": [
+      "general"
+    ],
+    "submitter": {
+      "name": "Example Organization",
+      "aboutMe": "An example organization",
+      "team": [
+        {
+          "name": "John Doe",
+          "aboutMe": "Lead Researcher",
+          "oauthId": {
+            "oauthId": "1234567890",
+            "provider": "google"
+          }
+        }
+      ]
+    },
+    "license": "MIT",
+    "inferenceEndPoint": {
+      "schema": {
+        "modelProcessingType": {
+          "type": "batch"
+        },
+        "model_name": null,
+        "request": {
+          "input": [
+            {
+              "audio": "base64_encoded_audio_string"
+            }
+          ],
+          "config": {
+            "language": {
+              "sourceLanguage": "hi"
+            }
+          }
+        },
+        "response": {
+          "output": [
+            {
+              "transcript": "string"
+            }
+          ]
+        }
+      },
+      "endpoint": null,
+      "model_name": null,
+      "modelName": null,
+      "model": null
+    },
+    "source": "https://github.com/example/example-model",
+    "task": {
+      "type": "asr"
+    },
+    "createdBy": "1",
+    "updatedBy": null
+  },
+  {
+    "modelId": "25e951ec1b3dbaeaa032fd45008d85cd",
+    "uuid": "9251dd96-c3fc-4486-bd75-ec3a56fd485a",
+    "name": "asr-Test-feb-26",
+    "version": "v1",
+    "versionStatus": "ACTIVE",
+    "versionStatusUpdatedAt": "2026-03-04T09:35:30.061694+00:00",
+    "description": "A sample model for demonstration purposes",
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "domain": [
+      "general"
+    ],
+    "submitter": {
+      "name": "Example Organization",
+      "aboutMe": "An example organization",
+      "team": [
+        {
+          "name": "John Doe",
+          "aboutMe": "Lead Researcher",
+          "oauthId": {
+            "oauthId": "1234567890",
+            "provider": "google"
+          }
+        }
+      ]
+    },
+    "license": "MIT",
+    "inferenceEndPoint": {
+      "schema": {
+        "modelProcessingType": {
+          "type": "batch"
+        },
+        "model_name": null,
+        "request": {
+          "input": [
+            {
+              "audio": "base64_encoded_audio_string"
+            }
+          ],
+          "config": {
+            "language": {
+              "sourceLanguage": "hi"
+            }
+          }
+        },
+        "response": {
+          "output": [
+            {
+              "transcript": "string"
+            }
+          ]
+        }
+      },
+      "endpoint": null,
+      "model_name": null,
+      "modelName": null,
+      "model": null
+    },
+    "source": "https://github.com/example/example-model",
+    "task": {
+      "type": "asr"
+    },
+    "createdBy": "5",
+    "updatedBy": "1"
+  },
+  {
+    "modelId": "c9b42044ab89f2d92f8d0a18cd9c53bf",
+    "uuid": "8b3f32c8-3e69-4f25-bdb6-2a5d8197a9d9",
+    "name": "Test-Model-get-1772098098",
+    "version": "1.0.0",
+    "versionStatus": "ACTIVE",
+    "versionStatusUpdatedAt": "2026-02-26T09:28:18.398315+00:00",
+    "description": "A sample model for demonstration purposes",
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "domain": [
+      "general"
+    ],
+    "submitter": {
+      "name": "Example Organization",
+      "aboutMe": "An example organization",
+      "team": [
+        {
+          "name": "John Doe",
+          "aboutMe": "Lead Researcher",
+          "oauthId": {
+            "oauthId": "1234567890",
+            "provider": "google"
+          }
+        }
+      ]
+    },
+    "license": "MIT",
+    "inferenceEndPoint": {
+      "schema": {
+        "modelProcessingType": {
+          "type": "batch"
+        },
+        "model_name": null,
+        "request": {
+          "input": [
+            {
+              "audio": "base64_encoded_audio_string"
+            }
+          ],
+          "config": {
+            "language": {
+              "sourceLanguage": "hi"
+            }
+          }
+        },
+        "response": {
+          "output": [
+            {
+              "transcript": "string"
+            }
+          ]
+        }
+      },
+      "endpoint": null,
+      "model_name": null,
+      "modelName": null,
+      "model": null
+    },
+    "source": "https://github.com/example/example-model",
+    "task": {
+      "type": "asr"
+    },
+    "createdBy": "5",
+    "updatedBy": null
+  },
+  {
+    "modelId": "2e10032facdb78b12ff2b4ff8eb7ae2b",
+    "uuid": "adb17435-1c3e-4b37-9138-24eb10360ed9",
+    "name": "Test-Model-admin-1772098079",
+    "version": "1.0.0",
+    "versionStatus": "ACTIVE",
+    "versionStatusUpdatedAt": "2026-02-26T09:27:59.199485+00:00",
+    "description": "A sample model for demonstration purposes",
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "domain": [
+      "general"
+    ],
+    "submitter": {
+      "name": "Example Organization",
+      "aboutMe": "An example organization",
+      "team": [
+        {
+          "name": "John Doe",
+          "aboutMe": "Lead Researcher",
+          "oauthId": {
+            "oauthId": "1234567890",
+            "provider": "google"
+          }
+        }
+      ]
+    },
+    "license": "MIT",
+    "inferenceEndPoint": {
+      "schema": {
+        "modelProcessingType": {
+          "type": "batch"
+        },
+        "model_name": null,
+        "request": {
+          "input": [
+            {
+              "audio": "base64_encoded_audio_string"
+            }
+          ],
+          "config": {
+            "language": {
+              "sourceLanguage": "hi"
+            }
+          }
+        },
+        "response": {
+          "output": [
+            {
+              "transcript": "string"
+            }
+          ]
+        }
+      },
+      "endpoint": null,
+      "model_name": null,
+      "modelName": null,
+      "model": null
+    },
+    "source": "https://github.com/example/example-model",
+    "task": {
+      "type": "asr"
+    },
+    "createdBy": "5",
+    "updatedBy": null
+  },
+  {
+    "modelId": "9de386433315ff0037d8cb6fcd5433ae",
+    "uuid": "a4b83e18-3ae4-4131-9e59-0e0c14783d3b",
+    "name": "Test-Model-asr-admin-1772097867",
+    "version": "1.0.0",
+    "versionStatus": "DEPRECATED",
+    "versionStatusUpdatedAt": "2026-03-02T10:03:13.694097+00:00",
+    "description": "A sample model for demonstration purposes",
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "domain": [
+      "general"
+    ],
+    "submitter": {
+      "name": "Example Organization",
+      "aboutMe": "An example organization",
+      "team": [
+        {
+          "name": "John Doe",
+          "aboutMe": "Lead Researcher",
+          "oauthId": {
+            "oauthId": "1234567890",
+            "provider": "google"
+          }
+        }
+      ]
+    },
+    "license": "MIT",
+    "inferenceEndPoint": {
+      "schema": {
+        "modelProcessingType": {
+          "type": "batch"
+        },
+        "model_name": null,
+        "request": {
+          "input": [
+            {
+              "audio": "base64_encoded_audio_string"
+            }
+          ],
+          "config": {
+            "language": {
+              "sourceLanguage": "hi"
+            }
+          }
+        },
+        "response": {
+          "output": [
+            {
+              "transcript": "string"
+            }
+          ]
+        }
+      },
+      "endpoint": null,
+      "model_name": null,
+      "modelName": null,
+      "model": null
+    },
+    "source": "https://github.com/example/example-model",
+    "task": {
+      "type": "asr"
+    },
+    "createdBy": "5",
+    "updatedBy": "1"
+  }
+]

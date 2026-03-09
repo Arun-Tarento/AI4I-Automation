@@ -1,0 +1,8 @@
+Status: 401
+
+{
+  "detail": {
+    "error": "AUTHORIZATION_ERROR",
+    "message": "Invalid API key"
+  }
+}

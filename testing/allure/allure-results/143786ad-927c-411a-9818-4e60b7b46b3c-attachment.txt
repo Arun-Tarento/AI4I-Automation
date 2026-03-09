@@ -1,0 +1,11 @@
+
+============================================================
+🔍 Test: Create Service Invalid Name - ADMIN
+🔍 Endpoint: POST /api/v1/model-management/services
+🔍 Invalid name: 'test_svc_underscore'
+============================================================
+📊 Status Code: 422
+📦 Response: {"detail":[{"loc":["body","name"],"msg":"Value error, Service name must contain only alphanumeric characters, hyphens (-), and forward slashes (/). Example: 'ai4bharath/indictrans-gpu'. Got: 'test_svc_underscore'","type":"value_error"}]}
+✅ [ADMIN] API correctly rejected invalid name 'test_svc_underscore'
+============================================================
+

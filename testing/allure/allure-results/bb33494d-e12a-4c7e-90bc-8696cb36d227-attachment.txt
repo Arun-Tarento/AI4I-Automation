@@ -1,0 +1,15 @@
+
+✅ [ADMIN] Model created: Test-Model-admin-1773034555
+🔍 [ADMIN] modelId: 99ea3c972f39ebb46bc554db10392ef8 | version: 1.0.0
+
+============================================================
+🔍 Business Case: versionStatus only ACTIVE or DEPRECATED - ADMIN
+🔍 Endpoint: PATCH /api/v1/model-management/models
+🔍 versionStatus: ACTIVE
+============================================================
+📊 Status Code: 200
+📦 Response: "Model '99ea3c972f39ebb46bc554db10392ef8' updated successfully."
+✅ [ADMIN] versionStatus='ACTIVE' accepted and verified
+============================================================
+
+🧹 [ADMIN] Cleanup: Model 'Test-Model-admin-1773034555' deleted

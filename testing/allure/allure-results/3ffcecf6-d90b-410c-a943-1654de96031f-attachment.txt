@@ -1,0 +1,13 @@
+
+✅ [ADMIN] Model created: Test-Model-tts-admin-1773034515 | task_type: tts
+🔍 [ADMIN] uuid: 34b3791d-d34a-4dc1-94c2-ba9e2e17f796
+
+============================================================
+🔍 Test: Delete Model - ADMIN | task_type: tts
+🔍 Endpoint: DELETE /api/v1/model-management/models/34b3791d-d34a-4dc1-94c2-ba9e2e17f796
+============================================================
+📊 Status Code: 200
+📦 Response: "Model '34b3791d-d34a-4dc1-94c2-ba9e2e17f796' deleted successfully."
+✅ [ADMIN] Model 'Test-Model-tts-admin-1773034515' with task_type 'tts' deleted successfully
+============================================================
+

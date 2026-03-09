@@ -1,0 +1,13 @@
+POST https://sandbox.ai4inclusion.org/api/v1/model-management/services
+
+{
+  "name": "test-svc-upd-hw-moderator-1771865537",
+  "serviceDescription": "Test service description",
+  "hardwareDescription": "Original hardware description",
+  "publishedOn": 0,
+  "modelId": "83a0dbf191017041d74b026dc0e6c4e2",
+  "modelVersion": "1.0.0",
+  "endpoint": "http://test-endpoint:8000",
+  "api_key": "test-api-key",
+  "isPublished": false
+}

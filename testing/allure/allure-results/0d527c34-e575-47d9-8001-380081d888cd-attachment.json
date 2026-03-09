@@ -1,0 +1,61 @@
+Status: 200
+
+[
+  {
+    "modelId": "30484f50e39b41580c0e158559a695ed",
+    "uuid": "e65248d6-3e5d-4897-aa38-3c64699a1b0e",
+    "name": "nmt",
+    "version": "1.0.0",
+    "versionStatus": "ACTIVE",
+    "versionStatusUpdatedAt": "2026-02-26T06:58:01.411240+00:00",
+    "description": "Neural Machine Translation model for English to Hindi using IndicTrans2. UPDATE ENDPOINT before use.",
+    "languages": [
+      {
+        "sourceLanguage": "en",
+        "targetLanguage": "hi"
+      },
+      {
+        "sourceLanguage": "en",
+        "targetLanguage": "ml"
+      }
+    ],
+    "domain": [
+      "general",
+      "news",
+      "conversational"
+    ],
+    "submitter": {
+      "name": "AI4Bharat",
+      "aboutMe": "AI research organization",
+      "team": [
+        {
+          "name": "Admin",
+          "aboutMe": null,
+          "oauthId": null
+        }
+      ]
+    },
+    "license": "MIT",
+    "inferenceEndPoint": {
+      "schema": {
+        "modelProcessingType": {
+          "type": "nmt"
+        },
+        "model_name": "nmt",
+        "request": {},
+        "response": {}
+      },
+      "endpoint": null,
+      "model_name": null,
+      "modelName": null,
+      "model": null,
+      "callbackUrl": "http://localhost:8003/nmt/v1/translate"
+    },
+    "source": null,
+    "task": {
+      "type": "nmt"
+    },
+    "createdBy": null,
+    "updatedBy": null
+  }
+]

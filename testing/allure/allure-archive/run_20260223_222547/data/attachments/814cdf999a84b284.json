@@ -1,0 +1,532 @@
+Status: 200
+
+[
+  {
+    "serviceId": "92e25b9e07f8fb15bb027a037b4ac810",
+    "uuid": "b6b34acf-cb88-4b37-95e3-ccd241d60304",
+    "name": "test-svc-dep-pub-moderator-1771865769",
+    "serviceDescription": "Test service description",
+    "hardwareDescription": "Test hardware description",
+    "publishedOn": 1771865770,
+    "modelId": "294d77675ceb86a9d1749b144e01cadf",
+    "endpoint": "http://test-endpoint:8000",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": null,
+    "isPublished": false,
+    "publishedAt": null,
+    "unpublishedAt": null,
+    "createdBy": "63",
+    "updatedBy": null,
+    "task": {
+      "type": "asr"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "264567b1acaf4778a9b0d03888a9469a",
+    "uuid": "00c75297-3c02-493c-a4f3-adac24941f57",
+    "name": "Model100",
+    "serviceDescription": "Model100_Service100",
+    "hardwareDescription": "Default hardware",
+    "publishedOn": 1771835096,
+    "modelId": "dd4a7a061880a8e8e5ee7f5bc8029476",
+    "endpoint": "http://localhost/8080",
+    "api_key": null,
+    "healthStatus": {
+      "status": "active",
+      "lastUpdated": "2026-02-23T08:24:56.199Z"
+    },
+    "benchmarks": null,
+    "isPublished": false,
+    "publishedAt": null,
+    "unpublishedAt": null,
+    "createdBy": "1",
+    "updatedBy": null,
+    "task": {
+      "type": "asr"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "modelVersion": "100.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "a960cd0ee18f67af724737ce5bbe161a",
+    "uuid": "b2eeec01-b814-4187-bd9a-d1899eb8d25d",
+    "name": "test-svc-dep-pub-moderator-1771588141",
+    "serviceDescription": "Updated service description",
+    "hardwareDescription": "Updated hardware description",
+    "publishedOn": 1771588142,
+    "modelId": "a0446e579632e836132eb2c250006f3c",
+    "endpoint": "http://test-endpoint:8000",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": null,
+    "isPublished": false,
+    "publishedAt": "2026-02-20T11:49:02",
+    "unpublishedAt": "2026-02-23T08:28:49",
+    "createdBy": "63",
+    "updatedBy": "1",
+    "task": {
+      "type": "asr"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "DEPRECATED"
+  },
+  {
+    "serviceId": "3f63acbb00251156062fbf5bdf116bee",
+    "uuid": "b6f9bdb3-1ccc-4ab8-9059-caaa455082f8",
+    "name": "4009af56eac8bf2efaedcb28e21ba49a-service-1",
+    "serviceDescription": "string",
+    "hardwareDescription": "string",
+    "publishedOn": 1771499045,
+    "modelId": "4009af56eac8bf2efaedcb28e21ba49a",
+    "endpoint": "string",
+    "api_key": null,
+    "healthStatus": {
+      "status": "string",
+      "lastUpdated": "string"
+    },
+    "benchmarks": {
+      "additionalProp1": [
+        {
+          "output_length": 100,
+          "generated": 50,
+          "actual": 50,
+          "throughput": 1000,
+          "50%": 10,
+          "99%": 20,
+          "language": "en"
+        }
+      ],
+      "additionalProp2": [
+        {
+          "output_length": 100,
+          "generated": 50,
+          "actual": 50,
+          "throughput": 1000,
+          "50%": 10,
+          "99%": 20,
+          "language": "en"
+        }
+      ],
+      "additionalProp3": [
+        {
+          "output_length": 100,
+          "generated": 50,
+          "actual": 50,
+          "throughput": 1000,
+          "50%": 10,
+          "99%": 20,
+          "language": "en"
+        }
+      ]
+    },
+    "isPublished": false,
+    "publishedAt": null,
+    "unpublishedAt": null,
+    "createdBy": "60",
+    "updatedBy": null,
+    "task": {
+      "type": "nmt"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "DEPRECATED"
+  },
+  {
+    "serviceId": "cc2dd8915d8e3eb7e45f8512c81fc440",
+    "uuid": "2ea91ce9-2d05-4418-918b-918c87bd3b80",
+    "name": "4c5791e203cadfda28cdd6da9f897fc7-ser-1",
+    "serviceDescription": "4c5791e203cadfda28cdd6da9f897fc7-se-1",
+    "hardwareDescription": "Default hardware",
+    "publishedOn": 1770739780,
+    "modelId": "4c5791e203cadfda28cdd6da9f897fc7",
+    "endpoint": ".com",
+    "api_key": null,
+    "healthStatus": {
+      "status": "active",
+      "lastUpdated": "2026-02-10T16:09:40.098Z"
+    },
+    "benchmarks": null,
+    "isPublished": false,
+    "publishedAt": null,
+    "unpublishedAt": null,
+    "createdBy": "60",
+    "updatedBy": null,
+    "task": {
+      "type": "asr"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "modelVersion": "7.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "9195c8c7bb9669dd88de7bcfe59c0980",
+    "uuid": "086a43c9-fd88-48e5-b807-e3df71863004",
+    "name": "Language-detection-test",
+    "serviceDescription": "Indic ld models hosted by AI4Bharat models.",
+    "hardwareDescription": "Auto-scalable deployment, using T4 GPUs",
+    "publishedOn": 1703022074000,
+    "modelId": "eebf4d4e4ae62233a19abe63a03269ff",
+    "endpoint": "13.200.133.97:5000",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": {
+      "1": [
+        {
+          "output_length": 14,
+          "generated": 3,
+          "actual": 3,
+          "throughput": 42,
+          "50%": 3,
+          "99%": 5,
+          "language": "Hindi-Telugu"
+        },
+        {
+          "output_length": 14,
+          "generated": 7,
+          "actual": 6,
+          "throughput": 97,
+          "50%": 1,
+          "99%": 5,
+          "language": "Hindi-English"
+        },
+        {
+          "output_length": 12,
+          "generated": 5,
+          "actual": 5,
+          "throughput": 60,
+          "50%": 1,
+          "99%": 3,
+          "language": "English-Hindi"
+        }
+      ]
+    },
+    "isPublished": false,
+    "publishedAt": null,
+    "unpublishedAt": null,
+    "createdBy": null,
+    "updatedBy": null,
+    "task": {
+      "type": "language-detection"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "ur",
+        "targetLanguage": "te",
+        "sourceScriptCode": "Aran",
+        "targetScriptCode": "Telu"
+      }
+    ],
+    "modelVersion": "1.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "ai4bharat/asr_service_test_1",
+    "uuid": "a63e929b-8540-4005-9878-90c34f4e4035",
+    "name": "Indicasr All Directions on T4",
+    "serviceDescription": "Indic NER models hosted by AI4Bharat models.",
+    "hardwareDescription": "Auto-scalable deployment, using T4 GPUs",
+    "publishedOn": 1703022074000,
+    "modelId": "test/asr-test-model",
+    "endpoint": "13.200.133.97:5000",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": {
+      "1": [
+        {
+          "output_length": 14,
+          "generated": 3,
+          "actual": 3,
+          "throughput": 42,
+          "50%": 3,
+          "99%": 5,
+          "language": "Hindi-Telugu"
+        },
+        {
+          "output_length": 14,
+          "generated": 7,
+          "actual": 6,
+          "throughput": 97,
+          "50%": 1,
+          "99%": 5,
+          "language": "Hindi-English"
+        },
+        {
+          "output_length": 12,
+          "generated": 5,
+          "actual": 5,
+          "throughput": 60,
+          "50%": 1,
+          "99%": 3,
+          "language": "English-Hindi"
+        }
+      ]
+    },
+    "isPublished": false,
+    "publishedAt": null,
+    "unpublishedAt": null,
+    "createdBy": null,
+    "updatedBy": null,
+    "task": {
+      "type": "asr"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "ur",
+        "targetLanguage": "te",
+        "sourceScriptCode": "Aran",
+        "targetScriptCode": "Telu"
+      }
+    ],
+    "modelVersion": "v5",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "ai4bharat/ner_service_test_1",
+    "uuid": "836aafdb-13be-4096-a968-a1a57b80ed2d",
+    "name": "Indicasr All Directions on T4",
+    "serviceDescription": "Indic NER models hosted by AI4Bharat models.",
+    "hardwareDescription": "Auto-scalable deployment, using T4 GPUs",
+    "publishedOn": 1703022074000,
+    "modelId": "test/ner-test-model",
+    "endpoint": "13.200.133.97:5000",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": {
+      "1": [
+        {
+          "output_length": 14,
+          "generated": 3,
+          "actual": 3,
+          "throughput": 42,
+          "50%": 3,
+          "99%": 5,
+          "language": "Hindi-Telugu"
+        },
+        {
+          "output_length": 14,
+          "generated": 7,
+          "actual": 6,
+          "throughput": 97,
+          "50%": 1,
+          "99%": 5,
+          "language": "Hindi-English"
+        },
+        {
+          "output_length": 12,
+          "generated": 5,
+          "actual": 5,
+          "throughput": 60,
+          "50%": 1,
+          "99%": 3,
+          "language": "English-Hindi"
+        }
+      ]
+    },
+    "isPublished": false,
+    "publishedAt": null,
+    "unpublishedAt": null,
+    "createdBy": null,
+    "updatedBy": null,
+    "task": {
+      "type": "ner"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "ur",
+        "targetLanguage": "te",
+        "sourceScriptCode": "Aran",
+        "targetScriptCode": "Telu"
+      }
+    ],
+    "modelVersion": "v2",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "test/ner-test-model",
+    "uuid": "3cae37c8-babd-4d35-931b-3d4ea62956ed",
+    "name": "Indicasr All Directions on T4_test/ner",
+    "serviceDescription": "Indic NER models hosted by AI4Bharat models.",
+    "hardwareDescription": "Auto-scalable deployment, using T4 GPUs",
+    "publishedOn": 1703022074000,
+    "modelId": "test/ocr-test-model",
+    "endpoint": "13.200.133.97:5000",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": {
+      "1": [
+        {
+          "output_length": 14,
+          "generated": 3,
+          "actual": 3,
+          "throughput": 42,
+          "50%": 3,
+          "99%": 5,
+          "language": "Hindi-Telugu"
+        },
+        {
+          "output_length": 14,
+          "generated": 7,
+          "actual": 6,
+          "throughput": 97,
+          "50%": 1,
+          "99%": 5,
+          "language": "Hindi-English"
+        },
+        {
+          "output_length": 12,
+          "generated": 5,
+          "actual": 5,
+          "throughput": 60,
+          "50%": 1,
+          "99%": 3,
+          "language": "English-Hindi"
+        }
+      ]
+    },
+    "isPublished": false,
+    "publishedAt": null,
+    "unpublishedAt": null,
+    "createdBy": null,
+    "updatedBy": null,
+    "task": {
+      "type": "ocr"
+    },
+    "languages": [
+      {
+        "additionalProp1": {}
+      }
+    ],
+    "modelVersion": "v2",
+    "versionStatus": "DEPRECATED"
+  },
+  {
+    "serviceId": "ai4bharat/ocr_service_test_1",
+    "uuid": "fdea9d18-e18e-4701-94cc-17ab00e7222c",
+    "name": "Indicasr All Directions on T4",
+    "serviceDescription": "IndicTrans ASR models hosted by AI4Bharat models.",
+    "hardwareDescription": "Auto-scalable deployment, using T4 GPUs",
+    "publishedOn": 1703022074000,
+    "modelId": "test/ocr-test-model",
+    "endpoint": "13.200.133.97:5000",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": {
+      "1": [
+        {
+          "output_length": 14,
+          "generated": 3,
+          "actual": 3,
+          "throughput": 42,
+          "50%": 3,
+          "99%": 5,
+          "language": "Hindi-Telugu"
+        },
+        {
+          "output_length": 14,
+          "generated": 7,
+          "actual": 6,
+          "throughput": 97,
+          "50%": 1,
+          "99%": 5,
+          "language": "Hindi-English"
+        },
+        {
+          "output_length": 12,
+          "generated": 5,
+          "actual": 5,
+          "throughput": 60,
+          "50%": 1,
+          "99%": 3,
+          "language": "English-Hindi"
+        }
+      ]
+    },
+    "isPublished": false,
+    "publishedAt": null,
+    "unpublishedAt": null,
+    "createdBy": null,
+    "updatedBy": null,
+    "task": {
+      "type": "ner"
+    },
+    "languages": [
+      {
+        "additionalProp1": {
+          "prop1": "prop1"
+        }
+      }
+    ],
+    "modelVersion": "v1",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "ai4bharat/surya-ocr-v1--gpu--t4",
+    "uuid": "c049de68-92fe-4e5a-a013-35cd64037200",
+    "name": "Surya OCR v1 GPU T4",
+    "serviceDescription": "Surya OCR model for optical character recognition on GPU T4",
+    "hardwareDescription": "GPU T4",
+    "publishedOn": 1767037290,
+    "modelId": "ocr_model",
+    "endpoint": "65.1.35.3:8400",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": null,
+    "isPublished": false,
+    "publishedAt": null,
+    "unpublishedAt": null,
+    "createdBy": null,
+    "updatedBy": null,
+    "task": {
+      "type": "ocr"
+    },
+    "languages": [
+      {
+        "code": "en",
+        "name": "English"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  }
+]

@@ -1,0 +1,11 @@
+✓ Background token refresh started
+
+============================================================
+🔍 Test: Create Model - USER (Should be DENIED)
+🔍 Endpoint: POST /api/v1/model-management/models
+============================================================
+📊 Status Code: 403
+📦 Response: {"detail":{"message":"Only ADMIN or MODERATOR roles can perform this operation.","code":"HTTP_ERROR","timestamp":1773034494.2174883,"details":"PERMISSION_DENIED"}}
+✅ [USER] Correctly denied access (Status: 403)
+============================================================
+

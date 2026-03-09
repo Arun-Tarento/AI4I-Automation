@@ -1,0 +1,12 @@
+✓ Background token refresh started
+
+============================================================
+🔍 Test: Create Model with Valid Payload - ADMIN
+🔍 Endpoint: POST /api/v1/model-management/models
+🔍 name: Test-Model-asr-admin-1773034489 | version: 1.0.0 | task_type: asr
+============================================================
+📊 Status Code: 200
+📦 Response: "Model 'Test-Model-asr-admin-1773034489' (ID: c70c166d6b5a7913356220a89c862edc) created successfully."
+✅ [ADMIN] Model 'Test-Model-asr-admin-1773034489' created successfully
+============================================================
+

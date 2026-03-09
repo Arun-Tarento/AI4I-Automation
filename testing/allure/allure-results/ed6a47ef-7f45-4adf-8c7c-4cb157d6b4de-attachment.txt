@@ -1,0 +1,14 @@
+
+✅ [ADMIN] Model created: Test-Model-admin-1773034547
+
+============================================================
+🔍 Test: Update Model with Invalid versionStatus - ADMIN
+🔍 Endpoint: PATCH /api/v1/model-management/models
+🔍 Invalid versionStatus: deprecated
+============================================================
+📊 Status Code: 422
+📦 Response: {"detail":[{"loc":["body","versionStatus"],"msg":"Input should be 'ACTIVE' or 'DEPRECATED'","type":"enum"}]}
+✅ [ADMIN] API correctly rejected invalid versionStatus 'deprecated'
+============================================================
+
+🧹 [ADMIN] Cleanup: Model 'Test-Model-admin-1773034547' deleted

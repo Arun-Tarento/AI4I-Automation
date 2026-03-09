@@ -1,0 +1,15 @@
+
+✅ [ADMIN] Model created: Test-Model-ner-admin-1773034502 | task_type: ner
+🔍 [ADMIN] modelId: e0a5bf9a80a18d7ba01cd2c25b7c64d6 | version: 1.0.0
+
+============================================================
+🔍 Test: Create Service - ADMIN | task_type: ner
+🔍 Endpoint: POST /api/v1/model-management/services
+🔍 service_name: test-svc-ner-admin-1773034502
+============================================================
+📊 Status Code: 200
+📦 Response: "Service 'test-svc-ner-admin-1773034502' (ID: 00c87616023a15f8c1f119f74cab7a2b) created successfully."
+✅ [ADMIN] Service 'test-svc-ner-admin-1773034502' created successfully
+============================================================
+
+🧹 [ADMIN] Cleanup: Model 'Test-Model-ner-admin-1773034502' deleted

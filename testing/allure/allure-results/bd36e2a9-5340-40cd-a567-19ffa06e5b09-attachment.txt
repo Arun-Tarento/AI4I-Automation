@@ -1,0 +1,11 @@
+
+============================================================
+🔍 Test: List Services Filter by task_type - ADMIN
+🔍 Endpoint: GET /api/v1/model-management/services
+🔍 Filter: task_type = language-diarization
+============================================================
+📊 Status Code: 200
+📦 Total Services with task_type 'language-diarization': 1
+✅ [ADMIN] Successfully filtered services by task_type 'language-diarization'
+============================================================
+

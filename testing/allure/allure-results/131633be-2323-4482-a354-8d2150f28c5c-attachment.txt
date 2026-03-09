@@ -1,0 +1,10 @@
+
+============================================================
+🔍 Test: Create Service Missing endpoint - ADMIN
+🔍 Endpoint: POST /api/v1/model-management/services
+============================================================
+📊 Status Code: 422
+📦 Response: {"detail":[{"loc":["body","endpoint"],"msg":"Field required","type":"missing"}]}
+✅ [ADMIN] API correctly rejected payload missing endpoint
+============================================================
+

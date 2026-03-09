@@ -1,0 +1,9 @@
+Status: 404
+
+{
+  "detail": {
+    "message": "Model with id 'invalid-uuid-000-000-000' not found",
+    "code": "NotFound",
+    "timestamp": 1773034521.948379
+  }
+}

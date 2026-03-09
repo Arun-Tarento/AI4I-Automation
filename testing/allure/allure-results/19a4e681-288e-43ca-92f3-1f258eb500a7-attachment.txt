@@ -1,0 +1,13 @@
+
+🔍 [ADMIN] Using service_id: 9a2dc96e3e2fb4d306c2215dc23ef0d1
+🔍 Full URL: https://sandbox.ai4inclusion.org/api/v1/model-management/services/9a2dc96e3e2fb4d306c2215dc23ef0d1
+
+============================================================
+🔍 Test: Get Service by Valid service_id - ADMIN
+🔍 Endpoint: GET /api/v1/model-management/services/9a2dc96e3e2fb4d306c2215dc23ef0d1
+============================================================
+📊 Status Code: 200
+✅ [ADMIN] Service retrieved successfully
+🔍 Service Name: NMT-3-En-Hi | isPublished: True
+============================================================
+

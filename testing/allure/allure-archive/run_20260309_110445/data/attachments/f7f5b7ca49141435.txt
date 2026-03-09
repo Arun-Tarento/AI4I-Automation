@@ -1,0 +1,15 @@
+
+✅ [ADMIN] Model created: Test-Model-transliteration-admin-1773034503 | task_type: transliteration
+🔍 [ADMIN] modelId: 7c5329d80316703639d360a7d2c47cff | version: 1.0.0
+
+============================================================
+🔍 Test: Create Service - ADMIN | task_type: transliteration
+🔍 Endpoint: POST /api/v1/model-management/services
+🔍 service_name: test-svc-transliteration-admin-1773034503
+============================================================
+📊 Status Code: 200
+📦 Response: "Service 'test-svc-transliteration-admin-1773034503' (ID: e241bac64868666e6780569ce662c0c7) created successfully."
+✅ [ADMIN] Service 'test-svc-transliteration-admin-1773034503' created successfully
+============================================================
+
+🧹 [ADMIN] Cleanup: Model 'Test-Model-transliteration-admin-1773034503' deleted

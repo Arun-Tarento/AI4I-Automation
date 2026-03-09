@@ -1,0 +1,593 @@
+Status: 200
+
+[
+  {
+    "serviceId": "5f3d373c24709ae89b1ba05f63b9061a",
+    "uuid": "c6d89061-f4ae-4371-a0ec-ff035fb0c032",
+    "name": "test-svc-pub-unpub-admin-1773034561",
+    "serviceDescription": "Test service description",
+    "hardwareDescription": "Test hardware description",
+    "publishedOn": 1773034559,
+    "modelId": "cada7c6a1c9bb78072580731a3ec5bc9",
+    "endpoint": "http://test-endpoint:8000",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": false,
+    "publishedAt": null,
+    "unpublishedAt": null,
+    "createdBy": "5",
+    "updatedBy": null,
+    "task": {
+      "type": "asr"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "1a6f23e588713a0ca305f677aa159975",
+    "uuid": "56155ea8-1418-4d19-ab0e-099695418688",
+    "name": "TTS-Testing",
+    "serviceDescription": "Testing",
+    "hardwareDescription": "Default hardware",
+    "publishedOn": 1772446300,
+    "modelId": "36d4bb3a6f18062bcae017e0af91c220",
+    "endpoint": "ai4inclusion.org",
+    "api_key": null,
+    "healthStatus": {
+      "status": "active",
+      "lastUpdated": "2026-03-02T10:11:40.697Z"
+    },
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": false,
+    "publishedAt": null,
+    "unpublishedAt": null,
+    "createdBy": "1",
+    "updatedBy": null,
+    "task": {
+      "type": "tts"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "6b6075c1458a7d7e0c2410860cd2e968",
+    "uuid": "80ccc171-4f57-4a6c-a050-9ee51ac21b06",
+    "name": "asdfa",
+    "serviceDescription": "asdfa",
+    "hardwareDescription": "Default hardware",
+    "publishedOn": 1772183646,
+    "modelId": "34748f953ea5ae8ae2effae73dcbe777",
+    "endpoint": "sadfas",
+    "api_key": null,
+    "healthStatus": {
+      "status": "active",
+      "lastUpdated": "2026-02-27T09:14:06.493Z"
+    },
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": false,
+    "publishedAt": null,
+    "unpublishedAt": null,
+    "createdBy": "5",
+    "updatedBy": null,
+    "task": {
+      "type": "nmt"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "ef1aec9fdcd914050894a4d2c4beff91",
+    "uuid": "ac35199c-ea18-4ba4-b8d9-35d754e06932",
+    "name": "SMR-NMT-En-Hi-3",
+    "serviceDescription": "SMR-NMT-En-Hi-3\nhttp://13.200.133.97:8000",
+    "hardwareDescription": "Default hardware",
+    "publishedOn": 1772111858,
+    "modelId": "4323daa678edb5d3925cf0cb6d04fa54",
+    "endpoint": "http://13.200.133.97:8000",
+    "api_key": null,
+    "healthStatus": {
+      "status": "healthy",
+      "lastUpdated": "2026-02-26T13:17:38.173Z"
+    },
+    "benchmarks": null,
+    "policy": {
+      "cost": "tier_3",
+      "domain": "medical",
+      "latency": "low",
+      "accuracy": "sensitive",
+      "complexity": "LOW"
+    },
+    "isPublished": false,
+    "publishedAt": "2026-02-26T13:18:33",
+    "unpublishedAt": "2026-03-02T09:52:38",
+    "createdBy": "1",
+    "updatedBy": "1",
+    "task": {
+      "type": "nmt"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "en",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "modelVersion": "v1",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "9b25c7ba1f911c5b2b1a93a36567487b",
+    "uuid": "901d4160-629b-4b0b-9c4f-01359671aac5",
+    "name": "SMR-NMT-En-Hi-2",
+    "serviceDescription": "SMR-NMT-En-Hi-2",
+    "hardwareDescription": "Default hardware",
+    "publishedOn": 1772111762,
+    "modelId": "4323daa678edb5d3925cf0cb6d04fa54",
+    "endpoint": "http://13.200.133.97:8000",
+    "api_key": null,
+    "healthStatus": {
+      "status": "healthy",
+      "lastUpdated": "2026-02-26T13:16:02.442Z"
+    },
+    "benchmarks": null,
+    "policy": {
+      "cost": "tier_1",
+      "domain": "legal",
+      "latency": "high",
+      "accuracy": "standard",
+      "complexity": "LOW"
+    },
+    "isPublished": false,
+    "publishedAt": "2026-02-26T13:16:14",
+    "unpublishedAt": "2026-03-03T14:02:04",
+    "createdBy": "1",
+    "updatedBy": "1",
+    "task": {
+      "type": "nmt"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "en",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "modelVersion": "v1",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "732b9745e7efdcbc397307af5dfdc449",
+    "uuid": "54727733-83e9-4921-b867-9ca7f51fd587",
+    "name": "NMT-SMR-SERVICE-5",
+    "serviceDescription": "NMT-SMR-SERVICE-5",
+    "hardwareDescription": "Default hardware",
+    "publishedOn": 1772111171,
+    "modelId": "f65dd402e535996ff28986a2546fab07",
+    "endpoint": "http://13.200.133.97:8000",
+    "api_key": null,
+    "healthStatus": {
+      "status": "active",
+      "lastUpdated": "2026-02-26T13:06:11.075Z"
+    },
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": false,
+    "publishedAt": "2026-02-26T13:06:09",
+    "unpublishedAt": "2026-02-26T13:07:30",
+    "createdBy": "1",
+    "updatedBy": "1",
+    "task": {
+      "type": "nmt"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "modelVersion": "v1",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "b8e7143dd61d6cfbef3a7b69d34a1e89",
+    "uuid": "a4be2a6d-38e2-4ff5-9091-a67e0c9c882b",
+    "name": "NMT-SMR-SERVICE-4",
+    "serviceDescription": "NMT-SMR-SERVICE-4",
+    "hardwareDescription": "Default hardware",
+    "publishedOn": 1772111133,
+    "modelId": "f65dd402e535996ff28986a2546fab07",
+    "endpoint": "http://13.200.133.97:8000",
+    "api_key": null,
+    "healthStatus": {
+      "status": "active",
+      "lastUpdated": "2026-02-26T13:05:33.859Z"
+    },
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": false,
+    "publishedAt": "2026-02-26T13:06:07",
+    "unpublishedAt": "2026-02-26T13:07:30",
+    "createdBy": "1",
+    "updatedBy": "1",
+    "task": {
+      "type": "nmt"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "modelVersion": "v1",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "ed19729b4f634ca3b25868c99a1a0b54",
+    "uuid": "98fa5ebf-f917-4521-b7fb-d40ce31c3f9b",
+    "name": "NMT-SMR-SERVICE-3",
+    "serviceDescription": "NMT-SMR-SERVICE-3",
+    "hardwareDescription": "Default hardware",
+    "publishedOn": 1772111094,
+    "modelId": "f65dd402e535996ff28986a2546fab07",
+    "endpoint": "http://13.200.133.97:8000",
+    "api_key": null,
+    "healthStatus": {
+      "status": "active",
+      "lastUpdated": "2026-02-26T13:04:54.079Z"
+    },
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": false,
+    "publishedAt": "2026-02-26T13:06:06",
+    "unpublishedAt": "2026-02-26T13:07:31",
+    "createdBy": "1",
+    "updatedBy": "1",
+    "task": {
+      "type": "nmt"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "modelVersion": "v1",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "21441f6e8ab521cfcf51d2e2618e83e8",
+    "uuid": "4ebabd44-b206-4077-92d9-46af4689c367",
+    "name": "NMT-SMR-SERVICE-2",
+    "serviceDescription": "NMT-SMR-SERVICE-2",
+    "hardwareDescription": "Default hardware",
+    "publishedOn": 1772111055,
+    "modelId": "f65dd402e535996ff28986a2546fab07",
+    "endpoint": "http://13.200.133.97:8000",
+    "api_key": null,
+    "healthStatus": {
+      "status": "active",
+      "lastUpdated": "2026-02-26T13:04:15.590Z"
+    },
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": false,
+    "publishedAt": "2026-02-26T13:06:03",
+    "unpublishedAt": "2026-02-26T13:07:32",
+    "createdBy": "1",
+    "updatedBy": "1",
+    "task": {
+      "type": "nmt"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "modelVersion": "v1",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "96bf6905003e0a2fae392568683c9905",
+    "uuid": "46c42a6a-c6df-4538-88af-cf0d73cfe6ea",
+    "name": "NMT-SMR-SERVICE-1",
+    "serviceDescription": "NMT-SMR-SERVICE-1",
+    "hardwareDescription": "Default hardware",
+    "publishedOn": 1772110360,
+    "modelId": "f65dd402e535996ff28986a2546fab07",
+    "endpoint": "http://13.200.133.97:8000",
+    "api_key": null,
+    "healthStatus": {
+      "status": "active",
+      "lastUpdated": "2026-02-26T12:52:40.881Z"
+    },
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": false,
+    "publishedAt": "2026-02-26T13:03:20",
+    "unpublishedAt": "2026-02-26T13:07:34",
+    "createdBy": "1",
+    "updatedBy": "1",
+    "task": {
+      "type": "nmt"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "modelVersion": "v1",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "0bcf6b50c4ad72815e58330d0ce0c755",
+    "uuid": "c6bb255b-7577-4acf-97ec-c7f17a722aba",
+    "name": "OCR-Service1-Test-feb-26",
+    "serviceDescription": "OCR-Service1-Test-feb-26",
+    "hardwareDescription": "Default hardware",
+    "publishedOn": 1772099638,
+    "modelId": "bf903e3f222d79b46f1692dd27c8a730",
+    "endpoint": "http://65.1.35.3:8400",
+    "api_key": null,
+    "healthStatus": {
+      "status": "active",
+      "lastUpdated": "2026-02-26T09:53:58.123Z"
+    },
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": false,
+    "publishedAt": "2026-02-26T11:24:09",
+    "unpublishedAt": "2026-03-02T10:16:30",
+    "createdBy": "5",
+    "updatedBy": "1",
+    "task": {
+      "type": "ocr"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi",
+        "sourceScriptCode": "Deva",
+        "targetScriptCode": "Deva"
+      }
+    ],
+    "modelVersion": "v1",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "49d217b8cdb1e7a376787763c0e166c7",
+    "uuid": "506db922-7d75-4381-ace9-85c927ff49c7",
+    "name": "NMT-C-Mediumlatency-sensitive-tire2",
+    "serviceDescription": "NMT service C",
+    "hardwareDescription": "Default hardware",
+    "publishedOn": 1772093790,
+    "modelId": "30484f50e39b41580c0e158559a695ed",
+    "endpoint": "http://13.200.133.97:8000",
+    "api_key": null,
+    "healthStatus": {
+      "status": "healthy",
+      "lastUpdated": "2026-02-26T08:16:30.656Z"
+    },
+    "benchmarks": null,
+    "policy": {
+      "cost": "tier_2",
+      "domain": "legal",
+      "latency": "medium",
+      "accuracy": "sensitive",
+      "complexity": "high"
+    },
+    "isPublished": false,
+    "publishedAt": "2026-02-26T07:06:36",
+    "unpublishedAt": "2026-02-26T18:10:32",
+    "createdBy": "1",
+    "updatedBy": "1",
+    "task": {
+      "type": "nmt"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "en",
+        "targetLanguage": "hi"
+      },
+      {
+        "sourceLanguage": "en",
+        "targetLanguage": "ml"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "1cbb2bd19d78927d64e2354454a9efe4",
+    "uuid": "a5c2b456-2bac-4aee-8d0a-291597b51376",
+    "name": "NMT-B-Highlatency-standard-tire1",
+    "serviceDescription": "NMT service B ",
+    "hardwareDescription": "Default hardware",
+    "publishedOn": 1772093755,
+    "modelId": "30484f50e39b41580c0e158559a695ed",
+    "endpoint": "http://13.200.133.97:8000",
+    "api_key": null,
+    "healthStatus": {
+      "status": "healthy",
+      "lastUpdated": "2026-02-26T08:15:55.122Z"
+    },
+    "benchmarks": null,
+    "policy": {
+      "cost": "tier_1",
+      "domain": "casual",
+      "latency": "high",
+      "accuracy": "standard",
+      "complexity": "low"
+    },
+    "isPublished": false,
+    "publishedAt": "2026-02-26T07:06:36",
+    "unpublishedAt": "2026-02-26T18:10:34",
+    "createdBy": "1",
+    "updatedBy": "1",
+    "task": {
+      "type": "nmt"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "en",
+        "targetLanguage": "hi"
+      },
+      {
+        "sourceLanguage": "en",
+        "targetLanguage": "ml"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "24cc9867ffed74877ecef8432716df4a",
+    "uuid": "2d26af7e-c688-4cb8-9c3a-61ac83602945",
+    "name": "NMT-A-Lowlatency-sensitive-tire3",
+    "serviceDescription": "NMT Service ",
+    "hardwareDescription": "Default hardware",
+    "publishedOn": 1772093670,
+    "modelId": "30484f50e39b41580c0e158559a695ed",
+    "endpoint": "http://13.200.133.97:8000",
+    "api_key": null,
+    "healthStatus": {
+      "status": "healthy",
+      "lastUpdated": "2026-02-26T08:14:30.558Z"
+    },
+    "benchmarks": null,
+    "policy": {
+      "cost": "tier_3",
+      "domain": "medical",
+      "latency": "low",
+      "accuracy": "sensitive",
+      "complexity": "high"
+    },
+    "isPublished": false,
+    "publishedAt": "2026-02-26T07:06:36",
+    "unpublishedAt": "2026-02-26T18:10:39",
+    "createdBy": "1",
+    "updatedBy": "1",
+    "task": {
+      "type": "nmt"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "en",
+        "targetLanguage": "hi"
+      },
+      {
+        "sourceLanguage": "en",
+        "targetLanguage": "ml"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "ai4bharat/indictrans--gpu-t4",
+    "uuid": "c3aca93a-1918-440d-9099-5ff0038c665d",
+    "name": "gpu-t4",
+    "serviceDescription": "IndicTrans NMT service on GPU T4.",
+    "hardwareDescription": "GPU: NVIDIA T4, RAM: 16GB",
+    "publishedOn": 1772089081411,
+    "modelId": "ae29c58dfc62559018baa42667180df9",
+    "endpoint": "http://13.200.133.97:8000",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": null,
+    "policy": {
+      "cost": "tier_3",
+      "domain": "medical",
+      "latency": "low",
+      "accuracy": "sensitive",
+      "complexity": "high"
+    },
+    "isPublished": false,
+    "publishedAt": "2026-02-26T07:06:45",
+    "unpublishedAt": "2026-02-26T18:10:43",
+    "createdBy": null,
+    "updatedBy": "1",
+    "task": {
+      "type": "nmt"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "en",
+        "targetLanguage": "hi"
+      },
+      {
+        "sourceLanguage": "hi",
+        "targetLanguage": "en"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  },
+  {
+    "serviceId": "939cc23f840a0b8251ded1880c74703c",
+    "uuid": "8f3d08f0-2a78-459c-88a3-5f5e55b323f8",
+    "name": "speaker-diarize-prod",
+    "serviceDescription": "Production Speaker Diarization service. UPDATE ENDPOINT to your actual service URL.",
+    "hardwareDescription": "GPU: NVIDIA T4, RAM: 16GB",
+    "publishedOn": 1772089081411,
+    "modelId": "cc813f7998d2669356119302570b0fa9",
+    "endpoint": "http://65.1.35.3:8700",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": false,
+    "publishedAt": "2026-02-26T07:06:41",
+    "unpublishedAt": "2026-02-26T18:10:36",
+    "createdBy": null,
+    "updatedBy": "1",
+    "task": {
+      "type": "speaker-diarization"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "*"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  }
+]

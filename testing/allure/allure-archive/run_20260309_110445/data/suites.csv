@@ -1,0 +1,937 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Mon Mar 09 11:05:29 IST 2026","Mon Mar 09 11:05:29 IST 2026","0","tests.test_model_management","test_model_management_get_models","TestModelManagementGetModels","","","test_get_model_by_id[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Get a model by valid model_id
+        Expected: 200 with model data matching what was created
+        "
+"passed","Mon Mar 09 11:06:04 IST 2026","Mon Mar 09 11:06:01 IST 2026","-2340","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Unauthorized roles cannot update service — user_client_with_valid_api_key","
+        USER & GUEST: Attempt to update a service (should be denied)
+        Expected: 401 Unauthorized or 403 Forbidden
+        "
+"passed","Mon Mar 09 11:05:48 IST 2026","Mon Mar 09 11:05:49 IST 2026","883","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_invalid_version_status[PENDING-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Update model with invalid versionStatus
+        Flow: Create model → patch with invalid versionStatus → expect 400/422
+        Expected: 400/422 with error details
+        "
+"passed","Mon Mar 09 11:05:50 IST 2026","Mon Mar 09 11:05:51 IST 2026","162","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_unauthorized_roles[user_client_with_valid_api_key]","
+        USER & GUEST: Attempt to update a model (should be denied)
+        Expected: 401 Unauthorized or 403 Forbidden
+        "
+"broken","Mon Mar 09 11:05:20 IST 2026","Mon Mar 09 11:05:20 IST 2026","0","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[speaker-diarization-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "
+"broken","Mon Mar 09 11:05:04 IST 2026","Mon Mar 09 11:05:04 IST 2026","0","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[speaker-diarization-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"passed","Mon Mar 09 11:05:33 IST 2026","Mon Mar 09 11:05:33 IST 2026","256","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_all_services_without_filters[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List all services without any filters
+        Expected: 200 OK with list of services
+        "
+"broken","Mon Mar 09 11:05:32 IST 2026","Mon Mar 09 11:05:32 IST 2026","0","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_filter_by_created_by[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Test listing models filtered by created_by
+        Expected: 200 OK with filtered list
+        "
+"broken","Mon Mar 09 11:05:02 IST 2026","Mon Mar 09 11:05:02 IST 2026","1","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[language-detection-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"broken","Mon Mar 09 11:04:50 IST 2026","Mon Mar 09 11:04:50 IST 2026","0","tests.test_model_management","test_model_management_create_model","TestModelManagementCreateModel","","","test_create_model_with_valid_payload[tts-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a model with a valid payload
+        Expected: 200/201 with success message string
+        "
+"broken","Mon Mar 09 11:05:16 IST 2026","Mon Mar 09 11:05:16 IST 2026","0","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[llm-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "
+"broken","Mon Mar 09 11:05:03 IST 2026","Mon Mar 09 11:05:03 IST 2026","1","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[ner-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"broken","Mon Mar 09 11:05:18 IST 2026","Mon Mar 09 11:05:18 IST 2026","0","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[ner-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "
+"passed","Mon Mar 09 11:04:50 IST 2026","Mon Mar 09 11:04:51 IST 2026","227","tests.test_model_management","test_model_management_create_model","TestModelManagementCreateModel","","","test_create_model_missing_name[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a model without the mandatory 'name' field
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:33 IST 2026","Mon Mar 09 11:05:33 IST 2026","0","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_invalid_task_type[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Test listing models with INVALID task_type
+        Expected: 400/422 error OR 200 with empty list
+        "
+"passed","Mon Mar 09 11:04:59 IST 2026","Mon Mar 09 11:05:00 IST 2026","920","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[llm-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"passed","Mon Mar 09 11:05:08 IST 2026","Mon Mar 09 11:05:09 IST 2026","166","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_missing_service_description[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service without mandatory serviceDescription field
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:38 IST 2026","Mon Mar 09 11:05:38 IST 2026","1","tests.test_model_management","test_model_management_list_services_byserviceid","TestModelManagementGetServiceByServiceId","","","test_get_service_by_valid_service_id[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Get service by valid service_id
+        Dynamic — fetches real service_id from list endpoint first
+        Expected: 200 with service data
+        "
+"broken","Mon Mar 09 11:05:04 IST 2026","Mon Mar 09 11:05:04 IST 2026","0","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[transliteration-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"broken","Mon Mar 09 11:05:55 IST 2026","Mon Mar 09 11:05:55 IST 2026","0","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_can_deprecate_model_with_unpublished_services[moderator_client_with_valid_api_key]","
+        BUSINESS RULE: Can deprecate a model when all associated services are unpublished
+        Flow: Create model → create service → ensure unpublished → deprecate model → expect 200
+        Expected: 200 with success message and versionStatus = DEPRECATED
+        "
+"passed","Mon Mar 09 11:04:57 IST 2026","Mon Mar 09 11:04:58 IST 2026","1210","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[nmt-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"passed","Mon Mar 09 11:04:52 IST 2026","Mon Mar 09 11:04:56 IST 2026","3910","tests.test_model_management","test_model_management_create_model","TestModelManagementCreateModel","","","test_create_model_unauthorized_roles[user_client_with_valid_api_key]","
+        USER & GUEST: Attempt to create a model (should be denied)
+        Expected: 401 Unauthorized or 403 Forbidden
+        "
+"passed","Mon Mar 09 11:05:37 IST 2026","Mon Mar 09 11:05:37 IST 2026","163","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_is_published[True-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by is_published (True / False)
+        Expected: 200 with filtered list where all services match is_published status
+        "
+"broken","Mon Mar 09 11:05:51 IST 2026","Mon Mar 09 11:05:51 IST 2026","0","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_unauthorized_roles[guest_client_with_valid_api_key]","
+        USER & GUEST: Attempt to update a model (should be denied)
+        Expected: 401 Unauthorized or 403 Forbidden
+        "
+"broken","Mon Mar 09 11:05:53 IST 2026","Mon Mar 09 11:05:53 IST 2026","0","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_cannot_deprecate_model_with_published_service[moderator_client_with_valid_api_key]","
+        BUSINESS RULE: Cannot deprecate a model that has at least one published service
+        Flow: Create model → create service → publish service → attempt deprecate → expect 400/422
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:45 IST 2026","Mon Mar 09 11:05:45 IST 2026","0","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_invalid_task_type[ASR-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Update model with invalid task type
+        Flow: Create model → patch with invalid task type → expect 400/422
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:34 IST 2026","Mon Mar 09 11:05:34 IST 2026","0","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[tts-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"passed","Mon Mar 09 11:05:13 IST 2026","Mon Mar 09 11:05:14 IST 2026","702","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[asr-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "
+"broken","Mon Mar 09 11:05:27 IST 2026","Mon Mar 09 11:05:27 IST 2026","0","tests.test_model_management","test_model_management_delete_services","TestModelManagementDeleteServices","","","test_delete_service_invalid_uuid[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Delete a service with invalid/non-existent uuid
+        Expected: 404 Not Found
+        "
+"broken","Mon Mar 09 11:05:10 IST 2026","Mon Mar 09 11:05:10 IST 2026","0","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_invalid_name[test@svc#special-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service with invalid name (non alphanumeric/hyphen)
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:36 IST 2026","Mon Mar 09 11:05:36 IST 2026","0","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[audio-lang-detection-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"broken","Mon Mar 09 11:04:52 IST 2026","Mon Mar 09 11:04:52 IST 2026","1","tests.test_model_management","test_model_management_create_model","TestModelManagementCreateModel","","","test_create_model_duplicate_name_and_version[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create two models with the same name+version combination
+        First call: 200/201 - created successfully
+        Second call: 400/409 - duplicate rejected
+        "
+"passed","Mon Mar 09 11:05:34 IST 2026","Mon Mar 09 11:05:34 IST 2026","188","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[llm-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"passed","Mon Mar 09 11:05:20 IST 2026","Mon Mar 09 11:05:21 IST 2026","671","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[language-diarization-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "
+"broken","Mon Mar 09 11:05:42 IST 2026","Mon Mar 09 11:05:42 IST 2026","1","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_status_to_active[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Update model versionStatus to DEPRECATED then back to ACTIVE
+        Flow: Create model → deprecate → update to ACTIVE → verify
+        Expected: 200 with versionStatus = ACTIVE
+        "
+"broken","Mon Mar 09 11:05:44 IST 2026","Mon Mar 09 11:05:44 IST 2026","0","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_invalid_task_type[invalid_task-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Update model with invalid task type
+        Flow: Create model → patch with invalid task type → expect 400/422
+        Expected: 400/422 with error details
+        "
+"passed","Mon Mar 09 11:05:37 IST 2026","Mon Mar 09 11:05:37 IST 2026","219","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_is_published[False-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by is_published (True / False)
+        Expected: 200 with filtered list where all services match is_published status
+        "
+"broken","Mon Mar 09 11:06:01 IST 2026","Mon Mar 09 11:06:01 IST 2026","0","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Unauthorized roles cannot update service — guest_client_with_valid_api_key","
+        USER & GUEST: Attempt to update a service (should be denied)
+        Expected: 401 Unauthorized or 403 Forbidden
+        "
+"broken","Mon Mar 09 11:05:10 IST 2026","Mon Mar 09 11:05:10 IST 2026","0","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_invalid_name[test.svc.dot-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service with invalid name (non alphanumeric/hyphen)
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:33 IST 2026","Mon Mar 09 11:05:33 IST 2026","0","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_with_filters_unauthorized_roles[asr-guest_client_with_valid_api_key]","
+        USER & GUEST: Test access with filters (should still be denied)
+        Expected: 403 Forbidden or 401 Unauthorized
+        "
+"broken","Mon Mar 09 11:05:17 IST 2026","Mon Mar 09 11:05:17 IST 2026","0","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[ocr-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "
+"failed","Mon Mar 09 11:05:33 IST 2026","Mon Mar 09 11:05:33 IST 2026","223","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_with_filters_unauthorized_roles[nmt-user_client_with_valid_api_key]","
+        USER & GUEST: Test access with filters (should still be denied)
+        Expected: 403 Forbidden or 401 Unauthorized
+        "
+"failed","Mon Mar 09 11:05:39 IST 2026","Mon Mar 09 11:05:39 IST 2026","458","tests.test_model_management","test_model_management_list_services_byserviceid","TestModelManagementGetServiceByServiceId","","","test_get_service_by_service_id_unauthorized_roles[user_client_with_valid_api_key]","
+        USER & GUEST: Get service by service_id (should be denied)
+        Expected: 401 Unauthorized or 403 Forbidden
+        "
+"passed","Mon Mar 09 11:04:50 IST 2026","Mon Mar 09 11:04:50 IST 2026","257","tests.test_model_management","test_model_management_create_model","TestModelManagementCreateModel","","","test_create_model_with_valid_payload[tts-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a model with a valid payload
+        Expected: 200/201 with success message string
+        "
+"passed","Mon Mar 09 11:05:45 IST 2026","Mon Mar 09 11:05:46 IST 2026","780","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_invalid_task_type[speech-to-text-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Update model with invalid task type
+        Flow: Create model → patch with invalid task type → expect 400/422
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:47 IST 2026","Mon Mar 09 11:05:47 IST 2026","0","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_invalid_version_status[INACTIVE-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Update model with invalid versionStatus
+        Flow: Create model → patch with invalid versionStatus → expect 400/422
+        Expected: 400/422 with error details
+        "
+"passed","Mon Mar 09 11:05:08 IST 2026","Mon Mar 09 11:05:08 IST 2026","190","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_missing_model_version[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service without mandatory modelVersion field
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:35 IST 2026","Mon Mar 09 11:05:35 IST 2026","0","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[transliteration-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"broken","Mon Mar 09 11:04:57 IST 2026","Mon Mar 09 11:04:57 IST 2026","0","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[asr-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"passed","Mon Mar 09 11:05:33 IST 2026","Mon Mar 09 11:05:34 IST 2026","417","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_filter_by_model_name[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Test listing models filtered by model_name
+        Expected: 200 OK with filtered list
+        "
+"broken","Mon Mar 09 11:05:16 IST 2026","Mon Mar 09 11:05:16 IST 2026","0","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[tts-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "
+"passed","Mon Mar 09 11:05:51 IST 2026","Mon Mar 09 11:05:53 IST 2026","2049","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_cannot_deprecate_model_with_published_service[admin_client_with_valid_api_key]","
+        BUSINESS RULE: Cannot deprecate a model that has at least one published service
+        Flow: Create model → create service → publish service → attempt deprecate → expect 400/422
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:14 IST 2026","Mon Mar 09 11:05:14 IST 2026","0","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[asr-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "
+"broken","Mon Mar 09 11:05:25 IST 2026","Mon Mar 09 11:05:25 IST 2026","1","tests.test_model_management","test_model_management_delete_services","TestModelManagementDeleteServices","","","test_delete_service_with_valid_uuid[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service and delete it with valid uuid
+        Flow: Create model → create service → fetch uuid → delete → verify
+        Expected: 200 with success message
+        "
+"passed","Mon Mar 09 11:05:34 IST 2026","Mon Mar 09 11:05:34 IST 2026","179","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[nmt-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"passed","Mon Mar 09 11:05:32 IST 2026","Mon Mar 09 11:05:33 IST 2026","193","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_filter_by_task_type[tts-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Test listing models filtered by task_type (asr, nmt, tts)
+        Expected: 200 OK with filtered list
+        "
+"passed","Mon Mar 09 11:05:32 IST 2026","Mon Mar 09 11:05:32 IST 2026","178","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_filter_by_task_type[asr-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Test listing models filtered by task_type (asr, nmt, tts)
+        Expected: 200 OK with filtered list
+        "
+"passed","Mon Mar 09 11:05:41 IST 2026","Mon Mar 09 11:05:42 IST 2026","1445","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_status_to_active[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Update model versionStatus to DEPRECATED then back to ACTIVE
+        Flow: Create model → deprecate → update to ACTIVE → verify
+        Expected: 200 with versionStatus = ACTIVE
+        "
+"broken","Mon Mar 09 11:05:35 IST 2026","Mon Mar 09 11:05:35 IST 2026","0","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[language-detection-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"passed","Mon Mar 09 11:05:34 IST 2026","Mon Mar 09 11:05:34 IST 2026","167","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[tts-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"passed","Mon Mar 09 11:05:09 IST 2026","Mon Mar 09 11:05:09 IST 2026","251","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_invalid_name[test_svc_underscore-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service with invalid name (non alphanumeric/hyphen)
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:33 IST 2026","Mon Mar 09 11:05:33 IST 2026","0","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_all_services_without_filters[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List all services without any filters
+        Expected: 200 OK with list of services
+        "
+"broken","Mon Mar 09 11:05:32 IST 2026","Mon Mar 09 11:05:32 IST 2026","0","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_all_models_without_filters[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Test listing all models without any filters
+        Expected: 200 OK with list of models
+        "
+"broken","Mon Mar 09 11:05:56 IST 2026","Mon Mar 09 11:05:56 IST 2026","0","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_model_version_status_valid_values[ACTIVE-moderator_client_with_valid_api_key]","
+        BUSINESS CASE: versionStatus can only be ACTIVE or DEPRECATED
+        Flow: Create model → patch to each valid status → verify accepted
+        Expected: 200 for both ACTIVE and DEPRECATED
+        "
+"broken","Mon Mar 09 11:04:49 IST 2026","Mon Mar 09 11:04:49 IST 2026","158","tests.test_model_management","test_model_management_create_model","TestModelManagementCreateModel","","","test_create_model_with_valid_payload[asr-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a model with a valid payload
+        Expected: 200/201 with success message string
+        "
+"broken","Mon Mar 09 11:05:29 IST 2026","Mon Mar 09 11:05:29 IST 2026","0","tests.test_model_management","test_model_management_get_models","TestModelManagementGetModels","","","test_get_model_by_id_and_version[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Get a model by valid model_id + specific version
+        Expected: 200 with model data matching what was created
+        "
+"passed","Mon Mar 09 11:05:05 IST 2026","Mon Mar 09 11:05:06 IST 2026","993","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[audio-lang-detection-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"broken","Mon Mar 09 11:05:10 IST 2026","Mon Mar 09 11:05:10 IST 2026","0","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_invalid_name[test svc space-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service with invalid name (non alphanumeric/hyphen)
+        Expected: 400/422 with error details
+        "
+"passed","Mon Mar 09 11:05:10 IST 2026","Mon Mar 09 11:05:10 IST 2026","255","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_invalid_name[test@svc#special-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service with invalid name (non alphanumeric/hyphen)
+        Expected: 400/422 with error details
+        "
+"passed","Mon Mar 09 11:06:03 IST 2026","Mon Mar 09 11:06:04 IST 2026","217","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Update service with invalid serviceId — admin_client_with_valid_api_key","
+        ADMIN & MODERATOR: Update a service with invalid/non-existent serviceId
+        Expected: 404 Not Found
+        "
+"broken","Mon Mar 09 11:05:39 IST 2026","Mon Mar 09 11:05:39 IST 2026","0","tests.test_model_management","test_model_management_list_services_byserviceid","TestModelManagementGetServiceByServiceId","","","test_get_service_by_invalid_service_id[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Get service by invalid/non-existent service_id
+        Expected: 404 Not Found
+        "
+"passed","Mon Mar 09 11:05:29 IST 2026","Mon Mar 09 11:05:29 IST 2026","356","tests.test_model_management","test_model_management_get_models","TestModelManagementGetModels","","","test_get_model_by_id_and_version[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Get a model by valid model_id + specific version
+        Expected: 200 with model data matching what was created
+        "
+"passed","Mon Mar 09 11:05:16 IST 2026","Mon Mar 09 11:05:17 IST 2026","753","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[ocr-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "
+"broken","Mon Mar 09 11:05:37 IST 2026","Mon Mar 09 11:05:37 IST 2026","0","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_is_published[True-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by is_published (True / False)
+        Expected: 200 with filtered list where all services match is_published status
+        "
+"passed","Mon Mar 09 11:05:36 IST 2026","Mon Mar 09 11:05:36 IST 2026","167","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[speaker-diarization-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"broken","Mon Mar 09 11:05:43 IST 2026","Mon Mar 09 11:05:43 IST 2026","0","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_invalid_license[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Update model with invalid license
+        Flow: Create model → patch with invalid license → expect 400/422
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:38 IST 2026","Mon Mar 09 11:05:38 IST 2026","0","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_created_by[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by created_by
+        Dynamic — fetches real created_by value from first service in list
+        Expected: 200 with filtered list where all services match created_by
+        "
+"broken","Mon Mar 09 11:05:46 IST 2026","Mon Mar 09 11:05:46 IST 2026","0","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_invalid_task_type[speech-to-text-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Update model with invalid task type
+        Flow: Create model → patch with invalid task type → expect 400/422
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:50 IST 2026","Mon Mar 09 11:05:50 IST 2026","1","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_non_existent_model[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Update a model that does not exist
+        Expected: 404 Not Found
+        "
+"passed","Mon Mar 09 11:04:45 IST 2026","Mon Mar 09 11:04:49 IST 2026","4085","tests.test_model_management","test_model_management_create_model","TestModelManagementCreateModel","","","test_create_model_with_valid_payload[asr-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a model with a valid payload
+        Expected: 200/201 with success message string
+        "
+"passed","Mon Mar 09 11:05:16 IST 2026","Mon Mar 09 11:05:16 IST 2026","701","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[llm-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "
+"passed","Mon Mar 09 11:05:23 IST 2026","Mon Mar 09 11:05:23 IST 2026","164","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_invalid_uuid[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Delete a model with invalid/non-existent uuid
+        Expected: 404 Not Found
+        "
+"passed","Mon Mar 09 11:04:51 IST 2026","Mon Mar 09 11:04:52 IST 2026","581","tests.test_model_management","test_model_management_create_model","TestModelManagementCreateModel","","","test_create_model_duplicate_name_and_version[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create two models with the same name+version combination
+        First call: 200/201 - created successfully
+        Second call: 400/409 - duplicate rejected
+        "
+"passed","Mon Mar 09 11:05:10 IST 2026","Mon Mar 09 11:05:12 IST 2026","1341","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_is_unpublished[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Verify created service is in unpublished state
+        Flow: Create model → create service → fetch service → verify isPublished = False
+        Expected: 200 with isPublished = False
+        "
+"passed","Mon Mar 09 11:05:24 IST 2026","Mon Mar 09 11:05:25 IST 2026","1546","tests.test_model_management","test_model_management_delete_services","TestModelManagementDeleteServices","","","test_delete_service_with_valid_uuid[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service and delete it with valid uuid
+        Flow: Create model → create service → fetch uuid → delete → verify
+        Expected: 200 with success message
+        "
+"passed","Mon Mar 09 11:04:56 IST 2026","Mon Mar 09 11:04:57 IST 2026","1037","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[asr-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"broken","Mon Mar 09 11:05:23 IST 2026","Mon Mar 09 11:05:23 IST 2026","1","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_already_deleted[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Delete the same model twice
+        First call: 200 - deleted successfully
+        Second call: 404 - model no longer exists
+        "
+"passed","Mon Mar 09 11:05:29 IST 2026","Mon Mar 09 11:05:31 IST 2026","1421","tests.test_model_management","test_model_management_get_models","TestModelManagementGetModels","","","test_get_model_by_invalid_id[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Get a model by invalid/non-existent model_id
+        Expected: 404 Not Found
+        "
+"passed","Mon Mar 09 11:05:06 IST 2026","Mon Mar 09 11:05:08 IST 2026","1892","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_multiple_services_same_model[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create multiple services for the same modelId + version
+        Flow: Create model → create service 1 → create service 2 → assert both succeed
+        Expected: Both services created successfully
+        "
+"broken","Mon Mar 09 11:05:59 IST 2026","Mon Mar 09 11:05:59 IST 2026","0","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Update service description — moderator_client_with_valid_api_key","
+        ADMIN & MODERATOR: Update serviceDescription of a service
+        Flow: Create model → create service → fetch serviceId → patch → verify
+        Expected: 200 with success message and updated serviceDescription
+        "
+"passed","Mon Mar 09 11:05:47 IST 2026","Mon Mar 09 11:05:48 IST 2026","879","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_invalid_version_status[deprecated-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Update model with invalid versionStatus
+        Flow: Create model → patch with invalid versionStatus → expect 400/422
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:22 IST 2026","Mon Mar 09 11:05:22 IST 2026","0","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[audio-lang-detection-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "
+"broken","Mon Mar 09 11:05:50 IST 2026","Mon Mar 09 11:05:50 IST 2026","0","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_name_not_allowed[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Attempt to update model name (should be rejected)
+        Model name is immutable after creation
+        Flow: Create model → patch with different name → expect 400/422
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:32 IST 2026","Mon Mar 09 11:05:32 IST 2026","0","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_filter_by_task_type[nmt-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Test listing models filtered by task_type (asr, nmt, tts)
+        Expected: 200 OK with filtered list
+        "
+"passed","Mon Mar 09 11:05:35 IST 2026","Mon Mar 09 11:05:35 IST 2026","174","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[transliteration-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"broken","Mon Mar 09 11:05:09 IST 2026","Mon Mar 09 11:05:09 IST 2026","0","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_missing_service_description[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service without mandatory serviceDescription field
+        Expected: 400/422 with error details
+        "
+"passed","Mon Mar 09 11:05:27 IST 2026","Mon Mar 09 11:05:27 IST 2026","242","tests.test_model_management","test_model_management_delete_services","TestModelManagementDeleteServices","","","test_delete_service_invalid_uuid[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Delete a service with invalid/non-existent uuid
+        Expected: 404 Not Found
+        "
+"broken","Mon Mar 09 11:05:32 IST 2026","Mon Mar 09 11:05:32 IST 2026","0","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_unauthorized_roles[guest_client_with_valid_api_key]","
+        USER & GUEST: Test access to list models endpoint
+        Expected: 403 Forbidden or 401 Unauthorized
+        "
+"broken","Mon Mar 09 11:05:27 IST 2026","Mon Mar 09 11:05:27 IST 2026","0","tests.test_model_management","test_model_management_delete_services","TestModelManagementDeleteServices","","","test_delete_service_already_deleted[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Delete the same service twice
+        First call: 200 - deleted successfully
+        Second call: 404 - service no longer exists
+        "
+"passed","Mon Mar 09 11:05:36 IST 2026","Mon Mar 09 11:05:37 IST 2026","161","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_invalid_task_type[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services with invalid task_type
+        Expected: 400/422 or 200 with empty list
+        "
+"passed","Mon Mar 09 11:05:55 IST 2026","Mon Mar 09 11:05:56 IST 2026","1266","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_model_version_status_valid_values[ACTIVE-admin_client_with_valid_api_key]","
+        BUSINESS CASE: versionStatus can only be ACTIVE or DEPRECATED
+        Flow: Create model → patch to each valid status → verify accepted
+        Expected: 200 for both ACTIVE and DEPRECATED
+        "
+"passed","Mon Mar 09 11:05:33 IST 2026","Mon Mar 09 11:05:34 IST 2026","218","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[asr-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"broken","Mon Mar 09 11:05:33 IST 2026","Mon Mar 09 11:05:33 IST 2026","0","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_filter_by_deprecated_status[False-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Test listing models filtered by include_deprecated (True, False)
+        Expected: 200 OK with filtered list based on versionStatus
+        "
+"failed","Mon Mar 09 11:05:38 IST 2026","Mon Mar 09 11:05:38 IST 2026","211","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_unauthorized_roles[user_client_with_valid_api_key]","
+        USER & GUEST: List services (should be denied)
+        Expected: 401 Unauthorized or 403 Forbidden
+        "
+"passed","Mon Mar 09 11:05:09 IST 2026","Mon Mar 09 11:05:10 IST 2026","250","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_invalid_name[test svc space-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service with invalid name (non alphanumeric/hyphen)
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:31 IST 2026","Mon Mar 09 11:05:31 IST 2026","0","tests.test_model_management","test_model_management_get_models","TestModelManagementGetModels","","","test_get_model_by_invalid_id[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Get a model by invalid/non-existent model_id
+        Expected: 404 Not Found
+        "
+"broken","Mon Mar 09 11:06:04 IST 2026","Mon Mar 09 11:06:04 IST 2026","0","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Cannot publish service with deprecated model — moderator_client_with_valid_api_key","
+        BUSINESS RULE: Cannot publish a service when its associated model is deprecated
+        Flow: Create model → create service → deprecate model → attempt publish service → expect 400/422/409
+        Expected: 400/422/409 with error details
+        "
+"passed","Mon Mar 09 11:05:36 IST 2026","Mon Mar 09 11:05:36 IST 2026","251","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[audio-lang-detection-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"broken","Mon Mar 09 11:05:34 IST 2026","Mon Mar 09 11:05:34 IST 2026","0","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[llm-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"broken","Mon Mar 09 11:05:08 IST 2026","Mon Mar 09 11:05:08 IST 2026","0","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_missing_model_version[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service without mandatory modelVersion field
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:48 IST 2026","Mon Mar 09 11:05:48 IST 2026","0","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_invalid_version_status[deprecated-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Update model with invalid versionStatus
+        Flow: Create model → patch with invalid versionStatus → expect 400/422
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:06 IST 2026","Mon Mar 09 11:05:06 IST 2026","0","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[audio-lang-detection-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"passed","Mon Mar 09 11:05:03 IST 2026","Mon Mar 09 11:05:04 IST 2026","1113","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[transliteration-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"broken","Mon Mar 09 11:05:08 IST 2026","Mon Mar 09 11:05:08 IST 2026","0","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_multiple_services_same_model[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create multiple services for the same modelId + version
+        Flow: Create model → create service 1 → create service 2 → assert both succeed
+        Expected: Both services created successfully
+        "
+"passed","Mon Mar 09 11:05:59 IST 2026","Mon Mar 09 11:06:01 IST 2026","1831","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Update service hardware description — admin_client_with_valid_api_key","
+        ADMIN & MODERATOR: Update hardwareDescription of a service
+        Flow: Create model → create service → fetch serviceId → patch → verify
+        Expected: 200 with success message and updated hardwareDescription
+        "
+"failed","Mon Mar 09 11:06:01 IST 2026","Mon Mar 09 11:06:04 IST 2026","2407","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Cannot publish service with deprecated model — admin_client_with_valid_api_key","
+        BUSINESS RULE: Cannot publish a service when its associated model is deprecated
+        Flow: Create model → create service → deprecate model → attempt publish service → expect 400/422/409
+        Expected: 400/422/409 with error details
+        "
+"broken","Mon Mar 09 11:06:03 IST 2026","Mon Mar 09 11:06:03 IST 2026","0","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Publish and unpublish service — moderator_client_with_valid_api_key","
+        ADMIN & MODERATOR: Publish then unpublish a service
+        Flow: Create model → create service → publish → verify → unpublish → verify → cleanup
+        Expected: 200 with correct isPublished state after each update
+        "
+"broken","Mon Mar 09 11:05:00 IST 2026","Mon Mar 09 11:05:00 IST 2026","1","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[llm-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"passed","Mon Mar 09 11:05:10 IST 2026","Mon Mar 09 11:05:10 IST 2026","226","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_invalid_name[test.svc.dot-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service with invalid name (non alphanumeric/hyphen)
+        Expected: 400/422 with error details
+        "
+"passed","Mon Mar 09 11:05:36 IST 2026","Mon Mar 09 11:05:36 IST 2026","198","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[language-diarization-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"broken","Mon Mar 09 11:04:56 IST 2026","Mon Mar 09 11:04:56 IST 2026","157","tests.test_model_management","test_model_management_create_model","TestModelManagementCreateModel","","","test_create_model_unauthorized_roles[guest_client_with_valid_api_key]","
+        USER & GUEST: Attempt to create a model (should be denied)
+        Expected: 401 Unauthorized or 403 Forbidden
+        "
+"passed","Mon Mar 09 11:05:57 IST 2026","Mon Mar 09 11:05:59 IST 2026","1653","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Update service description — admin_client_with_valid_api_key","
+        ADMIN & MODERATOR: Update serviceDescription of a service
+        Flow: Create model → create service → fetch serviceId → patch → verify
+        Expected: 200 with success message and updated serviceDescription
+        "
+"broken","Mon Mar 09 11:05:31 IST 2026","Mon Mar 09 11:05:31 IST 2026","0","tests.test_model_management","test_model_management_get_models","TestModelManagementGetModels","","","test_get_model_by_id_invalid_version[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Get a model by valid model_id + invalid version
+        Expected: 404 Not Found
+        "
+"broken","Mon Mar 09 11:05:35 IST 2026","Mon Mar 09 11:05:35 IST 2026","0","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[ocr-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"passed","Mon Mar 09 11:05:04 IST 2026","Mon Mar 09 11:05:05 IST 2026","994","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[language-diarization-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"passed","Mon Mar 09 11:06:01 IST 2026","Mon Mar 09 11:06:03 IST 2026","2440","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Publish and unpublish service — admin_client_with_valid_api_key","
+        ADMIN & MODERATOR: Publish then unpublish a service
+        Flow: Create model → create service → publish → verify → unpublish → verify → cleanup
+        Expected: 200 with correct isPublished state after each update
+        "
+"passed","Mon Mar 09 11:05:32 IST 2026","Mon Mar 09 11:05:32 IST 2026","169","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_filter_by_task_type[nmt-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Test listing models filtered by task_type (asr, nmt, tts)
+        Expected: 200 OK with filtered list
+        "
+"passed","Mon Mar 09 11:05:17 IST 2026","Mon Mar 09 11:05:18 IST 2026","797","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[ner-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "
+"broken","Mon Mar 09 11:05:28 IST 2026","Mon Mar 09 11:05:28 IST 2026","0","tests.test_model_management","test_model_management_delete_services","TestModelManagementDeleteServices","","","test_delete_service_unauthorized_roles[guest_client_with_valid_api_key]","
+        USER & GUEST: Attempt to delete a service (should be denied)
+        Expected: 401 Unauthorized or 403 Forbidden
+        "
+"passed","Mon Mar 09 11:05:00 IST 2026","Mon Mar 09 11:05:01 IST 2026","1068","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[ocr-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"broken","Mon Mar 09 11:05:34 IST 2026","Mon Mar 09 11:05:34 IST 2026","0","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_filter_by_model_name[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Test listing models filtered by model_name
+        Expected: 200 OK with filtered list
+        "
+"passed","Mon Mar 09 11:05:22 IST 2026","Mon Mar 09 11:05:23 IST 2026","895","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_already_deleted[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Delete the same model twice
+        First call: 200 - deleted successfully
+        Second call: 404 - model no longer exists
+        "
+"broken","Mon Mar 09 11:05:15 IST 2026","Mon Mar 09 11:05:15 IST 2026","0","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[nmt-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "
+"passed","Mon Mar 09 11:05:49 IST 2026","Mon Mar 09 11:05:50 IST 2026","992","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_name_not_allowed[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Attempt to update model name (should be rejected)
+        Model name is immutable after creation
+        Flow: Create model → patch with different name → expect 400/422
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:09 IST 2026","Mon Mar 09 11:05:09 IST 2026","0","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_invalid_name[test_svc_underscore-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service with invalid name (non alphanumeric/hyphen)
+        Expected: 400/422 with error details
+        "
+"passed","Mon Mar 09 11:05:09 IST 2026","Mon Mar 09 11:05:09 IST 2026","202","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_missing_endpoint[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service without mandatory endpoint field
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:12 IST 2026","Mon Mar 09 11:05:12 IST 2026","0","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_unauthorized_roles[guest_client_with_valid_api_key]","
+        USER & GUEST: Attempt to create a service (should be denied)
+        Expected: 401 Unauthorized or 403 Forbidden
+        "
+"broken","Mon Mar 09 11:05:13 IST 2026","Mon Mar 09 11:05:13 IST 2026","0","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_with_deprecated_model[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Attempt to create a service with a deprecated model
+        Business Rule: Services cannot be created for inactive/deprecated models
+        Flow: Create model → deprecate → attempt service creation → expect 400/422
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:38 IST 2026","Mon Mar 09 11:05:38 IST 2026","0","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_unauthorized_roles[guest_client_with_valid_api_key]","
+        USER & GUEST: List services (should be denied)
+        Expected: 401 Unauthorized or 403 Forbidden
+        "
+"broken","Mon Mar 09 11:05:12 IST 2026","Mon Mar 09 11:05:12 IST 2026","1","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_is_unpublished[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Verify created service is in unpublished state
+        Flow: Create model → create service → fetch service → verify isPublished = False
+        Expected: 200 with isPublished = False
+        "
+"passed","Mon Mar 09 11:05:14 IST 2026","Mon Mar 09 11:05:15 IST 2026","643","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[nmt-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "
+"passed","Mon Mar 09 11:05:27 IST 2026","Mon Mar 09 11:05:28 IST 2026","460","tests.test_model_management","test_model_management_delete_services","TestModelManagementDeleteServices","","","test_delete_service_unauthorized_roles[user_client_with_valid_api_key]","
+        USER & GUEST: Attempt to delete a service (should be denied)
+        Expected: 401 Unauthorized or 403 Forbidden
+        "
+"broken","Mon Mar 09 11:04:50 IST 2026","Mon Mar 09 11:04:50 IST 2026","1","tests.test_model_management","test_model_management_create_model","TestModelManagementCreateModel","","","test_create_model_with_valid_payload[nmt-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a model with a valid payload
+        Expected: 200/201 with success message string
+        "
+"broken","Mon Mar 09 11:05:33 IST 2026","Mon Mar 09 11:05:33 IST 2026","0","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_filter_by_deprecated_status[True-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Test listing models filtered by include_deprecated (True, False)
+        Expected: 200 OK with filtered list based on versionStatus
+        "
+"passed","Mon Mar 09 11:05:04 IST 2026","Mon Mar 09 11:05:02 IST 2026","-1358","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[language-detection-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"broken","Mon Mar 09 11:05:21 IST 2026","Mon Mar 09 11:05:21 IST 2026","0","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[language-diarization-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "
+"broken","Mon Mar 09 11:05:41 IST 2026","Mon Mar 09 11:05:41 IST 2026","0","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_status_to_deprecated[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Update model versionStatus to DEPRECATED
+        Flow: Create model → fetch modelId + uuid → patch to DEPRECATED → verify
+        Expected: 200 with updated model data
+        "
+"passed","Mon Mar 09 11:05:31 IST 2026","Mon Mar 09 11:05:31 IST 2026","408","tests.test_model_management","test_model_management_get_models","TestModelManagementGetModels","","","test_get_model_by_id_invalid_version[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Get a model by valid model_id + invalid version
+        Expected: 404 Not Found
+        "
+"failed","Mon Mar 09 11:05:31 IST 2026","Mon Mar 09 11:05:31 IST 2026","181","tests.test_model_management","test_model_management_get_models","TestModelManagementGetModels","","","test_get_model_by_id_unauthorized_roles[user_client_with_valid_api_key]","
+        USER & GUEST: Get a model by model_id (should be denied)
+        Expected: 401 Unauthorized or 403 Forbidden
+        "
+"passed","Mon Mar 09 11:05:02 IST 2026","Mon Mar 09 11:05:03 IST 2026","1018","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[ner-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"passed","Mon Mar 09 11:05:25 IST 2026","Mon Mar 09 11:05:27 IST 2026","1526","tests.test_model_management","test_model_management_delete_services","TestModelManagementDeleteServices","","","test_delete_service_already_deleted[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Delete the same service twice
+        First call: 200 - deleted successfully
+        Second call: 404 - service no longer exists
+        "
+"broken","Mon Mar 09 11:05:34 IST 2026","Mon Mar 09 11:05:34 IST 2026","0","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[nmt-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"broken","Mon Mar 09 11:05:34 IST 2026","Mon Mar 09 11:05:34 IST 2026","0","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[asr-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"broken","Mon Mar 09 11:05:08 IST 2026","Mon Mar 09 11:05:08 IST 2026","0","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_missing_model_id[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service without mandatory modelId field
+        Expected: 400/422 with error details
+        "
+"passed","Mon Mar 09 11:05:39 IST 2026","Mon Mar 09 11:05:41 IST 2026","1336","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_status_to_deprecated[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Update model versionStatus to DEPRECATED
+        Flow: Create model → fetch modelId + uuid → patch to DEPRECATED → verify
+        Expected: 200 with updated model data
+        "
+"passed","Mon Mar 09 11:05:32 IST 2026","Mon Mar 09 11:05:32 IST 2026","206","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_all_models_without_filters[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Test listing all models without any filters
+        Expected: 200 OK with list of models
+        "
+"broken","Mon Mar 09 11:05:09 IST 2026","Mon Mar 09 11:05:09 IST 2026","0","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_missing_endpoint[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service without mandatory endpoint field
+        Expected: 400/422 with error details
+        "
+"passed","Mon Mar 09 11:05:28 IST 2026","Mon Mar 09 11:05:29 IST 2026","301","tests.test_model_management","test_model_management_get_models","TestModelManagementGetModels","","","test_get_model_by_id[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Get a model by valid model_id
+        Expected: 200 with model data matching what was created
+        "
+"passed","Mon Mar 09 11:04:58 IST 2026","Mon Mar 09 11:04:59 IST 2026","1117","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[tts-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"broken","Mon Mar 09 11:05:37 IST 2026","Mon Mar 09 11:05:37 IST 2026","0","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_invalid_task_type[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services with invalid task_type
+        Expected: 400/422 or 200 with empty list
+        "
+"passed","Mon Mar 09 11:05:15 IST 2026","Mon Mar 09 11:05:16 IST 2026","693","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[tts-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "
+"broken","Mon Mar 09 11:05:36 IST 2026","Mon Mar 09 11:05:36 IST 2026","0","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[speaker-diarization-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"broken","Mon Mar 09 11:04:51 IST 2026","Mon Mar 09 11:04:51 IST 2026","0","tests.test_model_management","test_model_management_create_model","TestModelManagementCreateModel","","","test_create_model_missing_name[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a model without the mandatory 'name' field
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:39 IST 2026","Mon Mar 09 11:05:39 IST 2026","0","tests.test_model_management","test_model_management_list_services_byserviceid","TestModelManagementGetServiceByServiceId","","","test_get_service_by_service_id_unauthorized_roles[guest_client_with_valid_api_key]","
+        USER & GUEST: Get service by service_id (should be denied)
+        Expected: 401 Unauthorized or 403 Forbidden
+        "
+"broken","Mon Mar 09 11:05:35 IST 2026","Mon Mar 09 11:05:35 IST 2026","0","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[ner-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"passed","Mon Mar 09 11:05:42 IST 2026","Mon Mar 09 11:05:43 IST 2026","778","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_invalid_license[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Update model with invalid license
+        Flow: Create model → patch with invalid license → expect 400/422
+        Expected: 400/422 with error details
+        "
+"passed","Mon Mar 09 11:05:34 IST 2026","Mon Mar 09 11:05:32 IST 2026","-1998","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_filter_by_created_by[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Test listing models filtered by created_by
+        Expected: 200 OK with filtered list
+        "
+"broken","Mon Mar 09 11:05:23 IST 2026","Mon Mar 09 11:05:23 IST 2026","0","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_invalid_uuid[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Delete a model with invalid/non-existent uuid
+        Expected: 404 Not Found
+        "
+"broken","Mon Mar 09 11:04:58 IST 2026","Mon Mar 09 11:04:58 IST 2026","0","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[nmt-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"passed","Mon Mar 09 11:05:38 IST 2026","Mon Mar 09 11:05:38 IST 2026","484","tests.test_model_management","test_model_management_list_services_byserviceid","TestModelManagementGetServiceByServiceId","","","test_get_service_by_valid_service_id[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Get service by valid service_id
+        Dynamic — fetches real service_id from list endpoint first
+        Expected: 200 with service data
+        "
+"broken","Mon Mar 09 11:04:51 IST 2026","Mon Mar 09 11:04:51 IST 2026","0","tests.test_model_management","test_model_management_create_model","TestModelManagementCreateModel","","","test_create_model_missing_version[moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a model without the mandatory 'version' field
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:05 IST 2026","Mon Mar 09 11:05:05 IST 2026","0","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[language-diarization-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"passed","Mon Mar 09 11:05:39 IST 2026","Mon Mar 09 11:05:39 IST 2026","244","tests.test_model_management","test_model_management_list_services_byserviceid","TestModelManagementGetServiceByServiceId","","","test_get_service_by_invalid_service_id[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Get service by invalid/non-existent service_id
+        Expected: 404 Not Found
+        "
+"passed","Mon Mar 09 11:05:33 IST 2026","Mon Mar 09 11:05:33 IST 2026","237","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_filter_by_deprecated_status[False-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Test listing models filtered by include_deprecated (True, False)
+        Expected: 200 OK with filtered list based on versionStatus
+        "
+"broken","Mon Mar 09 11:05:49 IST 2026","Mon Mar 09 11:05:49 IST 2026","0","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_invalid_version_status[PENDING-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Update model with invalid versionStatus
+        Flow: Create model → patch with invalid versionStatus → expect 400/422
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:20 IST 2026","Mon Mar 09 11:05:20 IST 2026","0","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[language-detection-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "
+"broken","Mon Mar 09 11:05:37 IST 2026","Mon Mar 09 11:05:37 IST 2026","0","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_is_published[False-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by is_published (True / False)
+        Expected: 200 with filtered list where all services match is_published status
+        "
+"passed","Mon Mar 09 11:05:37 IST 2026","Mon Mar 09 11:05:38 IST 2026","474","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_created_by[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by created_by
+        Dynamic — fetches real created_by value from first service in list
+        Expected: 200 with filtered list where all services match created_by
+        "
+"passed","Mon Mar 09 11:04:51 IST 2026","Mon Mar 09 11:04:51 IST 2026","256","tests.test_model_management","test_model_management_create_model","TestModelManagementCreateModel","","","test_create_model_missing_version[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a model without the mandatory 'version' field
+        Expected: 400/422 with error details
+        "
+"passed","Mon Mar 09 11:05:20 IST 2026","Mon Mar 09 11:05:20 IST 2026","679","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[speaker-diarization-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "
+"passed","Mon Mar 09 11:05:21 IST 2026","Mon Mar 09 11:05:22 IST 2026","671","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[audio-lang-detection-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "
+"passed","Mon Mar 09 11:05:43 IST 2026","Mon Mar 09 11:05:44 IST 2026","801","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_invalid_task_type[invalid_task-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Update model with invalid task type
+        Flow: Create model → patch with invalid task type → expect 400/422
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:06:04 IST 2026","Mon Mar 09 11:06:04 IST 2026","0","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Update service with invalid serviceId — moderator_client_with_valid_api_key","
+        ADMIN & MODERATOR: Update a service with invalid/non-existent serviceId
+        Expected: 404 Not Found
+        "
+"failed","Mon Mar 09 11:05:44 IST 2026","Mon Mar 09 11:05:45 IST 2026","1050","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_invalid_task_type[ASR-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Update model with invalid task type
+        Flow: Create model → patch with invalid task type → expect 400/422
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:31 IST 2026","Mon Mar 09 11:05:31 IST 2026","0","tests.test_model_management","test_model_management_get_models","TestModelManagementGetModels","","","test_get_model_by_id_unauthorized_roles[guest_client_with_valid_api_key]","
+        USER & GUEST: Get a model by model_id (should be denied)
+        Expected: 401 Unauthorized or 403 Forbidden
+        "
+"passed","Mon Mar 09 11:05:35 IST 2026","Mon Mar 09 11:05:35 IST 2026","159","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[ner-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"passed","Mon Mar 09 11:05:34 IST 2026","Mon Mar 09 11:05:35 IST 2026","235","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[ocr-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"broken","Mon Mar 09 11:04:59 IST 2026","Mon Mar 09 11:04:59 IST 2026","0","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[tts-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"passed","Mon Mar 09 11:05:18 IST 2026","Mon Mar 09 11:05:19 IST 2026","694","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[transliteration-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "
+"passed","Mon Mar 09 11:05:53 IST 2026","Mon Mar 09 11:05:55 IST 2026","1633","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_can_deprecate_model_with_unpublished_services[admin_client_with_valid_api_key]","
+        BUSINESS RULE: Can deprecate a model when all associated services are unpublished
+        Flow: Create model → create service → ensure unpublished → deprecate model → expect 200
+        Expected: 200 with success message and versionStatus = DEPRECATED
+        "
+"passed","Mon Mar 09 11:05:50 IST 2026","Mon Mar 09 11:05:50 IST 2026","246","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_non_existent_model[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Update a model that does not exist
+        Expected: 404 Not Found
+        "
+"broken","Mon Mar 09 11:05:32 IST 2026","Mon Mar 09 11:05:32 IST 2026","1","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_filter_by_task_type[asr-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Test listing models filtered by task_type (asr, nmt, tts)
+        Expected: 200 OK with filtered list
+        "
+"passed","Mon Mar 09 11:04:49 IST 2026","Mon Mar 09 11:04:50 IST 2026","372","tests.test_model_management","test_model_management_create_model","TestModelManagementCreateModel","","","test_create_model_with_valid_payload[nmt-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a model with a valid payload
+        Expected: 200/201 with success message string
+        "
+"broken","Mon Mar 09 11:05:19 IST 2026","Mon Mar 09 11:05:19 IST 2026","0","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[transliteration-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "
+"broken","Mon Mar 09 11:05:01 IST 2026","Mon Mar 09 11:05:01 IST 2026","0","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[ocr-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"failed","Mon Mar 09 11:05:32 IST 2026","Mon Mar 09 11:05:32 IST 2026","262","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_unauthorized_roles[user_client_with_valid_api_key]","
+        USER & GUEST: Test access to list models endpoint
+        Expected: 403 Forbidden or 401 Unauthorized
+        "
+"broken","Mon Mar 09 11:05:24 IST 2026","Mon Mar 09 11:05:24 IST 2026","0","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_unauthorized_roles[guest_client_with_valid_api_key]","
+        USER & GUEST: Attempt to delete a model (should be denied)
+        Expected: 401 Unauthorized or 403 Forbidden
+        "
+"failed","Mon Mar 09 11:05:33 IST 2026","Mon Mar 09 11:05:33 IST 2026","156","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_invalid_task_type[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Test listing models with INVALID task_type
+        Expected: 400/422 error OR 200 with empty list
+        "
+"passed","Mon Mar 09 11:05:33 IST 2026","Mon Mar 09 11:05:33 IST 2026","241","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_filter_by_deprecated_status[True-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Test listing models filtered by include_deprecated (True, False)
+        Expected: 200 OK with filtered list based on versionStatus
+        "
+"passed","Mon Mar 09 11:05:56 IST 2026","Mon Mar 09 11:05:57 IST 2026","1128","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_model_version_status_valid_values[DEPRECATED-admin_client_with_valid_api_key]","
+        BUSINESS CASE: versionStatus can only be ACTIVE or DEPRECATED
+        Flow: Create model → patch to each valid status → verify accepted
+        Expected: 200 for both ACTIVE and DEPRECATED
+        "
+"failed","Mon Mar 09 11:05:12 IST 2026","Mon Mar 09 11:05:13 IST 2026","1335","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_with_deprecated_model[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Attempt to create a service with a deprecated model
+        Business Rule: Services cannot be created for inactive/deprecated models
+        Flow: Create model → deprecate → attempt service creation → expect 400/422
+        Expected: 400/422 with error details
+        "
+"passed","Mon Mar 09 11:05:24 IST 2026","Mon Mar 09 11:05:24 IST 2026","167","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_unauthorized_roles[user_client_with_valid_api_key]","
+        USER & GUEST: Attempt to delete a model (should be denied)
+        Expected: 401 Unauthorized or 403 Forbidden
+        "
+"passed","Mon Mar 09 11:05:08 IST 2026","Mon Mar 09 11:05:08 IST 2026","159","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_missing_model_id[admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service without mandatory modelId field
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:05:57 IST 2026","Mon Mar 09 11:05:57 IST 2026","0","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_model_version_status_valid_values[DEPRECATED-moderator_client_with_valid_api_key]","
+        BUSINESS CASE: versionStatus can only be ACTIVE or DEPRECATED
+        Flow: Create model → patch to each valid status → verify accepted
+        Expected: 200 for both ACTIVE and DEPRECATED
+        "
+"broken","Mon Mar 09 11:05:33 IST 2026","Mon Mar 09 11:05:33 IST 2026","1","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_with_filters_unauthorized_roles[nmt-guest_client_with_valid_api_key]","
+        USER & GUEST: Test access with filters (should still be denied)
+        Expected: 403 Forbidden or 401 Unauthorized
+        "
+"broken","Mon Mar 09 11:05:33 IST 2026","Mon Mar 09 11:05:33 IST 2026","1","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_filter_by_task_type[tts-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Test listing models filtered by task_type (asr, nmt, tts)
+        Expected: 200 OK with filtered list
+        "
+"passed","Mon Mar 09 11:05:12 IST 2026","Mon Mar 09 11:05:12 IST 2026","218","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_unauthorized_roles[user_client_with_valid_api_key]","
+        USER & GUEST: Attempt to create a service (should be denied)
+        Expected: 401 Unauthorized or 403 Forbidden
+        "
+"passed","Mon Mar 09 11:05:35 IST 2026","Mon Mar 09 11:05:35 IST 2026","165","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[language-detection-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"passed","Mon Mar 09 11:05:03 IST 2026","Mon Mar 09 11:05:04 IST 2026","1103","tests.test_model_management","test_model_management_create_services","TestModelManagementCreateServices","","","test_create_service_for_all_task_types[speaker-diarization-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create a service for each task type
+        Flow: Create model → fetch modelId → create service → assert → cleanup
+        Expected: 200/201 with success message
+        "
+"broken","Mon Mar 09 11:05:36 IST 2026","Mon Mar 09 11:05:36 IST 2026","0","tests.test_model_management","test_model_management_list_services","TestModelManagementListServices","","","test_list_services_filter_by_task_type[language-diarization-moderator_client_with_valid_api_key]","
+        ADMIN & MODERATOR: List services filtered by task_type
+        Expected: 200 with filtered list where all services match task_type
+        "
+"failed","Mon Mar 09 11:05:32 IST 2026","Mon Mar 09 11:05:33 IST 2026","214","tests.test_model_management","test_model_management_list_model","TestModelManagementListModels","","","test_list_models_with_filters_unauthorized_roles[asr-user_client_with_valid_api_key]","
+        USER & GUEST: Test access with filters (should still be denied)
+        Expected: 403 Forbidden or 401 Unauthorized
+        "
+"passed","Mon Mar 09 11:05:46 IST 2026","Mon Mar 09 11:05:47 IST 2026","887","tests.test_model_management","test_model_management_update_model","TestModelManagementUpdateModel","","","test_update_model_invalid_version_status[INACTIVE-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Update model with invalid versionStatus
+        Flow: Create model → patch with invalid versionStatus → expect 400/422
+        Expected: 400/422 with error details
+        "
+"broken","Mon Mar 09 11:06:01 IST 2026","Mon Mar 09 11:06:01 IST 2026","0","tests.test_model_management","test_model_management_update_services","TestModelManagementUpdateServices","","","Update service hardware description — moderator_client_with_valid_api_key","
+        ADMIN & MODERATOR: Update hardwareDescription of a service
+        Flow: Create model → create service → fetch serviceId → patch → verify
+        Expected: 200 with success message and updated hardwareDescription
+        "
+"passed","Mon Mar 09 11:05:19 IST 2026","Mon Mar 09 11:05:20 IST 2026","670","tests.test_model_management","test_model_management_delete_model","TestModelManagementDeleteModel","","","test_delete_model_with_valid_uuid[language-detection-admin_client_with_valid_api_key]","
+        ADMIN & MODERATOR: Create and delete a model for each task type
+        Expected: 200 with success message
+        "

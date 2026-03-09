@@ -1,0 +1,16 @@
+
+✅ [ADMIN] Model created: Test-Model-admin-1771865548
+🔍 [ADMIN] modelId: 2dab498391abe1b90391246f4611e6ab | version: 1.0.0
+✅ [ADMIN] Service created (unpublished): test-svc-dep-pub-admin-1771865548
+🔍 [ADMIN] serviceId: 48994dfcf011a20dd9c0f9292c0c4e57
+✅ [ADMIN] Model deprecated successfully
+
+============================================================
+🔍 Business Rule: Cannot Publish Service with Deprecated Model - ADMIN
+🔍 Endpoint: PATCH /api/v1/model-management/services
+🔍 serviceId: 48994dfcf011a20dd9c0f9292c0c4e57 | model versionStatus: DEPRECATED
+============================================================
+📊 Status Code: 200
+📦 Response: "Service '48994dfcf011a20dd9c0f9292c0c4e57' updated successfully."
+🧹 [ADMIN] Cleanup: Service unpublished
+🧹 [ADMIN] Cleanup: Model 'Test-Model-admin-1771865548' deleted

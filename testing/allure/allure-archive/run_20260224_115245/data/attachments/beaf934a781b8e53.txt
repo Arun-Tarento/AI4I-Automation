@@ -1,0 +1,3 @@
+2026-02-24 11:52:32.284 | INFO     | utils.auth:_login:31 - 🔍 Login URL: https://dev.ai4inclusion.org/api/v1/auth/login
+2026-02-24 11:52:32.284 | INFO     | utils.auth:_login:32 - 🔍 Password: ************
+2026-02-24 11:52:35.986 | INFO     | utils.auth:_login:40 - ✓ Login successful. Token expires in 900s

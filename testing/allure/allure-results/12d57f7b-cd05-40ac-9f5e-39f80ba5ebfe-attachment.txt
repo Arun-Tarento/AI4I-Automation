@@ -1,0 +1,15 @@
+
+✅ [ADMIN] Model created: Test-Model-speaker-diarization-admin-1773034503 | task_type: speaker-diarization
+🔍 [ADMIN] modelId: 1af0cce4865fe1f68cd6d5f251543d6a | version: 1.0.0
+
+============================================================
+🔍 Test: Create Service - ADMIN | task_type: speaker-diarization
+🔍 Endpoint: POST /api/v1/model-management/services
+🔍 service_name: test-svc-speaker-diarization-admin-1773034503
+============================================================
+📊 Status Code: 200
+📦 Response: "Service 'test-svc-speaker-diarization-admin-1773034503' (ID: 7cadc576b6862a5b7cdbfad92d5ece1f) created successfully."
+✅ [ADMIN] Service 'test-svc-speaker-diarization-admin-1773034503' created successfully
+============================================================
+
+🧹 [ADMIN] Cleanup: Model 'Test-Model-speaker-diarization-admin-1773034503' deleted

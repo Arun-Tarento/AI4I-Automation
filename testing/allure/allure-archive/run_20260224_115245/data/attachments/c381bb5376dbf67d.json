@@ -1,0 +1,10 @@
+Status: 401
+
+{
+  "detail": {
+    "message": "API key not found",
+    "code": "AUTHENTICATION_ERROR",
+    "timestamp": 1771914156.149583,
+    "details": null
+  }
+}

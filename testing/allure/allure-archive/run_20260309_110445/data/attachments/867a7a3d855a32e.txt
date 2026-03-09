@@ -1,0 +1,16 @@
+
+✅ [ADMIN] Model created: Test-Model-admin-1773034549
+
+============================================================
+🔍 Test: Update Model Name (Should be Rejected) - ADMIN
+🔍 Endpoint: PATCH /api/v1/model-management/models
+🔍 Original name: Test-Model-admin-1773034549
+🔍 Attempted new name: Updated-Model-Name-1773034549
+============================================================
+📊 Status Code: 400
+📦 Response: {"detail":{"message":"Model name cannot be updated. Model ID is derived from name and version. Create a new model version with the new name instead.","code":"HTTP_ERROR","timestamp":1773034548.8118706}}
+✅ [ADMIN] API correctly rejected model name update
+✅ [ADMIN] Original name 'Test-Model-admin-1773034549' remains unchanged
+============================================================
+
+🧹 [ADMIN] Cleanup: Model 'Test-Model-admin-1773034549' deleted

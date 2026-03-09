@@ -1,0 +1,9 @@
+
+============================================================
+🔍 Test: List Models Filtered by model_name - ADMIN
+============================================================
+🔍 Testing with model_name: nmt
+📊 Status Code: 200
+📦 Total Models with model_name 'nmt': 1
+✅ ADMIN successfully filtered by model_name
+🔍 Sample Model Keys: ['modelId', 'uuid', 'name', 'version', 'versionStatus', 'versionStatusUpdatedAt', 'description', 'languages', 'domain', 'submitter', 'license', 'inferenceEndPoint', 'source', 'task', 'createdBy', 'updatedBy']

@@ -1,0 +1,8 @@
+PATCH https://sandbox.ai4inclusion.org/api/v1/model-management/services
+
+{
+  "serviceId": "placeholder-service-id",
+  "serviceDescription": "This should not update",
+  "hardwareDescription": "This should not update",
+  "isPublished": false
+}

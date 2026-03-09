@@ -1,0 +1,13 @@
+
+✅ [ADMIN] Model created: Test-Model-llm-admin-1773034516 | task_type: llm
+🔍 [ADMIN] uuid: dfa7f8c2-293d-454c-b045-e4f2eef59680
+
+============================================================
+🔍 Test: Delete Model - ADMIN | task_type: llm
+🔍 Endpoint: DELETE /api/v1/model-management/models/dfa7f8c2-293d-454c-b045-e4f2eef59680
+============================================================
+📊 Status Code: 200
+📦 Response: "Model 'dfa7f8c2-293d-454c-b045-e4f2eef59680' deleted successfully."
+✅ [ADMIN] Model 'Test-Model-llm-admin-1773034516' with task_type 'llm' deleted successfully
+============================================================
+

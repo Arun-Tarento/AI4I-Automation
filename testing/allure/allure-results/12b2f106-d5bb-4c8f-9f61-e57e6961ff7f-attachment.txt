@@ -1,0 +1,11 @@
+
+============================================================
+🔍 Test: List Services Filter by is_published - ADMIN
+🔍 Endpoint: GET /api/v1/model-management/services
+🔍 Filter: is_published = True
+============================================================
+📊 Status Code: 200
+📦 Total Services with is_published=True: 14
+✅ [ADMIN] Successfully filtered services by is_published=True
+============================================================
+

@@ -1,0 +1,10 @@
+
+============================================================
+🔍 Test: Create Service - USER (Should be DENIED)
+🔍 Endpoint: POST /api/v1/model-management/services
+============================================================
+📊 Status Code: 403
+📦 Response: {"detail":{"message":"Only ADMIN or MODERATOR roles can perform this operation.","code":"HTTP_ERROR","timestamp":1773034511.6070848,"details":"PERMISSION_DENIED"}}
+✅ [USER] Correctly denied access (Status: 403)
+============================================================
+

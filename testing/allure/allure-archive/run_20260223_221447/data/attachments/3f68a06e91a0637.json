@@ -1,0 +1,83 @@
+POST https://sandbox.ai4inclusion.org/api/v1/model-management/models
+
+{
+  "modelId": "Example/Example-1",
+  "version": "1.0.0",
+  "name": "Test-Model-admin-1771865083",
+  "description": "A sample model for demonstration purposes",
+  "refUrl": "https://github.com/example/example-model",
+  "task": {
+    "type": "asr"
+  },
+  "languages": [
+    {
+      "sourceLanguage": "hi",
+      "sourceScriptCode": "Deva",
+      "targetLanguage": "hi",
+      "targetScriptCode": "Deva"
+    }
+  ],
+  "license": "mit",
+  "domain": [
+    "general"
+  ],
+  "inferenceEndPoint": {
+    "schema": {
+      "modelProcessingType": {
+        "type": "batch"
+      },
+      "request": {
+        "input": [
+          {
+            "audio": "base64_encoded_audio_string"
+          }
+        ],
+        "config": {
+          "language": {
+            "sourceLanguage": "hi"
+          }
+        }
+      },
+      "response": {
+        "output": [
+          {
+            "transcript": "string"
+          }
+        ]
+      }
+    }
+  },
+  "benchmarks": [
+    {
+      "benchmarkId": "example-benchmark-001",
+      "name": "Example Benchmark",
+      "description": "Sample benchmark for evaluation",
+      "domain": "general",
+      "createdOn": "2025-01-15T10:00:00.000Z",
+      "languages": {
+        "sourceLanguage": "hi",
+        "targetLanguage": "hi"
+      },
+      "score": [
+        {
+          "metricName": "WER",
+          "score": "7.5"
+        }
+      ]
+    }
+  ],
+  "submitter": {
+    "name": "Example Organization",
+    "aboutMe": "An example organization",
+    "team": [
+      {
+        "name": "John Doe",
+        "aboutMe": "Lead Researcher",
+        "oauthId": {
+          "oauthId": "1234567890",
+          "provider": "google"
+        }
+      }
+    ]
+  }
+}

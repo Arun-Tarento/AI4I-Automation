@@ -1,0 +1,11 @@
+
+============================================================
+🔍 Test: List All Services Without Filters - ADMIN
+🔍 Endpoint: GET /api/v1/model-management/services
+============================================================
+📊 Status Code: 200
+📦 Total Services: 29
+✅ [ADMIN] Successfully listed all services
+🔍 Sample Service Keys: ['serviceId', 'uuid', 'name', 'serviceDescription', 'hardwareDescription', 'publishedOn', 'modelId', 'endpoint', 'api_key', 'healthStatus', 'benchmarks', 'policy', 'isPublished', 'publishedAt', 'unpublishedAt', 'createdBy', 'updatedBy', 'task', 'languages', 'modelVersion', 'versionStatus']
+============================================================
+

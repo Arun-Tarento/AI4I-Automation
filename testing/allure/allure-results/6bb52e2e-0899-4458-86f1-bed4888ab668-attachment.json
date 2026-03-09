@@ -1,0 +1,33 @@
+Status: 200
+
+[
+  {
+    "serviceId": "939cc23f840a0b8251ded1880c74703c",
+    "uuid": "8f3d08f0-2a78-459c-88a3-5f5e55b323f8",
+    "name": "speaker-diarize-prod",
+    "serviceDescription": "Production Speaker Diarization service. UPDATE ENDPOINT to your actual service URL.",
+    "hardwareDescription": "GPU: NVIDIA T4, RAM: 16GB",
+    "publishedOn": 1772089081411,
+    "modelId": "cc813f7998d2669356119302570b0fa9",
+    "endpoint": "http://65.1.35.3:8700",
+    "api_key": null,
+    "healthStatus": null,
+    "benchmarks": null,
+    "policy": null,
+    "isPublished": false,
+    "publishedAt": "2026-02-26T07:06:41",
+    "unpublishedAt": "2026-02-26T18:10:36",
+    "createdBy": null,
+    "updatedBy": "1",
+    "task": {
+      "type": "speaker-diarization"
+    },
+    "languages": [
+      {
+        "sourceLanguage": "*"
+      }
+    ],
+    "modelVersion": "1.0.0",
+    "versionStatus": "ACTIVE"
+  }
+]

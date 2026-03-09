@@ -1,0 +1,18 @@
+
+✅ [ADMIN] Model created: Test-Model-admin-1773034525
+✅ [ADMIN] Service created: test-svc-del-twice-admin-1773034525
+🔍 [ADMIN] service uuid: 0dc00f9f-baaa-4e12-bdf1-b0e99b555e90
+
+============================================================
+🔍 Test: Delete Already Deleted Service - ADMIN
+🔍 Endpoint: DELETE /api/v1/model-management/services/0dc00f9f-baaa-4e12-bdf1-b0e99b555e90
+============================================================
+📊 First Call Status Code: 200
+📦 First Call Response: "Service '0dc00f9f-baaa-4e12-bdf1-b0e99b555e90' deleted successfully."
+✅ [ADMIN] First call: Service deleted successfully
+📊 Second Call Status Code: 404
+📦 Second Call Response: {"detail":{"message":"Service with id '0dc00f9f-baaa-4e12-bdf1-b0e99b555e90' not found","code":"NotFound","timestamp":1773034525.3115253}}
+✅ [ADMIN] Second call correctly returned 404 for already deleted service
+============================================================
+
+🧹 [ADMIN] Cleanup: Model 'Test-Model-admin-1773034525' deleted

@@ -1,0 +1,6 @@
+
+============================================================
+🔍 Test: List Models with Filter - USER (Should be DENIED)
+🔍 Filter: task_type = nmt
+============================================================
+📊 Status Code: 200

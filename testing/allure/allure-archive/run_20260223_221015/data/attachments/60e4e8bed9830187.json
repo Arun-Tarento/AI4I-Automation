@@ -1,0 +1,9 @@
+Status: 404
+
+{
+  "detail": {
+    "message": "Service not found in database",
+    "code": "HTTP_ERROR",
+    "timestamp": 1771864829.975765
+  }
+}
