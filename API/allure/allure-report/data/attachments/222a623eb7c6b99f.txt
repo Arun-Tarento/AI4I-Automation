@@ -1,3 +1,0 @@
-{'detail': {'error': 'AUTHORIZATION_ERROR', 'message': 'Invalid API key'}}
-
-✅ USER Pipeline (ASR → Translation → TTS):

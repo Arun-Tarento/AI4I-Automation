@@ -1,3 +1,0 @@
-
-✅ USER OCR correctly blocked with no API key
-   Error: API key is required to access this service., API_KEY_MISSING

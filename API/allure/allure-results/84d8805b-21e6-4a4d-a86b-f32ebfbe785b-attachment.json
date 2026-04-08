@@ -1,8 +1,0 @@
-Status: 401
-
-{
-  "detail": {
-    "error": "AUTHORIZATION_ERROR",
-    "message": "API key does not belong to the authenticated user"
-  }
-}

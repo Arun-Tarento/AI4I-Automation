@@ -1,8 +1,0 @@
-
-============================================================
-🔍 Test: Update Service with Invalid serviceId - ADMIN
-🔍 Endpoint: PATCH /api/v1/model-management/services
-🔍 serviceId: invalid-service-id-000000
-============================================================
-📊 Status Code: 401
-📦 Response: {"detail":{"message":"API key not found","code":"AUTHENTICATION_ERROR","timestamp":1771914157.0903475,"details":null}}

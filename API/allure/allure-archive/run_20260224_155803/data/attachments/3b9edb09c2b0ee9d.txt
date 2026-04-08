@@ -1,2 +1,0 @@
-
-✅ USER Text Language Detection correctly blocked with no API key

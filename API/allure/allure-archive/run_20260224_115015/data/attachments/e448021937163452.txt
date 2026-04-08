@@ -1,3 +1,0 @@
-{'detail': 'Not Found'}
-
-✅ USER Pipeline (ASR → Translation → TTS):
