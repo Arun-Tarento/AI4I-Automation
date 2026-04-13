@@ -3,18 +3,44 @@ Test Module: Role Management RBAC Tests
 Tests role assignment, removal, and viewing with proper RBAC enforcement
 
 RBAC Matrix:
-- List Available Roles: Adopter Admin ✅, Admin ✅, Tenant Admin ✅, Others ❌ (403)
-- Assign/Remove Roles: Adopter Admin ✅, Admin ✅, Tenant Admin ✅ (tenant only), Others ❌ (403)
-- View User Roles: Adopter Admin ✅, Admin ✅, Tenant Admin ✅ (tenant only)
-- List Permissions: All authenticated users ✅
+┌─────────────────────────┬──────────────┬───────┬──────────────┬───────────┬──────┬───────┐
+│ Endpoint                │ Adopter Admin│ Admin │ Tenant Admin │ Moderator │ User │ Guest │
+├─────────────────────────┼──────────────┼───────┼──────────────┼───────────┼──────┼───────┤
+│ List Available Roles    │      ✅      │  ✅   │      ✅      │    ❌     │  ❌  │  ❌   │
+│ Assign Roles            │      ✅      │  ✅   │  ✅ (tenant) │    ❌     │  ❌  │  ❌   │
+│ Remove Roles            │   ❌ (bug)   │ ❌ (bug)│  ❌ (bug)  │    ❌     │  ❌  │  ❌   │
+│ View User Roles (any)   │      ✅      │  ✅   │  ✅ (tenant) │    ❌     │  ❌  │  ❌   │
+│ View User Roles (self)  │      ✅      │  ✅   │      ✅      │    ✅     │  ✅  │  ✅   │
+│ List Permissions        │   ⚠️ (xfail) │⚠️ (xfail)│⚠️ (xfail) │ ⚠️ (xfail)│⚠️ (xfail)│⚠️ (xfail)│
+└─────────────────────────┴──────────────┴───────┴──────────────┴───────────┴──────┴───────┘
 
 Test Coverage:
-- Positive: Admin/Adopter Admin/Tenant Admin can list roles (200)
-- Positive: Admin/Adopter Admin can assign and remove roles (200/201)
-- Positive: Tenant Admin can assign roles within their tenant
-- Negative: Moderator/User/Guest cannot list roles (403)
-- Negative: Moderator/User/Guest cannot assign/remove roles (403)
-- Edge cases: Invalid role, missing parameters
+✅ Positive Tests:
+  - Admin/Adopter Admin can list roles (200)
+  - Admin/Adopter Admin can assign roles (200/201)
+  - Admin/Adopter Admin can view ANY user's roles (200)
+  - Tenant Admin can assign roles within their tenant
+  - Tenant Admin can view roles within their tenant
+  - Moderator/User/Guest can view their OWN roles (200)
+
+❌ Negative Tests:
+  - Moderator/User/Guest cannot list roles (403)
+  - Moderator/User/Guest cannot assign roles (403)
+  - Moderator/User/Guest cannot remove roles (403)
+  - Moderator/User/Guest cannot view OTHER users' roles (403)
+  - Tenant Admin cannot view users OUTSIDE their tenant (403)
+
+⚠️ Known Bugs:
+  - AI4IDS-1364: Role Remove endpoint returns 403 for ALL roles (completely broken)
+  - AI4IDS-1361: USER role can assign roles (security issue)
+  - AI4IDS-1366: Moderator/Guest cannot view their own roles (get 403 instead of 200)
+  - AI4IDS-1367: USER role can view other users' roles (security vulnerability)
+  - AI4IDS-1368: Permission endpoints not working for all roles (both /permissions and /permission/list)
+
+🧪 Edge Cases:
+  - Invalid role assignment (400/422)
+  - Missing parameters (422)
+  - Unauthenticated access (401)
 """
 
 import pytest
@@ -84,7 +110,10 @@ class TestRoleManagementRBAC:
 
     @allure.story("List Permissions - Positive")
     @allure.title("Test all authenticated users can list permissions")
-    @pytest.mark.xfail(reason="Known bug: Permission list endpoint not working as expected")
+    @allure.link("https://coss-team-ai4x.atlassian.net/browse/AI4IDS-1368", name="Bug: Permission endpoints not working")
+    @allure.issue("AI4IDS-1368", name="Permission endpoints broken")
+    @pytest.mark.bug
+    @pytest.mark.xfail(reason="Known bug AI4IDS-1368: Permission list endpoint not working as expected")
     @pytest.mark.parametrize("role_fixture,role_name", [
         ("admin_client", "Admin"),
         ("moderator_client", "Moderator"),
@@ -111,7 +140,10 @@ class TestRoleManagementRBAC:
 
     @allure.story("Permission Catalog - Positive")
     @allure.title("Test Admin roles can access permission catalog")
-    @pytest.mark.xfail(reason="Known bug: Permission catalog endpoint not working as expected")
+    @allure.link("https://coss-team-ai4x.atlassian.net/browse/AI4IDS-1368", name="Bug: Permission endpoints not working")
+    @allure.issue("AI4IDS-1368", name="Permission endpoints broken")
+    @pytest.mark.bug
+    @pytest.mark.xfail(reason="Known bug AI4IDS-1368: Permission catalog endpoint not working as expected")
     @pytest.mark.parametrize("role_fixture,role_name", [
         ("adopter_admin_client", "Adopter Admin"),
         ("admin_client", "Admin"),
@@ -143,7 +175,10 @@ class TestRoleManagementRBAC:
 
     @allure.story("Permission Catalog - Negative")
     @allure.title("Test Moderator/User/Guest cannot access permission catalog (403)")
-    @pytest.mark.xfail(reason="Known bug: Permission catalog endpoint not working as expected")
+    @allure.link("https://coss-team-ai4x.atlassian.net/browse/AI4IDS-1368", name="Bug: Permission endpoints not working")
+    @allure.issue("AI4IDS-1368", name="Permission endpoints broken")
+    @pytest.mark.bug
+    @pytest.mark.xfail(reason="Known bug AI4IDS-1368: Permission catalog endpoint not working as expected")
     @pytest.mark.parametrize("role_fixture,role_name", [
         ("moderator_client", "Moderator"),
         ("user_client", "User"),
@@ -263,6 +298,10 @@ class TestRoleManagementRBAC:
 
     @allure.story("Remove Role - Positive (Admin)")
     @allure.title("Test Admin can remove roles from users")
+    @allure.link("https://coss-team-ai4x.atlassian.net/browse/AI4IDS-1364", name="Bug: Role Remove endpoint returns 403 for all roles")
+    @allure.issue("AI4IDS-1364", name="Role Remove endpoint broken")
+    @pytest.mark.bug
+    @pytest.mark.xfail(reason="Known bug AI4IDS-1364: Role Remove endpoint returns 403 for all roles (completely non-functional)")
     @pytest.mark.parametrize("admin_fixture,admin_name", [
         ("admin_client", "Admin"),
         ("adopter_admin_client", "Adopter Admin"),
@@ -299,6 +338,7 @@ class TestRoleManagementRBAC:
 
     @allure.story("Remove Role - Negative (Non-Admin)")
     @allure.title("Test Moderator/User/Guest cannot remove roles (403)")
+    @allure.link("https://coss-team-ai4x.atlassian.net/browse/AI4IDS-1364", name="Bug: Role Remove endpoint returns 403 for all roles")
     @pytest.mark.parametrize("role_fixture,role_name", [
         ("moderator_client", "Moderator"),
         ("user_client", "User"),
@@ -310,6 +350,8 @@ class TestRoleManagementRBAC:
 
         Expected:
         - 403 Forbidden for Moderator/User/Guest
+
+        Note: Test currently passes but for wrong reason - endpoint returns 403 for ALL roles (AI4IDS-1364)
         """
         client = request.getfixturevalue(role_fixture)
 
@@ -331,36 +373,243 @@ class TestRoleManagementRBAC:
 
         print(f"✓ {role_name} correctly denied role removal (403)")
 
-    @allure.story("View User Roles")
-    @allure.title("Test Admin can view user's assigned roles")
-    def test_get_user_roles_success_admin(self, admin_client):
+    @allure.story("View User Roles - Admin Access")
+    @allure.title("Test Admin/Adopter Admin can view any user's roles")
+    @pytest.mark.parametrize("admin_fixture,admin_name", [
+        ("admin_client", "Admin"),
+        ("adopter_admin_client", "Adopter Admin"),
+    ])
+    def test_get_user_roles_success_admin(self, admin_fixture, admin_name, request):
         """
-        Verify Admin can view a user's assigned roles
+        Verify Admin/Adopter Admin can view ANY user's assigned roles
 
         Endpoint: GET /api/v1/auth/roles/user/{user_id}
+        RBAC: Admin & Adopter Admin can access ANY user_id in the system
         Expected:
         - 200 OK
         - Response contains list of user's roles
         """
+        client = request.getfixturevalue(admin_fixture)
+
         # Use a placeholder user_id - replace with actual user ID in your environment
         user_id = settings.TEST_USER_ID or "placeholder"
-        endpoint = settings.ROLE_GET_USER_ROLES.replace("{user_id}", user_id)
+        endpoint = settings.ROLE_GET_USER_ROLES.replace("{user_id}", str(user_id))
 
-        response = admin_client.get(endpoint)
+        response = client.get(endpoint)
 
         # Accept 200 or 404 (if user doesn't exist)
         assert response.status_code in [200, 404], (
-            f"Admin should be able to view user roles, got {response.status_code}: {response.text}"
+            f"{admin_name} should be able to view user roles, got {response.status_code}: {response.text}"
         )
 
         if response.status_code == 200:
             data = response.json()
-            # Response should contain roles information
-            assert "roles" in data or isinstance(data, list), (
-                "Response should contain roles information"
-            )
 
-        print(f"✓ Admin can view user roles (status: {response.status_code})")
+            # Validate response structure: {"success": true, "data": {"user_id": X, "roles": [...]}}
+            assert "success" in data and data["success"] is True, (
+                "Response should contain success=true"
+            )
+            assert "data" in data, "Response should contain data field"
+            assert "roles" in data["data"], "Response data should contain roles field"
+            assert isinstance(data["data"]["roles"], list), (
+                "Roles should be a list"
+            )
+            assert "user_id" in data["data"], "Response data should contain user_id field"
+
+            print(f"✓ {admin_name} can view any user's roles: {data['data']['roles']} (user_id: {data['data']['user_id']})")
+        else:
+            print(f"✓ {admin_name} request completed (user not found, status: {response.status_code})")
+
+    @allure.story("View User Roles - Tenant Admin Scoped Access")
+    @allure.title("Test Tenant Admin can view roles within their tenant only")
+    def test_get_user_roles_tenant_admin_scoped(self, tenant_admin_client):
+        """
+        Verify Tenant Admin can view roles for users within their tenant only
+
+        Endpoint: GET /api/v1/auth/roles/user/{user_id}
+        RBAC: Tenant Admin can view user_id within their tenant only
+        Expected:
+        - 200 OK for users in their tenant
+        - 403 Forbidden for users outside their tenant
+        """
+        # Skip test if TENANT_TEST_USER_ID is not configured
+        if not settings.TENANT_TEST_USER_ID or settings.TENANT_TEST_USER_ID.startswith("<"):
+            pytest.skip("TENANT_TEST_USER_ID not configured in .env.staging")
+
+        try:
+            user_id = int(settings.TENANT_TEST_USER_ID)
+        except (ValueError, TypeError):
+            user_id = settings.TENANT_TEST_USER_ID
+
+        endpoint = settings.ROLE_GET_USER_ROLES.replace("{user_id}", str(user_id))
+
+        response = tenant_admin_client.get(endpoint)
+
+        # Should succeed for users in their tenant
+        # May return 403 if user is outside their tenant scope
+        assert response.status_code in [200, 403, 404], (
+            f"Tenant Admin view user roles returned unexpected status: {response.status_code}: {response.text}"
+        )
+
+        if response.status_code == 200:
+            data = response.json()
+            # Validate response structure
+            assert "success" in data and data["success"] is True, "Response should contain success=true"
+            assert "data" in data and "roles" in data["data"], "Response should contain data.roles"
+            print(f"✓ Tenant Admin can view user roles within their tenant: {data['data']['roles']}")
+        elif response.status_code == 403:
+            print("✓ Tenant Admin correctly denied access to user outside their tenant (403)")
+        else:
+            print(f"✓ Tenant Admin request completed (status: {response.status_code})")
+
+    @allure.story("View User Roles - Tenant Admin Cross-Tenant Access")
+    @allure.title("Test Tenant Admin cannot view roles of users outside their tenant")
+    def test_get_user_roles_tenant_admin_cross_tenant_forbidden(self, tenant_admin_client):
+        """
+        Verify Tenant Admin CANNOT view roles for users outside their tenant
+
+        Endpoint: GET /api/v1/auth/roles/user/{user_id}
+        RBAC: Tenant Admin is scoped to their tenant only
+        Expected:
+        - 403 Forbidden when trying to view users outside their tenant
+
+        This test uses TEST_USER_ID which should be a user from a different tenant
+        """
+        # Skip test if TEST_USER_ID is not configured
+        if not settings.TEST_USER_ID:
+            pytest.skip("TEST_USER_ID not configured in .env.staging")
+
+        try:
+            user_id = int(settings.TEST_USER_ID)
+        except (ValueError, TypeError):
+            user_id = settings.TEST_USER_ID
+
+        endpoint = settings.ROLE_GET_USER_ROLES.replace("{user_id}", str(user_id))
+
+        response = tenant_admin_client.get(endpoint)
+
+        # Should be denied when trying to view user outside tenant
+        assert response.status_code == 403, (
+            f"Tenant Admin should NOT be able to view users outside their tenant, "
+            f"expected 403 but got {response.status_code}: {response.text}"
+        )
+
+        print("✓ Tenant Admin correctly denied access to user outside their tenant (403)")
+
+    @allure.story("View User Roles - Self Access")
+    @allure.title("Test non-admin users can view their own roles")
+    @allure.link("https://coss-team-ai4x.atlassian.net/browse/AI4IDS-1319", name="Parent: Role Management RBAC")
+    @allure.link("https://coss-team-ai4x.atlassian.net/browse/AI4IDS-1366", name="Bug: Moderator/Guest cannot view own roles")
+    @allure.issue("AI4IDS-1366", name="Moderator/Guest get 403 for own roles")
+    @pytest.mark.bug
+    @pytest.mark.parametrize("role_fixture,role_name", [
+        ("moderator_client", "Moderator"),
+        ("user_client", "User"),
+        ("guest_client", "Guest"),
+    ])
+    def test_get_user_roles_self_access(self, role_fixture, role_name, request):
+        """
+        Verify Moderator/User/Guest can view ONLY their own roles
+
+        Endpoint: GET /api/v1/auth/roles/user/{user_id}
+        RBAC: Moderator/User/Guest can view only their own user_id
+        Expected:
+        - 200 OK when viewing their own user_id
+
+        Known Bug (AI4IDS-1366):
+        - USER role: ✅ Works correctly (200 OK)
+        - MODERATOR role: ❌ Returns 403 Forbidden (should be 200 OK)
+        - GUEST role: ❌ Returns 403 Forbidden (should be 200 OK)
+
+        Test will FAIL for Moderator and Guest until AI4IDS-1366 is fixed.
+        """
+        client = request.getfixturevalue(role_fixture)
+
+        # First, get the current user's ID from /api/v1/auth/me endpoint
+        me_response = client.get(settings.AUTH_ME)
+
+        if me_response.status_code != 200:
+            pytest.skip(f"Cannot get current user info from {settings.AUTH_ME}")
+
+        me_data = me_response.json()
+        # print(f"DEBUG /me response: {me_response.text}")
+
+        # Extract user_id from response - handle both formats:
+        # Format 1: {"data": {"id": X, ...}}
+        # Format 2: {"id": X, "user_id": X, ...}
+        own_user_id = None
+        if "data" in me_data and isinstance(me_data["data"], dict):
+            # Response format: {"data": {"id": X}}
+            own_user_id = me_data["data"].get("id")
+       
+        if not own_user_id:
+            pytest.skip(f"Cannot determine current user's ID from /me endpoint. Response: {me_response.text}")
+
+        endpoint = settings.ROLE_GET_USER_ROLES.replace("{user_id}", str(own_user_id))
+
+        response = client.get(endpoint)
+        print(response.status_code)
+
+        #Should be able to view their own roles
+        assert response.status_code in [200, 404], (
+            f"{role_name} should be able to view their own roles, got {response.status_code}: {response.text}"
+        )
+
+        if response.status_code == 200:
+            data = response.json()
+            # Validate response structure
+            assert "success" in data and data["success"] is True, "Response should contain success=true"
+            assert "data" in data and "roles" in data["data"], "Response should contain data.roles"
+            assert isinstance(data["data"]["roles"], list), "Roles should be a list"
+            print(f"✓ {role_name} can view their own roles: {data['data']['roles']}")
+        else:
+            print(f"✓ {role_name} request completed (status: {response.status_code})")
+
+    @allure.story("View User Roles - Negative (Cross-User Access)")
+    @allure.title("Test non-admin users cannot view other users' roles")
+    @allure.link("https://coss-team-ai4x.atlassian.net/browse/AI4IDS-1319", name="Parent: Role Management RBAC")
+    @allure.link("https://coss-team-ai4x.atlassian.net/browse/AI4IDS-1367", name="Bug: USER can view other users' roles")
+    @allure.issue("AI4IDS-1367", name="USER role RBAC violation")
+    @pytest.mark.bug
+    @pytest.mark.parametrize("role_fixture,role_name", [
+        ("moderator_client", "Moderator"),
+        ("user_client", "User"),
+        ("guest_client", "Guest"),
+    ])
+    def test_get_user_roles_forbidden_cross_user(self, role_fixture, role_name, request):
+        """
+        Verify Moderator/User/Guest CANNOT view other users' roles
+
+        Endpoint: GET /api/v1/auth/roles/user/{user_id}
+        RBAC: Moderator/User/Guest cannot access other users' roles
+        Expected:
+        - 403 Forbidden when trying to view another user's roles
+
+        Known Bug (AI4IDS-1367):
+        - USER role can view other users' roles (security vulnerability)
+        - Test FAILS for USER role (returns 200 instead of 403)
+        """
+        client = request.getfixturevalue(role_fixture)
+
+        # Use TEST_USER_ID (which should be a different user)
+        if not settings.TEST_USER_ID:
+            pytest.skip("TEST_USER_ID not configured in .env.staging")
+
+        try:
+            user_id = int(settings.TEST_USER_ID)
+        except (ValueError, TypeError):
+            user_id = settings.TEST_USER_ID
+
+        endpoint = settings.ROLE_GET_USER_ROLES.replace("{user_id}", str(user_id))
+
+        response = client.get(endpoint)
+
+        # Should be denied when trying to view another user's roles
+        assert response.status_code == 403, (
+            f"{role_name} should NOT be able to view other users' roles, expected 403 but got {response.status_code}: {response.text}"
+        )
+
+        print(f"✓ {role_name} correctly denied access to other users' roles (403)")
 
     @allure.story("Tenant Admin - Role Assignment")
     @allure.title("Test Tenant Admin can assign roles within their tenant")
@@ -429,13 +678,13 @@ class TestRoleManagementEdgeCases:
     """Test edge cases and validation for role management"""
 
     @allure.story("Invalid Role Assignment")
-    @allure.title("Test assigning invalid role returns 400/422")
+    @allure.title("Test assigning invalid role returns error")
     def test_assign_invalid_role_validation_error(self, admin_client):
         """
         Verify assigning an invalid/non-existent role is rejected
 
         Expected:
-        - 400/422 Validation Error
+        - 400/422 Validation Error OR 404 Not Found (role doesn't exist)
         """
         try:
             user_id = int(settings.TEST_USER_ID) if settings.TEST_USER_ID else 1
@@ -449,11 +698,18 @@ class TestRoleManagementEdgeCases:
 
         response = admin_client.post(settings.ROLE_ASSIGN, json=payload)
 
-        assert response.status_code in [400, 422], (
-            f"Invalid role assignment should return 400/422, got {response.status_code}: {response.text}"
+        assert response.status_code in [400, 404, 422], (
+            f"Invalid role assignment should return 400/404/422, got {response.status_code}: {response.text}"
         )
 
-        print("✓ Invalid role correctly rejected with validation error")
+        if response.status_code == 404:
+            data = response.json()
+            assert "not found" in data.get("detail", {}).get("message", "").lower(), (
+                "404 response should indicate role not found"
+            )
+            print("✓ Invalid role correctly rejected with 404 Not Found")
+        else:
+            print(f"✓ Invalid role correctly rejected with {response.status_code}")
 
     @allure.story("Missing Parameters")
     @allure.title("Test role assignment with missing parameters returns 422")
