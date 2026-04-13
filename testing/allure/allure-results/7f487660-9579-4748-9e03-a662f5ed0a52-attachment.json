@@ -1,9 +1,0 @@
-Status: 404
-
-{
-  "detail": {
-    "message": "Model with ID non-existent-model-id-000000 and version 1.0.0 not found.",
-    "code": "HTTP_ERROR",
-    "timestamp": 1773034549.4129546
-  }
-}

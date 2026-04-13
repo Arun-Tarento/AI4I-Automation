@@ -1,9 +1,0 @@
-Status: 409
-
-{
-  "detail": {
-    "message": "Model version 'd1e0d908261c2230ef4d500f44b521a5' v1.0.0 cannot be modified because it is associated with 1 published service(s): 9aad24b123630f8f3f7f1f8970975bb2. Unpublish the service(s) first to modify this model version.",
-    "code": "ImmutableModelVersion",
-    "timestamp": 1773034550.9087436
-  }
-}

@@ -1,7 +1,0 @@
-
-============================================================
-🔍 Test: List Models with Invalid task_type - ADMIN
-🔍 Endpoint: /api/v1/model-management/models
-🔍 Filter: task_type = invalid_task_xyz
-============================================================
-📊 Status Code: 500

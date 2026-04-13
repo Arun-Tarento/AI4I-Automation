@@ -1,9 +1,0 @@
-Status: 500
-
-{
-  "detail": {
-    "message": "Error listing model details",
-    "code": "DBError",
-    "timestamp": 1773034530.841078
-  }
-}

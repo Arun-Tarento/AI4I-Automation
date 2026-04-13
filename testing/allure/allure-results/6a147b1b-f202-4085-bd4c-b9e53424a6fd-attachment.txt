@@ -1,2 +1,0 @@
-✓ Background token refresh stopped
-✓ Background token refresh stopped
