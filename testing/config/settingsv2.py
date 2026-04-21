@@ -65,6 +65,22 @@ class Settings:
     # ADMIN, USER, GUEST, MODERATOR, TENANT_ADMIN
 
     # ============================================
+    # TEST TOKENS - For Token Validation Tests & RBAC
+    # ============================================
+
+    # Group A: ASR, NMT, TTS, LLM, Pipeline, OCR
+    ASR_NMT_TTS_LLM_PIPELINE_OCR_KEY = os.getenv("ASR_NMT_TTS_LLM_PIPELINE_OCR_KEY")
+
+    # Group B: Transliteration, Text Lang Detection, Speaker Diarization, Language Diarization, Audio Lang Detection, NER
+    TRANSLIT_TLD_SD_LD_ALD_NER_KEY = os.getenv("TRANSLIT_TLD_SD_LD_ALD_NER_KEY")
+
+    # Legacy: Valid JWT API key with NMT permissions (admin-created, long-lived)
+    VALID_TEST_TOKEN = os.getenv("VALID_TEST_TOKEN")
+
+    # Invalid/corrupted JWT for negative testing
+    INVALID_TEST_TOKEN = os.getenv("INVALID_TEST_TOKEN", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.INVALID_PAYLOAD.INVALID_SIGNATURE")
+
+    # ============================================
     # AI Service IDs
     # ============================================
 

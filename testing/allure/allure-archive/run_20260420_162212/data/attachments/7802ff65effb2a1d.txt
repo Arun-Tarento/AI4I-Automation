@@ -1,0 +1,3 @@
+{"detail":{"message":"Authentication failed. Please log in again.","code":"AUTHENTICATION_ERROR","timestamp":1776682336.7700386,"details":null}}
+✓ NMT service correctly rejected request without token (401)
+  Error response: {'detail': {'message': 'Authentication failed. Please log in again.', 'code': 'AUTHENTICATION_ERROR', 'timestamp': 1776682336.7700386, 'details': None}}

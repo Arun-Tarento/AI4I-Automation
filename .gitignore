@@ -83,3 +83,4 @@ temp/
 outputs/
 results/
 test-results/
+.mcp.json

@@ -1,0 +1,26 @@
+Status: 200
+
+{
+  "success": true,
+  "data": {
+    "id": 31,
+    "email": "arunagiriperumal.atchilingam+01@tarento.com",
+    "username": "arun_user",
+    "full_name": "arun_user",
+    "is_active": true,
+    "is_verified": false,
+    "is_superuser": false,
+    "is_tenant": null,
+    "created_at": "2026-04-17T07:19:56.531051+00:00",
+    "updated_at": "2026-04-17T08:57:58.879614+00:00",
+    "last_login": "2026-04-17T08:57:59.811705+00:00",
+    "avatar_url": null,
+    "phone_number": null,
+    "timezone": "UTC",
+    "language": "en",
+    "roles": [
+      "USER"
+    ],
+    "tenant_id": null
+  }
+}

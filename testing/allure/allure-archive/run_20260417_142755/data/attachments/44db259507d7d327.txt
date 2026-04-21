@@ -1,0 +1,2 @@
+2026-04-17 14:27:57.703 | INFO     | utils.auth:_login:31 - 🔍 Login URL: https://staging.ai4inclusion.org/api/v1/auth/login
+2026-04-17 14:27:57.703 | INFO     | utils.auth:_login:32 - 🔍 Password: ********

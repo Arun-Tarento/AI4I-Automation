@@ -1,0 +1,134 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri Apr 17 14:28:03 IST 2026","Fri Apr 17 14:28:03 IST 2026","165","test_api_v2.test_auth","test_login","TestLogin","","","Test authenticated users can access /auth/me endpoint","
+        Verify authenticated users can retrieve their profile
+
+        Endpoint: GET /api/v1/auth/me
+        Expected:
+        - 200 OK
+        - Response contains user details (email, roles, etc.)
+        "
+"passed","Fri Apr 17 14:28:02 IST 2026","Fri Apr 17 14:28:02 IST 2026","173","test_api_v2.test_auth","test_login","TestLogin","","","Test login with invalid credentials returns 401","
+        Verify invalid credentials are rejected
+
+        Expected:
+        - Login fails with 401 Unauthorized
+        - No tokens are returned
+        "
+"passed","Fri Apr 17 14:28:03 IST 2026","Fri Apr 17 14:28:03 IST 2026","177","test_api_v2.test_auth","test_login","TestLogin","","","Test authenticated users can access /auth/me endpoint","
+        Verify authenticated users can retrieve their profile
+
+        Endpoint: GET /api/v1/auth/me
+        Expected:
+        - 200 OK
+        - Response contains user details (email, roles, etc.)
+        "
+"passed","Fri Apr 17 14:28:01 IST 2026","Fri Apr 17 14:28:02 IST 2026","179","test_api_v2.test_auth","test_login","TestLogin","","","Test /auth/validate endpoint with valid JWT tokens","
+        Verify JWT token validation endpoint works
+
+        Endpoint: GET /api/v1/auth/validate
+        Expected: 200 OK for valid tokens
+        "
+"passed","Fri Apr 17 14:27:55 IST 2026","Fri Apr 17 14:27:56 IST 2026","1159","test_api_v2.test_auth","test_login","TestLogin","","","Test all 6 roles can login successfully and receive JWT tokens","
+        Verify all 6 roles can successfully login and obtain JWT access tokens
+
+        Expected:
+        - Login succeeds (tokens obtained during fixture setup)
+        - Client has valid Bearer token
+        - Token is not empty
+        "
+"passed","Fri Apr 17 14:27:56 IST 2026","Fri Apr 17 14:27:57 IST 2026","1180","test_api_v2.test_auth","test_login","TestLogin","","","Test all 6 roles can login successfully and receive JWT tokens","
+        Verify all 6 roles can successfully login and obtain JWT access tokens
+
+        Expected:
+        - Login succeeds (tokens obtained during fixture setup)
+        - Client has valid Bearer token
+        - Token is not empty
+        "
+"passed","Fri Apr 17 14:28:00 IST 2026","Fri Apr 17 14:28:01 IST 2026","1171","test_api_v2.test_auth","test_login","TestLogin","","","Test all 6 roles can login successfully and receive JWT tokens","
+        Verify all 6 roles can successfully login and obtain JWT access tokens
+
+        Expected:
+        - Login succeeds (tokens obtained during fixture setup)
+        - Client has valid Bearer token
+        - Token is not empty
+        "
+"passed","Fri Apr 17 14:28:02 IST 2026","Fri Apr 17 14:28:02 IST 2026","153","test_api_v2.test_auth","test_login","TestLogin","","","Test /auth/validate endpoint with valid JWT tokens","
+        Verify JWT token validation endpoint works
+
+        Endpoint: GET /api/v1/auth/validate
+        Expected: 200 OK for valid tokens
+        "
+"passed","Fri Apr 17 14:28:02 IST 2026","Fri Apr 17 14:28:02 IST 2026","143","test_api_v2.test_auth","test_login","TestLogin","","","Test login without credentials returns 422","
+        Verify missing required fields are rejected
+
+        Expected:
+        - Login fails with 422 Validation Error
+        "
+"passed","Fri Apr 17 14:28:02 IST 2026","Fri Apr 17 14:28:03 IST 2026","186","test_api_v2.test_auth","test_login","TestLogin","","","Test authenticated users can access /auth/me endpoint","
+        Verify authenticated users can retrieve their profile
+
+        Endpoint: GET /api/v1/auth/me
+        Expected:
+        - 200 OK
+        - Response contains user details (email, roles, etc.)
+        "
+"passed","Fri Apr 17 14:27:58 IST 2026","Fri Apr 17 14:27:59 IST 2026","1118","test_api_v2.test_auth","test_login","TestLogin","","","Test all 6 roles can login successfully and receive JWT tokens","
+        Verify all 6 roles can successfully login and obtain JWT access tokens
+
+        Expected:
+        - Login succeeds (tokens obtained during fixture setup)
+        - Client has valid Bearer token
+        - Token is not empty
+        "
+"broken","Fri Apr 17 14:28:03 IST 2026","Fri Apr 17 14:28:03 IST 2026","0","test_api_v2.test_auth","test_login","TestLogin","","","Test authenticated users can access /auth/me endpoint","
+        Verify authenticated users can retrieve their profile
+
+        Endpoint: GET /api/v1/auth/me
+        Expected:
+        - 200 OK
+        - Response contains user details (email, roles, etc.)
+        "
+"passed","Fri Apr 17 14:28:03 IST 2026","Fri Apr 17 14:28:03 IST 2026","174","test_api_v2.test_auth","test_login","TestLogin","","","Test authenticated users can access /auth/me endpoint","
+        Verify authenticated users can retrieve their profile
+
+        Endpoint: GET /api/v1/auth/me
+        Expected:
+        - 200 OK
+        - Response contains user details (email, roles, etc.)
+        "
+"passed","Fri Apr 17 14:27:59 IST 2026","Fri Apr 17 14:28:00 IST 2026","1165","test_api_v2.test_auth","test_login","TestLogin","","","Test all 6 roles can login successfully and receive JWT tokens","
+        Verify all 6 roles can successfully login and obtain JWT access tokens
+
+        Expected:
+        - Login succeeds (tokens obtained during fixture setup)
+        - Client has valid Bearer token
+        - Token is not empty
+        "
+"passed","Fri Apr 17 14:28:03 IST 2026","Fri Apr 17 14:28:03 IST 2026","135","test_api_v2.test_auth","test_login","TestLogin","","","Test unauthenticated request to /auth/me returns 401","
+        Verify unauthenticated requests are rejected
+
+        Expected:
+        - 401 Unauthorized when no Bearer token provided
+        "
+"passed","Fri Apr 17 14:28:03 IST 2026","Fri Apr 17 14:28:03 IST 2026","176","test_api_v2.test_auth","test_login","TestLogin","","","Test authenticated users can access /auth/me endpoint","
+        Verify authenticated users can retrieve their profile
+
+        Endpoint: GET /api/v1/auth/me
+        Expected:
+        - 200 OK
+        - Response contains user details (email, roles, etc.)
+        "
+"broken","Fri Apr 17 14:27:57 IST 2026","Fri Apr 17 14:27:58 IST 2026","733","test_api_v2.test_auth","test_login","TestLogin","","","Test all 6 roles can login successfully and receive JWT tokens","
+        Verify all 6 roles can successfully login and obtain JWT access tokens
+
+        Expected:
+        - Login succeeds (tokens obtained during fixture setup)
+        - Client has valid Bearer token
+        - Token is not empty
+        "
+"passed","Fri Apr 17 14:28:02 IST 2026","Fri Apr 17 14:28:02 IST 2026","160","test_api_v2.test_auth","test_login","TestLogin","","","Test /auth/validate endpoint with valid JWT tokens","
+        Verify JWT token validation endpoint works
+
+        Endpoint: GET /api/v1/auth/validate
+        Expected: 200 OK for valid tokens
+        "

@@ -1,0 +1,2 @@
+✓ NMT service correctly rejected invalid token (401)
+  Error response: {'valid': False, 'error': 'TOKEN_INVALID'}

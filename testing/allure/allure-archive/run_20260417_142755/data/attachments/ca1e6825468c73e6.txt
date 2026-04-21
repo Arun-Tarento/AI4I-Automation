@@ -1,0 +1,6 @@
+✓ Unauthenticated request correctly rejected with 401
+✓ Background token refresh stopped
+✓ Background token refresh stopped
+✓ Background token refresh stopped
+✓ Background token refresh stopped
+✓ Background token refresh stopped

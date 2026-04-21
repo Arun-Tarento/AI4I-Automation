@@ -1,0 +1,7 @@
+✓ NMT service correctly rejected malformed token (401)
+  Error response: {'valid': False, 'error': 'TOKEN_INVALID'}
+✓ Background token refresh stopped
+✓ Background token refresh stopped
+✓ Background token refresh stopped
+✓ Background token refresh stopped
+✓ Background token refresh stopped

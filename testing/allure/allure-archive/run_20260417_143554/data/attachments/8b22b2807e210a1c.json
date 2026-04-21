@@ -1,0 +1,217 @@
+Status: 200
+
+{
+  "success": true,
+  "data": [
+    {
+      "id": 2,
+      "username": "admin",
+      "email": "admin@ai4inclusion.org",
+      "phone_number": null
+    },
+    {
+      "id": 37,
+      "username": "admin@alerting-staging-f2f290",
+      "email": "bharathicoldplay@gmail.com",
+      "phone_number": null
+    },
+    {
+      "id": 26,
+      "username": "admin@test-tenant-1-fb5359",
+      "email": "arunagiriperumal+01@gmail.com",
+      "phone_number": null
+    },
+    {
+      "id": 32,
+      "username": "arun_guest",
+      "email": "arunagiriperumal.atchilingam+02@tarento.com",
+      "phone_number": null
+    },
+    {
+      "id": 33,
+      "username": "arun_moderator",
+      "email": "arunagiriperumal.atchilingam+03@tarento.com",
+      "phone_number": null
+    },
+    {
+      "id": 31,
+      "username": "arun_user",
+      "email": "arunagiriperumal.atchilingam+01@tarento.com",
+      "phone_number": null
+    },
+    {
+      "id": 5,
+      "username": "arunagiriperumal",
+      "email": "arunagiriperumal@gmail.com",
+      "phone_number": null
+    },
+    {
+      "id": 6,
+      "username": "Bharathi A",
+      "email": "bharathia6@gmail.com",
+      "phone_number": null
+    },
+    {
+      "id": 1,
+      "username": "guest",
+      "email": "guest@ai4inclusion.org",
+      "phone_number": null
+    },
+    {
+      "id": 7,
+      "username": "ltest_user_1",
+      "email": "ltest_user_1@test.com",
+      "phone_number": "9909909901"
+    },
+    {
+      "id": 16,
+      "username": "ltest_user_10",
+      "email": "ltest_user_10@test.com",
+      "phone_number": "9909909910"
+    },
+    {
+      "id": 17,
+      "username": "ltest_user_11",
+      "email": "ltest_user_11@test.com",
+      "phone_number": "9909909911"
+    },
+    {
+      "id": 18,
+      "username": "ltest_user_12",
+      "email": "ltest_user_12@test.com",
+      "phone_number": "9909909912"
+    },
+    {
+      "id": 19,
+      "username": "ltest_user_13",
+      "email": "ltest_user_13@test.com",
+      "phone_number": "9909909913"
+    },
+    {
+      "id": 20,
+      "username": "ltest_user_14",
+      "email": "ltest_user_14@test.com",
+      "phone_number": "9909909914"
+    },
+    {
+      "id": 21,
+      "username": "ltest_user_15",
+      "email": "ltest_user_15@test.com",
+      "phone_number": "9909909915"
+    },
+    {
+      "id": 22,
+      "username": "ltest_user_16",
+      "email": "ltest_user_16@test.com",
+      "phone_number": "9909909916"
+    },
+    {
+      "id": 28,
+      "username": "ltest_user_17",
+      "email": "ltest_user_17@test.com",
+      "phone_number": "9909909917"
+    },
+    {
+      "id": 23,
+      "username": "ltest_user_18",
+      "email": "ltest_user_18@test.com",
+      "phone_number": "9909909918"
+    },
+    {
+      "id": 8,
+      "username": "ltest_user_2",
+      "email": "ltest_user_2@test.com",
+      "phone_number": "9909909902"
+    },
+    {
+      "id": 29,
+      "username": "ltest_user_20",
+      "email": "ltest_user_20@test.com",
+      "phone_number": "9909909920"
+    },
+    {
+      "id": 24,
+      "username": "ltest_user_21",
+      "email": "ltest_user_21@test.com",
+      "phone_number": "9909909921"
+    },
+    {
+      "id": 25,
+      "username": "ltest_user_22",
+      "email": "ltest_user_22@test.com",
+      "phone_number": "9909909922"
+    },
+    {
+      "id": 30,
+      "username": "ltest_user_24",
+      "email": "ltest_user_24@test.com",
+      "phone_number": "9909909924"
+    },
+    {
+      "id": 9,
+      "username": "ltest_user_3",
+      "email": "ltest_user_3@test.com",
+      "phone_number": "9909909903"
+    },
+    {
+      "id": 10,
+      "username": "ltest_user_4",
+      "email": "ltest_user_4@test.com",
+      "phone_number": "9909909904"
+    },
+    {
+      "id": 11,
+      "username": "ltest_user_5",
+      "email": "ltest_user_5@test.com",
+      "phone_number": "9909909905"
+    },
+    {
+      "id": 12,
+      "username": "ltest_user_6",
+      "email": "ltest_user_6@test.com",
+      "phone_number": "9909909906"
+    },
+    {
+      "id": 13,
+      "username": "ltest_user_7",
+      "email": "ltest_user_7@test.com",
+      "phone_number": "9909909907"
+    },
+    {
+      "id": 14,
+      "username": "ltest_user_8",
+      "email": "ltest_user_8@test.com",
+      "phone_number": "9909909908"
+    },
+    {
+      "id": 15,
+      "username": "ltest_user_9",
+      "email": "ltest_user_9@test.com",
+      "phone_number": "9909909909"
+    },
+    {
+      "id": 27,
+      "username": "Password@123",
+      "email": "arunagiriperumal.atchilingam@tarento.com",
+      "phone_number": null
+    },
+    {
+      "id": 34,
+      "username": "Test Tenant 1 Admin 2",
+      "email": "arunagiriperumal+11@gmail.com",
+      "phone_number": null
+    },
+    {
+      "id": 36,
+      "username": "Test Tenant 1 User 2",
+      "email": "arunagiriperumal+13@gmail.com",
+      "phone_number": null
+    },
+    {
+      "id": 35,
+      "username": "Test Tenant User 1",
+      "email": "arunagiriperumal+12@gmail.com",
+      "phone_number": null
+    }
+  ]
+}

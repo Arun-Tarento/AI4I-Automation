@@ -1,0 +1,335 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri Apr 17 14:36:01 IST 2026","Fri Apr 17 14:36:01 IST 2026","176","test_api_v2.test_auth","test_login","TestLogin","","","Test authenticated users can access /auth/me endpoint","
+        Verify authenticated users can retrieve their profile
+
+        Endpoint: GET /api/v1/auth/me
+        Expected:
+        - 200 OK
+        - Response contains user details (email, roles, etc.)
+        "
+"passed","Fri Apr 17 14:36:06 IST 2026","Fri Apr 17 14:36:06 IST 2026","148","test_api_v2.test_auth","test_user_management","TestUserManagementEdgeCases","","","Test unauthenticated request returns 401","
+        Verify unauthenticated requests are rejected
+
+        Expected:
+        - 401 Unauthorized for all user management endpoints
+        "
+"broken","Fri Apr 17 14:36:01 IST 2026","Fri Apr 17 14:36:01 IST 2026","0","test_api_v2.test_auth","test_login","TestLogin","","","Test authenticated users can access /auth/me endpoint","
+        Verify authenticated users can retrieve their profile
+
+        Endpoint: GET /api/v1/auth/me
+        Expected:
+        - 200 OK
+        - Response contains user details (email, roles, etc.)
+        "
+"failed","Fri Apr 17 14:36:03 IST 2026","Fri Apr 17 14:36:03 IST 2026","174","test_api_v2.test_auth","test_user_management","TestUserManagementRBAC","","","Test Admin roles can view any user's details","
+        Verify Admin/Adopter Admin can view ANY user's details
+
+        Endpoint: GET /api/v1/auth/users/{user_id}
+        Expected:
+        - 200 OK for valid user_id
+        - Response contains user details
+        "
+"passed","Fri Apr 17 14:36:02 IST 2026","Fri Apr 17 14:36:02 IST 2026","178","test_api_v2.test_auth","test_user_management","TestUserManagementRBAC","","","Test Admin roles can list all users","
+        Verify Admin/Adopter Admin can list all users in the system
+
+        Endpoint: GET /api/v1/auth/users
+        Expected:
+        - 200 OK for Adopter Admin, Admin
+        - Response contains list of users
+        "
+"failed","Fri Apr 17 14:36:04 IST 2026","Fri Apr 17 14:36:04 IST 2026","346","test_api_v2.test_auth","test_user_management","TestUserManagementRBAC","","","Test non-admin users can view their own details","
+        Verify Moderator/User/Guest can view their OWN user details
+
+        Endpoint: GET /api/v1/auth/users/{user_id}
+        Expected:
+        - 200 OK when viewing their own user_id
+        "
+"passed","Fri Apr 17 14:36:05 IST 2026","Fri Apr 17 14:36:05 IST 2026","171","test_api_v2.test_auth","test_user_management","TestUserManagementRBAC","","","Test non-admin users cannot view other users' details","
+        Verify Moderator/User/Guest CANNOT view other users' details
+
+        Endpoint: GET /api/v1/auth/users/{user_id}
+        Expected:
+        - 403 Forbidden when viewing another user's details
+        "
+"failed","Fri Apr 17 14:36:04 IST 2026","Fri Apr 17 14:36:04 IST 2026","337","test_api_v2.test_auth","test_user_management","TestUserManagementRBAC","","","Test non-admin users can view their own details","
+        Verify Moderator/User/Guest can view their OWN user details
+
+        Endpoint: GET /api/v1/auth/users/{user_id}
+        Expected:
+        - 200 OK when viewing their own user_id
+        "
+"passed","Fri Apr 17 14:36:02 IST 2026","Fri Apr 17 14:36:02 IST 2026","176","test_api_v2.test_auth","test_login","TestLogin","","","Test authenticated users can access /auth/me endpoint","
+        Verify authenticated users can retrieve their profile
+
+        Endpoint: GET /api/v1/auth/me
+        Expected:
+        - 200 OK
+        - Response contains user details (email, roles, etc.)
+        "
+"passed","Fri Apr 17 14:36:03 IST 2026","Fri Apr 17 14:36:03 IST 2026","171","test_api_v2.test_auth","test_user_management","TestUserManagementRBAC","","","Test Moderator/User/Guest cannot list users (403)","
+        Verify Moderator/User/Guest cannot list users
+
+        Endpoint: GET /api/v1/auth/users
+        RBAC: Only Admin/Adopter Admin/Tenant Admin should access this endpoint
+        Expected:
+        - 403 Forbidden for Moderator, User, Guest
+
+        Known Bug (AI4IDS-1372):
+        - USER role can list all users (security vulnerability - gets 200 instead of 403)
+        - Test FAILS for USER role until AI4IDS-1372 is fixed
+        "
+"broken","Fri Apr 17 14:36:04 IST 2026","Fri Apr 17 14:36:04 IST 2026","0","test_api_v2.test_auth","test_user_management","TestUserManagementRBAC","","","Test Tenant Admin can view users within their tenant","
+        Verify Tenant Admin can view users within their tenant only
+
+        Endpoint: GET /api/v1/auth/users/{user_id}
+        Expected:
+        - 200 OK for users in their tenant
+        - 403 Forbidden for users outside their tenant
+        "
+"failed","Fri Apr 17 14:36:06 IST 2026","Fri Apr 17 14:36:06 IST 2026","144","test_api_v2.test_ai_services","test_nmt","TestNMTTokenValidation","","","Test NMT service accepts valid JWT token","
+        Verify NMT service processes request with valid JWT token
+
+        Use Case:
+        - User provides a valid JWT token (admin-created, used like API key)
+        - NMT service should successfully process the translation request
+
+        Endpoint: POST /api/v1/nmt/inference
+        Auth: Valid JWT Bearer token (from VALID_TEST_TOKEN env var)
+        Expected:
+        - 200 OK
+        - Response contains translation result
+        "
+"passed","Fri Apr 17 14:36:02 IST 2026","Fri Apr 17 14:36:02 IST 2026","173","test_api_v2.test_auth","test_login","TestLogin","","","Test authenticated users can access /auth/me endpoint","
+        Verify authenticated users can retrieve their profile
+
+        Endpoint: GET /api/v1/auth/me
+        Expected:
+        - 200 OK
+        - Response contains user details (email, roles, etc.)
+        "
+"broken","Fri Apr 17 14:36:03 IST 2026","Fri Apr 17 14:36:03 IST 2026","0","test_api_v2.test_auth","test_user_management","TestUserManagementRBAC","","","Test Tenant Admin can list users within their tenant","
+        Verify Tenant Admin can list users within their tenant only
+
+        Endpoint: GET /api/v1/auth/users
+        Expected:
+        - 200 OK
+        - Response contains users from Tenant Admin's tenant only
+        - User count should be LESS than what Admin sees (tenant-scoped)
+        "
+"passed","Fri Apr 17 14:36:03 IST 2026","Fri Apr 17 14:36:03 IST 2026","181","test_api_v2.test_auth","test_user_management","TestUserManagementRBAC","","","Test Moderator/User/Guest cannot list users (403)","
+        Verify Moderator/User/Guest cannot list users
+
+        Endpoint: GET /api/v1/auth/users
+        RBAC: Only Admin/Adopter Admin/Tenant Admin should access this endpoint
+        Expected:
+        - 403 Forbidden for Moderator, User, Guest
+
+        Known Bug (AI4IDS-1372):
+        - USER role can list all users (security vulnerability - gets 200 instead of 403)
+        - Test FAILS for USER role until AI4IDS-1372 is fixed
+        "
+"failed","Fri Apr 17 14:36:05 IST 2026","Fri Apr 17 14:36:06 IST 2026","168","test_api_v2.test_auth","test_user_management","TestUserManagementEdgeCases","","","Test viewing non-existent user returns 404","
+        Verify requesting a non-existent user returns 404
+
+        Expected:
+        - 404 Not Found
+        "
+"passed","Fri Apr 17 14:35:57 IST 2026","Fri Apr 17 14:35:58 IST 2026","1085","test_api_v2.test_auth","test_login","TestLogin","","","Test all 6 roles can login successfully and receive JWT tokens","
+        Verify all 6 roles can successfully login and obtain JWT access tokens
+
+        Expected:
+        - Login succeeds (tokens obtained during fixture setup)
+        - Client has valid Bearer token
+        - Token is not empty
+        "
+"passed","Fri Apr 17 14:36:05 IST 2026","Fri Apr 17 14:36:05 IST 2026","211","test_api_v2.test_auth","test_user_management","TestUserManagementRBAC","","","Test non-admin users cannot view other users' details","
+        Verify Moderator/User/Guest CANNOT view other users' details
+
+        Endpoint: GET /api/v1/auth/users/{user_id}
+        Expected:
+        - 403 Forbidden when viewing another user's details
+        "
+"passed","Fri Apr 17 14:35:54 IST 2026","Fri Apr 17 14:35:55 IST 2026","1159","test_api_v2.test_auth","test_login","TestLogin","","","Test all 6 roles can login successfully and receive JWT tokens","
+        Verify all 6 roles can successfully login and obtain JWT access tokens
+
+        Expected:
+        - Login succeeds (tokens obtained during fixture setup)
+        - Client has valid Bearer token
+        - Token is not empty
+        "
+"passed","Fri Apr 17 14:36:02 IST 2026","Fri Apr 17 14:36:02 IST 2026","175","test_api_v2.test_auth","test_login","TestLogin","","","Test authenticated users can access /auth/me endpoint","
+        Verify authenticated users can retrieve their profile
+
+        Endpoint: GET /api/v1/auth/me
+        Expected:
+        - 200 OK
+        - Response contains user details (email, roles, etc.)
+        "
+"passed","Fri Apr 17 14:36:06 IST 2026","Fri Apr 17 14:36:06 IST 2026","143","test_api_v2.test_ai_services","test_nmt","TestNMTTokenValidation","","","Test NMT service rejects invalid JWT token with error message","
+        Verify NMT service rejects corrupted/fake JWT token with appropriate error
+
+        Endpoint: POST /api/v1/nmt/inference
+        Auth: Invalid/corrupted Bearer token (from INVALID_TEST_TOKEN env var)
+        Expected:
+        - 401 Unauthorized
+        - Error message indicates authentication failure
+        "
+"passed","Fri Apr 17 14:36:01 IST 2026","Fri Apr 17 14:36:01 IST 2026","159","test_api_v2.test_auth","test_login","TestLogin","","","Test /auth/validate endpoint with valid JWT tokens","
+        Verify JWT token validation endpoint works
+
+        Endpoint: GET /api/v1/auth/validate
+        Expected: 200 OK for valid tokens
+        "
+"passed","Fri Apr 17 14:35:55 IST 2026","Fri Apr 17 14:35:56 IST 2026","1086","test_api_v2.test_auth","test_login","TestLogin","","","Test all 6 roles can login successfully and receive JWT tokens","
+        Verify all 6 roles can successfully login and obtain JWT access tokens
+
+        Expected:
+        - Login succeeds (tokens obtained during fixture setup)
+        - Client has valid Bearer token
+        - Token is not empty
+        "
+"passed","Fri Apr 17 14:36:01 IST 2026","Fri Apr 17 14:36:01 IST 2026","187","test_api_v2.test_auth","test_login","TestLogin","","","Test authenticated users can access /auth/me endpoint","
+        Verify authenticated users can retrieve their profile
+
+        Endpoint: GET /api/v1/auth/me
+        Expected:
+        - 200 OK
+        - Response contains user details (email, roles, etc.)
+        "
+"passed","Fri Apr 17 14:36:05 IST 2026","Fri Apr 17 14:36:05 IST 2026","176","test_api_v2.test_auth","test_user_management","TestUserManagementRBAC","","","Test non-admin users cannot view other users' details","
+        Verify Moderator/User/Guest CANNOT view other users' details
+
+        Endpoint: GET /api/v1/auth/users/{user_id}
+        Expected:
+        - 403 Forbidden when viewing another user's details
+        "
+"failed","Fri Apr 17 14:36:04 IST 2026","Fri Apr 17 14:36:05 IST 2026","340","test_api_v2.test_auth","test_user_management","TestUserManagementRBAC","","","Test non-admin users can view their own details","
+        Verify Moderator/User/Guest can view their OWN user details
+
+        Endpoint: GET /api/v1/auth/users/{user_id}
+        Expected:
+        - 200 OK when viewing their own user_id
+        "
+"passed","Fri Apr 17 14:36:06 IST 2026","Fri Apr 17 14:36:06 IST 2026","151","test_api_v2.test_ai_services","test_nmt","TestNMTTokenValidation","","","Test NMT service rejects malformed JWT token with error message","
+        Verify NMT service rejects malformed token (not a valid JWT format)
+
+        Endpoint: POST /api/v1/nmt/inference
+        Auth: Malformed token (from MALFORMED_TEST_TOKEN env var)
+        Expected:
+        - 401 Unauthorized
+        - Error message indicates invalid token format
+        "
+"failed","Fri Apr 17 14:36:02 IST 2026","Fri Apr 17 14:36:03 IST 2026","181","test_api_v2.test_auth","test_user_management","TestUserManagementRBAC","","","Test Admin roles can list all users","
+        Verify Admin/Adopter Admin can list all users in the system
+
+        Endpoint: GET /api/v1/auth/users
+        Expected:
+        - 200 OK for Adopter Admin, Admin
+        - Response contains list of users
+        "
+"passed","Fri Apr 17 14:36:02 IST 2026","Fri Apr 17 14:36:02 IST 2026","147","test_api_v2.test_auth","test_login","TestLogin","","","Test unauthenticated request to /auth/me returns 401","
+        Verify unauthenticated requests are rejected
+
+        Expected:
+        - 401 Unauthorized when no Bearer token provided
+        "
+"passed","Fri Apr 17 14:35:58 IST 2026","Fri Apr 17 14:35:59 IST 2026","1012","test_api_v2.test_auth","test_login","TestLogin","","","Test all 6 roles can login successfully and receive JWT tokens","
+        Verify all 6 roles can successfully login and obtain JWT access tokens
+
+        Expected:
+        - Login succeeds (tokens obtained during fixture setup)
+        - Client has valid Bearer token
+        - Token is not empty
+        "
+"passed","Fri Apr 17 14:36:05 IST 2026","Fri Apr 17 14:36:05 IST 2026","171","test_api_v2.test_auth","test_user_management","TestUserManagementRBAC","","","Test Moderator access to view other users","
+        Verify Moderator's ability to view other users (access level TBD)
+
+        Endpoint: GET /api/v1/auth/users/{user_id}
+        Expected:
+        - TBD: Could be 200 (if allowed) or 403 (if denied)
+        "
+"passed","Fri Apr 17 14:36:03 IST 2026","Fri Apr 17 14:36:04 IST 2026","170","test_api_v2.test_auth","test_user_management","TestUserManagementRBAC","","","Test Admin roles can view any user's details","
+        Verify Admin/Adopter Admin can view ANY user's details
+
+        Endpoint: GET /api/v1/auth/users/{user_id}
+        Expected:
+        - 200 OK for valid user_id
+        - Response contains user details
+        "
+"passed","Fri Apr 17 14:36:01 IST 2026","Fri Apr 17 14:36:01 IST 2026","140","test_api_v2.test_auth","test_login","TestLogin","","","Test login without credentials returns 422","
+        Verify missing required fields are rejected
+
+        Expected:
+        - Login fails with 422 Validation Error
+        "
+"broken","Fri Apr 17 14:36:04 IST 2026","Fri Apr 17 14:36:04 IST 2026","0","test_api_v2.test_auth","test_user_management","TestUserManagementRBAC","","","Test Tenant Admin cannot view users outside their tenant","
+        Verify Tenant Admin CANNOT view users outside their tenant
+
+        Endpoint: GET /api/v1/auth/users/{user_id}
+        Expected:
+        - 403 Forbidden when viewing users outside their tenant
+
+        This test uses TEST_USER_ID which should be from a different tenant
+        "
+"passed","Fri Apr 17 14:36:00 IST 2026","Fri Apr 17 14:36:01 IST 2026","160","test_api_v2.test_auth","test_login","TestLogin","","","Test /auth/validate endpoint with valid JWT tokens","
+        Verify JWT token validation endpoint works
+
+        Endpoint: GET /api/v1/auth/validate
+        Expected: 200 OK for valid tokens
+        "
+"passed","Fri Apr 17 14:36:03 IST 2026","Fri Apr 17 14:36:03 IST 2026","179","test_api_v2.test_auth","test_user_management","TestUserManagementRBAC","","","Test Moderator/User/Guest cannot list users (403)","
+        Verify Moderator/User/Guest cannot list users
+
+        Endpoint: GET /api/v1/auth/users
+        RBAC: Only Admin/Adopter Admin/Tenant Admin should access this endpoint
+        Expected:
+        - 403 Forbidden for Moderator, User, Guest
+
+        Known Bug (AI4IDS-1372):
+        - USER role can list all users (security vulnerability - gets 200 instead of 403)
+        - Test FAILS for USER role until AI4IDS-1372 is fixed
+        "
+"passed","Fri Apr 17 14:36:01 IST 2026","Fri Apr 17 14:36:01 IST 2026","164","test_api_v2.test_auth","test_login","TestLogin","","","Test /auth/validate endpoint with valid JWT tokens","
+        Verify JWT token validation endpoint works
+
+        Endpoint: GET /api/v1/auth/validate
+        Expected: 200 OK for valid tokens
+        "
+"passed","Fri Apr 17 14:36:01 IST 2026","Fri Apr 17 14:36:01 IST 2026","154","test_api_v2.test_auth","test_login","TestLogin","","","Test login with invalid credentials returns 401","
+        Verify invalid credentials are rejected
+
+        Expected:
+        - Login fails with 401 Unauthorized
+        - No tokens are returned
+        "
+"failed","Fri Apr 17 14:36:06 IST 2026","Fri Apr 17 14:36:06 IST 2026","167","test_api_v2.test_auth","test_user_management","TestUserManagementEdgeCases","","","Test invalid user ID format returns error","
+        Verify invalid user ID format is rejected
+
+        Expected:
+        - 400/422 Validation Error or 404 Not Found
+        "
+"passed","Fri Apr 17 14:35:59 IST 2026","Fri Apr 17 14:36:00 IST 2026","1056","test_api_v2.test_auth","test_login","TestLogin","","","Test all 6 roles can login successfully and receive JWT tokens","
+        Verify all 6 roles can successfully login and obtain JWT access tokens
+
+        Expected:
+        - Login succeeds (tokens obtained during fixture setup)
+        - Client has valid Bearer token
+        - Token is not empty
+        "
+"broken","Fri Apr 17 14:35:56 IST 2026","Fri Apr 17 14:35:57 IST 2026","656","test_api_v2.test_auth","test_login","TestLogin","","","Test all 6 roles can login successfully and receive JWT tokens","
+        Verify all 6 roles can successfully login and obtain JWT access tokens
+
+        Expected:
+        - Login succeeds (tokens obtained during fixture setup)
+        - Client has valid Bearer token
+        - Token is not empty
+        "
+"passed","Fri Apr 17 14:36:06 IST 2026","Fri Apr 17 14:36:06 IST 2026","143","test_api_v2.test_ai_services","test_nmt","TestNMTTokenValidation","","","Test NMT service rejects request without token with error message","
+        Verify NMT service rejects request with missing Authorization header
+
+        Endpoint: POST /api/v1/nmt/inference
+        Auth: No Bearer token (missing Authorization header)
+        Expected:
+        - 401 Unauthorized
+        - Error message indicates missing authentication
+        "

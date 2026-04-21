@@ -1,6 +1,7 @@
 #!/bin/bash
 
-TEST_TARGET=${1:-tests/}
+# Accept all arguments as test targets (default to tests/)
+TEST_TARGET="${@:-tests/}"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 MAX_RUNS=30
 
@@ -63,5 +64,12 @@ if [ $RUN_COUNT -gt $MAX_RUNS ]; then
 fi
 cd ../..
 
-# 7. Open latest report
+# 7. Create shareable ZIP for client
+ZIP_NAME="allure-report-$(date +%Y%m%d-%H%M).zip"
+rm -f *.zip  # Remove old ZIP files
+zip -r $ZIP_NAME allure/allure-report/ > /dev/null
+ZIP_SIZE=$(ls -lh $ZIP_NAME | awk '{print $5}')
+echo "📦 Client report created: $ZIP_NAME ($ZIP_SIZE)"
+
+# 8. Open latest report
 allure open allure/allure-report &

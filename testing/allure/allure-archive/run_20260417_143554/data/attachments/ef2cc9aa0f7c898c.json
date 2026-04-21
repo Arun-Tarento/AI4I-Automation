@@ -1,0 +1,33 @@
+Status: 200
+
+{
+  "valid": true,
+  "user_id": 32,
+  "username": "arun_guest",
+  "tenant_id": null,
+  "permission_ids": [
+    2,
+    3,
+    21,
+    26,
+    36,
+    38,
+    40,
+    43,
+    45,
+    47,
+    48,
+    50,
+    52,
+    54,
+    56,
+    58,
+    60,
+    64,
+    65
+  ],
+  "roles": [
+    "USER"
+  ],
+  "token_type": "access_token"
+}

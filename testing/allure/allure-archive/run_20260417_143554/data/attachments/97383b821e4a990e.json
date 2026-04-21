@@ -1,0 +1,10 @@
+Status: 403
+
+{
+  "detail": {
+    "message": "You do not have permission to perform this action.",
+    "code": "AUTHORIZATION_ERROR",
+    "timestamp": 1776416763.9369242,
+    "details": null
+  }
+}

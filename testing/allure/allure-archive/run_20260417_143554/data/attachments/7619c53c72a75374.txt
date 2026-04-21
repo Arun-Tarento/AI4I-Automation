@@ -1,0 +1,1 @@
+✓ Missing credentials correctly rejected with 422

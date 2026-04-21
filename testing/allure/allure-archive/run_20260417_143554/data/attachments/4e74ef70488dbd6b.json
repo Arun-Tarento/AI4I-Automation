@@ -1,0 +1,26 @@
+Status: 200
+
+{
+  "success": true,
+  "data": {
+    "id": 2,
+    "email": "admin@ai4inclusion.org",
+    "username": "admin",
+    "full_name": null,
+    "is_active": true,
+    "is_verified": true,
+    "is_superuser": true,
+    "is_tenant": null,
+    "created_at": "2026-04-17T05:58:08.119448+00:00",
+    "updated_at": "2026-04-17T09:05:54.139961+00:00",
+    "last_login": "2026-04-17T09:05:54.997903+00:00",
+    "avatar_url": null,
+    "phone_number": null,
+    "timezone": "UTC",
+    "language": "en",
+    "roles": [
+      "ADMIN"
+    ],
+    "tenant_id": null
+  }
+}

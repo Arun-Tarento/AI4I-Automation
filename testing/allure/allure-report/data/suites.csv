@@ -1,0 +1,56 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Apr 20 16:22:15 IST 2026","Mon Apr 20 16:22:16 IST 2026","176","test_api_v2.test_ai_services","test_nmt","TestNMTTokenValidation","","","Test NMT service rejects invalid JWT token with error message","
+        Verify NMT service rejects corrupted/fake JWT token with appropriate error
+
+        Endpoint: POST /api/v1/nmt/inference
+        Auth: Invalid/corrupted Bearer token (from INVALID_TEST_TOKEN env var)
+        Expected:
+        - 401 Unauthorized
+        - Error message indicates authentication failure
+        "
+"passed","Mon Apr 20 16:22:16 IST 2026","Mon Apr 20 16:22:16 IST 2026","690","test_api_v2.test_ai_services","test_nmt","TestNMTTokenValidation","","","Test NMT service rejects request without token with error message","
+        Verify NMT service rejects request with missing Authorization header
+
+        Endpoint: POST /api/v1/nmt/inference
+        Auth: No Bearer token (missing Authorization header)
+        Expected:
+        - 401 Unauthorized
+        - Error message indicates missing authentication
+        "
+"passed","Mon Apr 20 16:22:16 IST 2026","Mon Apr 20 16:22:17 IST 2026","392","test_api_v2.test_ai_services","test_nmt","TestNMTTokenValidation","","","Test NMT service rejects token without NMT permissions","
+        Verify NMT service rejects a valid JWT token that lacks NMT permissions
+
+        Use Case:
+        - User provides a valid JWT token (admin-created API key)
+        - Token is valid BUT does not have NMT service permissions
+        - NMT service should reject the request with 403 Forbidden
+
+        Token Details:
+        - TRANSLIT_TLD_SD_LD_ALD_NER_KEY has permissions for:
+          Transliteration, Text Language Detection, Speaker Diarization,
+          Language Diarization, Audio Language Detection, NER
+        - Does NOT have NMT permission
+
+        Endpoint: POST /api/v1/nmt/inference
+        Auth: Valid Bearer token WITHOUT NMT permissions
+        Expected:
+        - 403 Forbidden (or 401 if API treats it as unauthorized)
+        - Error message indicates insufficient permissions
+        "
+"passed","Mon Apr 20 16:22:13 IST 2026","Mon Apr 20 16:22:15 IST 2026","2817","test_api_v2.test_ai_services","test_nmt","TestNMTTokenValidation","","","Test NMT service accepts valid JWT token with NMT permissions","
+        Verify NMT service processes request with valid JWT token that has NMT permissions
+
+        Use Case:
+        - User provides a valid JWT token (admin-created, used like API key)
+        - Token has NMT service permissions (Group A: ASR, NMT, TTS, LLM, Pipeline, OCR)
+        - NMT service should successfully process the translation request
+
+        Token Details:
+        - ASR_NMT_TTS_LLM_PIPELINE_OCR_KEY has permissions for NMT
+
+        Endpoint: POST /api/v1/nmt/inference
+        Auth: Valid JWT Bearer token WITH NMT permissions
+        Expected:
+        - 200 OK
+        - Response contains translation result
+        "

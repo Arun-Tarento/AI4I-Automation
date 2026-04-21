@@ -1,0 +1,3 @@
+GET https://staging.ai4inclusion.org/api/v1/auth/users
+
+(no body)

@@ -1,0 +1,5 @@
+"Epic","Feature","Story","FAILED","BROKEN","PASSED","SKIPPED","UNKNOWN"
+"AI Services","NMT - Token Validation","Invalid Token","0","0","1","0","0"
+"AI Services","NMT - Token Validation","No Token","0","0","1","0","0"
+"AI Services","NMT - Token Validation","RBAC - Token Without NMT Permission","0","0","1","0","0"
+"AI Services","NMT - Token Validation","RBAC - Token With NMT Permission","0","0","1","0","0"

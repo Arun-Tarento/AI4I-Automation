@@ -1,0 +1,1 @@
+✓ User correctly denied user list access (403)

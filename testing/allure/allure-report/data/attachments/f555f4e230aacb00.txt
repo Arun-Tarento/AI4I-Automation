@@ -1,0 +1,2 @@
+✓ NMT service correctly rejected token without NMT permission (403)
+  Error response: {'detail': {'message': 'Missing permission: /api/v1/nmt/inference.POST', 'code': 'AUTHORIZATION_ERROR', 'timestamp': 1776682337.1078062, 'details': None}}
