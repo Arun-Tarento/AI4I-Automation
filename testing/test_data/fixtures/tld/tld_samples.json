@@ -1,0 +1,9 @@
+{
+  "test_samples": [
+    {
+      "source_text": "आर्टिफिशियल इंटेलिजेंस के क्षेत्र में भारत की तरक्की कमाल की है",
+      "expected_language": "hi",
+      "description": "Hindi Devanagari text sample for language detection"
+    }
+  ]
+}

@@ -2,11 +2,40 @@
 Test Module: Authentication - Login Tests
 Tests JWT-based login for all 6 roles and token validation
 
+Total Active Tests: 19
+
+APIs Covered:
+  POST /api/v1/auth/login      — Login with email + password, receive JWT tokens
+  GET  /api/v1/auth/validate   — Validate an existing JWT token
+  GET  /api/v1/auth/me         — Retrieve current authenticated user's profile
+
 Test Coverage:
-- Positive: All 6 roles can successfully login and get JWT tokens
-- Negative: Invalid credentials return 401
-- Token refresh works for all roles
-- Token validation endpoint works
+✅ Login Success (6 tests):
+  - All 6 roles (Adopter Admin, Admin, Tenant Admin, Moderator, User, Guest)
+    can login and receive a valid JWT Bearer token
+
+✅ Token Validation (6 tests):
+  - All 6 roles' tokens are accepted by GET /auth/validate → 200 OK
+
+✅ Invalid Credentials (1 test):
+  - Wrong email/password → POST /auth/login → 401 Unauthorized
+
+✅ Missing Credentials (1 test):
+  - Empty payload → POST /auth/login → 422 Unprocessable Entity
+
+✅ Profile Access (6 tests):
+  - All 6 roles can access GET /auth/me → 200 OK with user profile data
+
+✅ Unauthenticated Profile Access (1 test):
+  - No token → GET /auth/me → 401 Unauthorized
+
+Note: Token refresh is handled automatically by TokenManager background thread
+      (tested implicitly via long-running session fixtures, no explicit test method)
+
+Endpoints Covered:
+  POST /api/v1/auth/login
+  GET  /api/v1/auth/validate
+  GET  /api/v1/auth/me
 """
 
 import pytest
@@ -53,9 +82,12 @@ class TestLogin:
     @allure.story("Token Validation")
     @allure.title("Test /auth/validate endpoint with valid JWT tokens")
     @pytest.mark.parametrize("role_fixture,role_name", [
+        ("adopter_admin_client", "Adopter Admin"),
         ("admin_client", "Admin"),
-        ("user_client", "User"),
+        ("tenant_admin_client", "Tenant Admin"),
         ("moderator_client", "Moderator"),
+        ("user_client", "User"),
+        ("guest_client", "Guest"),
     ])
     def test_validate_token_success(self, role_fixture, role_name, request):
         """

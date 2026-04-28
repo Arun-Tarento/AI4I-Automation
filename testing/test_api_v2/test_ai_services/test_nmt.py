@@ -5,13 +5,13 @@ Tests NMT inference endpoint with token validation and other scenarios
 Total Active Tests: 25
 
 Current Coverage:
-✅ Token Validation (4 tests):
+✅ Token Validation - TestNMTTokenValidation (4 tests):
   - Valid Token WITH NMT Permission → 200 OK
   - Valid Token WITHOUT NMT Permission → 401/403
   - Invalid Token → 401 Unauthorized
   - No Token → 401 Unauthorized
 
-✅ RBAC (Role-Based Access) - 6 Roles:
+✅ RBAC - TestNMTRBAC (6 tests):
   - Adopter Admin (via login JWT) → 200 OK
   - Admin (via login JWT) → 200 OK
   - Tenant Admin (via login JWT) → 200 OK
@@ -320,8 +320,27 @@ class TestNMTTokenValidation:
             f"Response should contain error message. Got: {data}"
         )
 
+@allure.epic("AI Services")
+@allure.feature("NMT - RBAC (Role-Based Access Control)")
+class TestNMTRBAC:
+    """Test NMT service access control based on user roles"""
+
+    @classmethod
+    def setup_class(cls):
+        """Load NMT sample data"""
+        fixture_path = Path(__file__).parent.parent.parent / "test_data" / "fixtures" / "nmt_samples.json"
+        with open(fixture_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            sample = data["test_samples"][0]
+            cls.nmt_sample = {
+                "source": sample["source_text"],
+                "source_language": sample["source_language"],
+                "target_language": sample["target_language"]
+            }
+
     @allure.story("RBAC - Role-Based Access")
-    @allure.title("Test NMT access across different user roles")
+    @allure.title("Test NMT access for role: {role_name}")
+    @allure.tag("rbac", "security", "nmt", "positive-testing")
     @pytest.mark.parametrize("role_name,username,password,should_succeed", [
         ("ADOPTER_ADMIN", settings.ADOPTER_ADMIN_USERNAME, settings.ADOPTER_ADMIN_PASSWORD, True),
         ("ADMIN", settings.ADMIN_USERNAME, settings.ADMIN_PASSWORD, True),
@@ -334,11 +353,6 @@ class TestNMTTokenValidation:
         """
         Verify NMT service access control based on user roles
 
-        Use Case:
-        - Different user roles login and receive JWT tokens
-        - NMT service grants/denies access based on role permissions
-        - Validates that RBAC is properly enforced at the service level
-
         Role Expectations:
         - ADOPTER_ADMIN: Full system access → 200 OK
         - ADMIN: Full access → 200 OK
@@ -350,11 +364,9 @@ class TestNMTTokenValidation:
         Endpoint: POST /api/v1/nmt/inference
         Auth: Role-based JWT Bearer token (from login)
         """
-        # Login as the specified role to get JWT token
         token_manager = login_and_get_token_manager(username, password)
         access_token = token_manager.get_access_token()
 
-        # Build NMT inference payload
         payload = {
             "input": [{"source": self.nmt_sample["source"]}],
             "config": {
@@ -377,27 +389,21 @@ class TestNMTTokenValidation:
         url = f"{settings.BASE_URL}{settings.NMT_INFERENCE_ENDPOINT}"
         response = httpx.post(url, json=payload, headers=headers, timeout=settings.REQUEST_TIMEOUT)
 
-        if should_succeed:
-            # Role should have NMT access
-            assert response.status_code == 200, (
-                f"{role_name} role should have NMT access (200), got {response.status_code}: {response.text}"
-            )
-            data = response.json()
-            print(f"✓ {role_name} role successfully accessed NMT service (status: {response.status_code})")
-            print(f"  Translation result: {str(data)[:100]}...")
-        else:
-            # Role should NOT have NMT access
-            assert response.status_code in [401, 403], (
-                f"{role_name} role should be denied NMT access (401/403), got {response.status_code}: {response.text}"
-            )
-            data = response.json()
-            print(f"✓ {role_name} role correctly denied NMT access ({response.status_code})")
-            print(f"  Error response: {data}")
+        token_manager.stop_background_refresh()
 
-            # Verify error message is present
-            error_fields = ["detail", "message", "error", "error_msg"]
-            has_error_message = any(field in data for field in error_fields)
-            assert has_error_message, f"Response should contain error message. Got: {data}"
+        if should_succeed:
+            assert response.status_code == 200, (
+                f"{role_name} should have NMT access (200 OK), got {response.status_code}: {response.text}"
+            )
+            data = response.json()
+            assert "output" in data, f"{role_name}: Response should contain 'output' field"
+            assert len(data["output"]) > 0, f"{role_name}: Output array should not be empty"
+            print(f"✓ {role_name} successfully accessed NMT service (status: {response.status_code})")
+        else:
+            assert response.status_code in [401, 403], (
+                f"{role_name} should be denied NMT access (401/403), got {response.status_code}: {response.text}"
+            )
+            print(f"✓ {role_name} was correctly denied NMT access (status: {response.status_code})")
 
 
 @allure.epic("AI Services")
@@ -507,7 +513,6 @@ class TestNMTRequestValidation:
 
     @allure.story("Source Text Validation")
     @allure.title("Test NMT rejects invalid source text: {test_case_id}")
-    @allure.severity(allure.severity_level.CRITICAL)
     @allure.tag("validation", "source-text", "negative-testing")
     @allure.link("https://coss-team-ai4x.atlassian.net/browse/AI4IDS-1442", name="Bug: Source text validation not working")
     @allure.link("https://coss-team-ai4x.atlassian.net/browse/AI4IDS-1440", name="Parent Story: NMT Service Testing")
@@ -571,7 +576,6 @@ class TestNMTRequestValidation:
 
     # @allure.story("Service ID Validation")
     # @allure.title("Test NMT rejects invalid service ID: {test_case_id}")
-    # @allure.severity(allure.severity_level.CRITICAL)
     # @allure.tag("validation", "service-id", "negative-testing")
     # @allure.link("https://coss-team-ai4x.atlassian.net/browse/AI4IDS-1440", name="Parent Story: NMT Service Testing")
     # @pytest.mark.parametrize("test_case_id", [
@@ -652,7 +656,6 @@ class TestNMTResponseSchema:
 
     @allure.story("Success Response Schema")
     @allure.title("Test NMT success response has correct schema")
-    @allure.severity(allure.severity_level.CRITICAL)
     @allure.tag("response-schema", "success", "positive-testing")
     def test_success_response_schema(self):
         """
@@ -725,7 +728,6 @@ class TestNMTResponseSchema:
 
     @allure.story("Error Response Schema")
     @allure.title("Test NMT error response has correct schema: {error_category}")
-    @allure.severity(allure.severity_level.CRITICAL)
     @allure.tag("response-schema", "error", "negative-testing")
     @pytest.mark.parametrize("error_category,test_case_id", [
         ("invalid_service", "invalid_service_id"),

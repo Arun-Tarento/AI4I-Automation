@@ -15,6 +15,7 @@ from utils.auth import login_and_get_token_manager
 from utils.api_clientv2 import APIClient
 from config.settingsv2 import settings
 from utils.services import ServiceWithPayloads
+from utils.helper import audio_to_base64, image_to_base64
 import time
 import os
 
@@ -187,6 +188,124 @@ def unauthenticated_client():
 # ============================================
 # HELPER FIXTURES (for test data)
 # ============================================
+
+@pytest.fixture(scope="session")
+def asr_audio_samples():
+    """
+    Load ASR audio files once per test session
+
+    Returns:
+        dict: Dictionary of audio files encoded as base64
+              {
+                  "hindi_4s": "base64_encoded_audio_data...",
+                  # Add more audio files as needed
+              }
+
+    Usage:
+        def test_asr(self, asr_audio_samples):
+            audio_data = asr_audio_samples["hindi_4s"]
+    """
+    fixtures_dir = Path(__file__).parent.parent / "test_data" / "fixtures" / "asr"
+
+    return {
+        "hindi_4s": audio_to_base64(str(fixtures_dir / "hindi_4s.wav"))
+        # Add more audio files here as needed:
+        # "hindi_10s": audio_to_base64(str(fixtures_dir / "hindi_10s.wav")),
+        # "english_5s": audio_to_base64(str(fixtures_dir / "english_5s.wav")),
+    }
+
+
+@pytest.fixture(scope="session")
+def ald_audio_samples():
+    """
+    Load Audio Language Detection audio files once per test session
+
+    Returns:
+        dict: Dictionary of audio files encoded as base64
+              {
+                  "hindi_4s": "base64_encoded_audio_data...",
+              }
+
+    Usage:
+        def test_ald(self, ald_audio_samples):
+            audio_data = ald_audio_samples["hindi_4s"]
+    """
+    fixtures_dir = Path(__file__).parent.parent / "test_data" / "fixtures" / "ald"
+
+    return {
+        "hindi_4s": audio_to_base64(str(fixtures_dir / "hindi_4s.wav"))
+    }
+
+
+@pytest.fixture(scope="session")
+def ld_audio_samples():
+    """
+    Load Language Diarization audio files once per test session
+
+    Returns:
+        dict: Dictionary of audio files encoded as base64
+              {
+                  "hindi_4s": "base64_encoded_audio_data...",
+              }
+
+    Usage:
+        def test_ld(self, ld_audio_samples):
+            audio_data = ld_audio_samples["hindi_4s"]
+    """
+    fixtures_dir = Path(__file__).parent.parent / "test_data" / "fixtures" / "ls"
+
+    return {
+        "hindi_4s": audio_to_base64(str(fixtures_dir / "hindi_4s.wav"))
+    }
+
+
+@pytest.fixture(scope="session")
+def sd_audio_samples():
+    """
+    Load Speaker Diarization audio files once per test session
+
+    Returns:
+        dict: Dictionary of audio files encoded as base64
+              {
+                  "hindi_4s": "base64_encoded_audio_data...",
+              }
+
+    Usage:
+        def test_sd(self, sd_audio_samples):
+            audio_data = sd_audio_samples["hindi_4s"]
+    """
+    samples_dir = Path(__file__).parent.parent / "samples" / "speaker_diarization"
+
+    return {
+        "hindi_4s": audio_to_base64(str(samples_dir / "hindi_4s.wav"))
+    }
+
+
+@pytest.fixture(scope="session")
+def ocr_image_samples():
+    """
+    Load OCR image files once per test session
+
+    Returns:
+        dict: Dictionary of image files encoded as base64
+              {
+                  "hindi_jpeg": "base64_encoded_image_data...",
+                  # Add more image files as needed
+              }
+
+    Usage:
+        def test_ocr(self, ocr_image_samples):
+            image_data = ocr_image_samples["hindi_jpeg"]
+    """
+    fixtures_dir = Path(__file__).parent.parent / "test_data" / "fixtures" / "ocr"
+
+    return {
+        "hindi_jpeg": image_to_base64(str(fixtures_dir / "OCR_HINDI_JPEG.jpg"))
+        # Add more image files here as needed:
+        # "english_jpeg": image_to_base64(str(fixtures_dir / "OCR_ENGLISH_JPEG.jpg")),
+        # "hindi_png": image_to_base64(str(fixtures_dir / "OCR_HINDI_PNG.png")),
+    }
+
 
 @pytest.fixture(scope="class")
 def created_model(admin_client):

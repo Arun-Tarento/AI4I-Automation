@@ -1,0 +1,22 @@
+{
+  "test_samples": [
+    {
+      "audio_file": "hindi_4s.wav",
+      "source_language": "hi",
+      "audio_format": "wav",
+      "encoding": "base64",
+      "sampling_rate": 16000,
+      "description": "4-second Hindi audio sample for ASR testing"
+    }
+  ],
+  "audio_files": {
+    "hindi_4s": {
+      "filename": "hindi_4s.wav",
+      "language": "hi",
+      "duration_seconds": 4,
+      "format": "wav",
+      "sampling_rate": 16000,
+      "use_case": "Token validation and basic ASR testing"
+    }
+  }
+}

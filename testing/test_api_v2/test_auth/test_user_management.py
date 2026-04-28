@@ -2,6 +2,12 @@
 Test Module: User Management RBAC Tests
 Tests user listing and viewing with proper RBAC enforcement
 
+Total Active Tests: 20
+
+APIs Covered:
+  GET /api/v1/auth/users             — List all users (scoped by role/tenant)
+  GET /api/v1/auth/users/{user_id}   — View a specific user's details
+
 RBAC Matrix:
 ┌─────────────────────────┬──────────────┬───────┬──────────────┬───────────┬──────┬───────┐
 │ Endpoint                │ Adopter Admin│ Admin │ Tenant Admin │ Moderator │ User │ Guest │
@@ -12,25 +18,34 @@ RBAC Matrix:
 └─────────────────────────┴──────────────┴───────┴──────────────┴───────────┴──────┴───────┘
 
 Test Coverage:
-✅ Positive Tests:
-  - Admin/Adopter Admin can list all users (200)
-  - Admin/Adopter Admin can view ANY user details (200)
-  - Tenant Admin can list users within their tenant
-  - Tenant Admin can view users within their tenant
-  - Moderator/User/Guest can view their OWN user details (200)
+✅ List Users - TestUserManagementRBAC (6 tests):
+  - Adopter Admin, Admin can list all users → 200 OK
+  - Tenant Admin can list users within their tenant → 200 OK (tenant-scoped)
+  - Moderator, User, Guest cannot list users → 403 Forbidden (bug: AI4IDS-1372 for User)
 
-❌ Negative Tests:
-  - User/Guest cannot list users (403)
-  - Moderator/User/Guest cannot view OTHER users' details (403)
-  - Tenant Admin cannot view users OUTSIDE their tenant (403)
+✅ View User (any) - TestUserManagementRBAC (5 tests):
+  - Admin, Adopter Admin can view ANY user's details → 200 OK
+  - Tenant Admin can view users within their tenant → 200 OK
+  - Tenant Admin cannot view users outside their tenant → 403 Forbidden
+  - Moderator cross-user access → TBD (200 or 403 — RBAC behavior under discovery)
+
+✅ View User (self) - TestUserManagementRBAC (3 tests):
+  - Moderator, User, Guest can view their OWN user details → 200 OK
+
+✅ View User (cross-user) - TestUserManagementRBAC (3 tests):
+  - Moderator, User, Guest cannot view OTHER users' details → 403 Forbidden
+
+✅ Edge Cases - TestUserManagementEdgeCases (3 tests):
+  - Non-existent user ID → GET /auth/users/{user_id} → 404 Not Found
+  - Invalid user ID format (string) → GET /auth/users/{user_id} → 400/404/422
+  - No token → GET /auth/users → 401 Unauthorized
 
 ⚠️ Known Bugs:
   - AI4IDS-1372: USER role can list all users (security vulnerability - should get 403)
 
-🧪 Edge Cases:
-  - Non-existent user ID (404)
-  - Invalid user ID format (400/422)
-  - Unauthenticated access (401)
+Endpoints Covered:
+  GET /api/v1/auth/users
+  GET /api/v1/auth/users/{user_id}
 """
 
 import pytest

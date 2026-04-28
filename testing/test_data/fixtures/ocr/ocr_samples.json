@@ -1,0 +1,17 @@
+{
+  "test_samples": [
+    {
+      "image_file": "OCR_HINDI_JPEG.jpg",
+      "source_language": "hi",
+      "description": "Hindi JPEG image sample for OCR testing"
+    }
+  ],
+  "image_files": {
+    "hindi_jpeg": {
+      "filename": "OCR_HINDI_JPEG.jpg",
+      "language": "hi",
+      "format": "jpeg",
+      "use_case": "Token validation and basic OCR testing"
+    }
+  }
+}

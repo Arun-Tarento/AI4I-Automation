@@ -1,0 +1,12 @@
+{
+  "test_samples": [
+    {
+      "source_text": "आर्टिफिशियल इंटेलिजेंस के क्षेत्र में भारत की तरक्की कमाल की है",
+      "source_language": "hi",
+      "target_language": "hi",
+      "is_sentence": true,
+      "num_suggestions": 0,
+      "description": "Hindi Devanagari to Roman script transliteration sample"
+    }
+  ]
+}

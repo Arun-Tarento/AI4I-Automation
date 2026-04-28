@@ -2,6 +2,16 @@
 Test Module: Role Management RBAC Tests
 Tests role assignment, removal, and viewing with proper RBAC enforcement
 
+Total Active Tests: 38
+
+APIs Covered:
+  GET  /api/v1/auth/roles/list              — List available roles in the system
+  POST /api/v1/auth/roles/assign            — Assign a role to a user
+  POST /api/v1/auth/roles/remove            — Remove a role from a user
+  GET  /api/v1/auth/roles/user/{user_id}   — Get roles assigned to a specific user
+  GET  /api/v1/auth/permissions             — List all permissions (xfail: AI4IDS-1368)
+  GET  /api/v1/auth/permission/list         — Permission catalog (xfail: AI4IDS-1368)
+
 RBAC Matrix:
 ┌─────────────────────────┬──────────────┬───────┬──────────────┬───────────┬──────┬───────┐
 │ Endpoint                │ Adopter Admin│ Admin │ Tenant Admin │ Moderator │ User │ Guest │
@@ -15,32 +25,54 @@ RBAC Matrix:
 └─────────────────────────┴──────────────┴───────┴──────────────┴───────────┴──────┴───────┘
 
 Test Coverage:
-✅ Positive Tests:
-  - Admin/Adopter Admin can list roles (200)
-  - Admin/Adopter Admin can assign roles (200/201)
-  - Admin/Adopter Admin can view ANY user's roles (200)
-  - Tenant Admin can assign roles within their tenant
-  - Tenant Admin can view roles within their tenant
-  - Moderator/User/Guest can view their OWN roles (200)
+✅ List Roles - TestRoleManagementRBAC (6 tests):
+  - Adopter Admin, Admin, Tenant Admin can list roles → 200 OK
+  - Moderator, User, Guest cannot list roles → 403 Forbidden
 
-❌ Negative Tests:
-  - Moderator/User/Guest cannot list roles (403)
-  - Moderator/User/Guest cannot assign roles (403)
-  - Moderator/User/Guest cannot remove roles (403)
-  - Moderator/User/Guest cannot view OTHER users' roles (403)
-  - Tenant Admin cannot view users OUTSIDE their tenant (403)
+✅ Assign Role - TestRoleManagementRBAC (6 tests):
+  - Admin, Adopter Admin can assign roles → 200/201 OK
+  - Moderator, User, Guest cannot assign roles → 403 Forbidden
+
+✅ Remove Role - TestRoleManagementRBAC (5 tests):
+  - Admin, Adopter Admin can remove roles → 200/204 (xfail: AI4IDS-1364)
+  - Moderator, User, Guest cannot remove roles → 403 Forbidden
+
+✅ View User Roles - TestRoleManagementRBAC (10 tests):
+  - Admin, Adopter Admin can view ANY user's roles → 200 OK
+  - Tenant Admin can view roles within their tenant → 200 OK
+  - Tenant Admin cannot view users outside their tenant → 403 Forbidden
+  - Moderator, User, Guest can view their OWN roles → 200 OK (bug: AI4IDS-1366)
+  - Moderator, User, Guest cannot view OTHER users' roles → 403 Forbidden (bug: AI4IDS-1367)
+
+✅ Tenant Admin Role Assignment - TestRoleManagementRBAC (1 test):
+  - Tenant Admin can assign roles within their tenant → 200/201 OK
+
+✅ Unauthenticated Access - TestRoleManagementRBAC (1 test):
+  - No token → GET /auth/roles/list → 401 Unauthorized
+
+⚠️ Permissions (xfail) - TestRoleManagementRBAC (6 tests):
+  - GET /auth/permissions: Admin, Moderator, User → xfail (AI4IDS-1368)
+  - GET /auth/permission/list: Adopter Admin, Admin, Tenant Admin → xfail (AI4IDS-1368)
+  - GET /auth/permission/list: Moderator, User, Guest → xfail (AI4IDS-1368)
+
+✅ Edge Cases - TestRoleManagementEdgeCases (2 tests):
+  - Invalid role name → POST /auth/roles/assign → 400/404/422
+  - Missing role_name param → POST /auth/roles/assign → 422
 
 ⚠️ Known Bugs:
   - AI4IDS-1364: Role Remove endpoint returns 403 for ALL roles (completely broken)
   - AI4IDS-1361: USER role can assign roles (security issue)
   - AI4IDS-1366: Moderator/Guest cannot view their own roles (get 403 instead of 200)
   - AI4IDS-1367: USER role can view other users' roles (security vulnerability)
-  - AI4IDS-1368: Permission endpoints not working for all roles (both /permissions and /permission/list)
+  - AI4IDS-1368: Permission endpoints not working for all roles
 
-🧪 Edge Cases:
-  - Invalid role assignment (400/422)
-  - Missing parameters (422)
-  - Unauthenticated access (401)
+Endpoints Covered:
+  GET  /api/v1/auth/roles/list
+  POST /api/v1/auth/roles/assign
+  POST /api/v1/auth/roles/remove
+  GET  /api/v1/auth/roles/user/{user_id}
+  GET  /api/v1/auth/permissions
+  GET  /api/v1/auth/permission/list
 """
 
 import pytest

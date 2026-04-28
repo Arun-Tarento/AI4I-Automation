@@ -1,14 +1,25 @@
 [
   {
     "data": {
+      "failed": 0,
+      "broken": 0,
+      "skipped": 0,
+      "passed": 4,
+      "unknown": 0,
+      "total": 4
+    },
+    "buildOrder": 1
+  },
+  {
+    "buildOrder": 1,
+    "data": {
       "failed": 8,
       "broken": 5,
       "skipped": 0,
       "passed": 29,
       "unknown": 0,
       "total": 42
-    },
-    "buildOrder": 1
+    }
   },
   {
     "buildOrder": 1,
@@ -188,6 +199,17 @@
   },
   {
     "buildOrder": 18,
+    "data": {
+      "failed": 4,
+      "broken": 0,
+      "skipped": 0,
+      "passed": 8,
+      "unknown": 0,
+      "total": 12
+    }
+  },
+  {
+    "buildOrder": 20,
     "data": {
       "failed": 4,
       "broken": 0,
