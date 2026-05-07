@@ -1,9 +1,0 @@
-Status: 404
-
-{
-  "detail": {
-    "message": "Model not found",
-    "code": "HTTP_ERROR",
-    "timestamp": 1773034528.9221203
-  }
-}

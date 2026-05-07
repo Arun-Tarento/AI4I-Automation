@@ -1,9 +1,0 @@
-
-============================================================
-🔍 Test: List Models Filtered by include_deprecated - ADMIN
-🔍 Endpoint: /api/v1/model-management/models
-🔍 Filter: include_deprecated = False
-============================================================
-📊 Status Code: 200
-📦 Total Models with include_deprecated=False: 36
-✅ ADMIN successfully filtered by deprecated status

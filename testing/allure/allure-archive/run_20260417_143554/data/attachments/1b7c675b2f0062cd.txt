@@ -1,1 +1,0 @@
-✓ Adopter Admin can view any user's details

@@ -1,9 +1,0 @@
-Status: 404
-
-{
-  "detail": {
-    "message": "Service with id 'invalid-uuid-000-000-000' not found",
-    "code": "NotFound",
-    "timestamp": 1773034525.8050127
-  }
-}

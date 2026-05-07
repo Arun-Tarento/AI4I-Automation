@@ -1,8 +1,0 @@
-✓ Background token refresh started
-
-============================================================
-🔍 Test: Update Service - GUEST (Should be DENIED)
-🔍 Endpoint: PATCH /api/v1/model-management/services
-============================================================
-📊 Status Code: 404
-📦 Response: {"detail":{"message":"Service not found in database","code":"HTTP_ERROR","timestamp":1771865767.9589531}}

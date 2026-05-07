@@ -1,9 +1,0 @@
-Status: 404
-
-{
-  "detail": {
-    "message": "Service with id '0dc00f9f-baaa-4e12-bdf1-b0e99b555e90' not found",
-    "code": "NotFound",
-    "timestamp": 1773034525.3115253
-  }
-}

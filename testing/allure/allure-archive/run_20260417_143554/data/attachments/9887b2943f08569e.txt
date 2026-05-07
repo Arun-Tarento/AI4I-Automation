@@ -1,1 +1,0 @@
-✓ Moderator correctly denied access to other users (403)

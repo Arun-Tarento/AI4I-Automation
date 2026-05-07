@@ -1,5 +1,0 @@
-Response: {"detail":{"code":"SMR_SERVICE_ERROR","message":"SMR service returned error: {\"detail\":{\"code\":\"POLICY_ENGINE_UNAVAILABLE\",\"message\":\"Policy Engine is temporarily unavailable. Please try again.\"}}"}}
-✓ Error response schema validation passed for 'null_service'
-  Status Code: 503
-  Error Code: SMR_SERVICE_ERROR
-  Error Message: SMR service returned error: {"detail":{"code":"POLICY_ENGINE_UNAVAILABLE","messa...

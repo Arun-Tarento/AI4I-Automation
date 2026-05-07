@@ -1,1 +1,0 @@
-✓ Unauthenticated request correctly rejected with 401

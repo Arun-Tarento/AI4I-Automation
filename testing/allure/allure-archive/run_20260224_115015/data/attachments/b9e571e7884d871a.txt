@@ -1,2 +1,0 @@
-
-✅ USER TTS correctly blocked with no API key

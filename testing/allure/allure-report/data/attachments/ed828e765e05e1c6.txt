@@ -1,2 +1,0 @@
-{"detail":[{"type":"string_type","loc":["body","input",0,"source"],"msg":"Input should be a valid string","input":12345},{"type":"string_type","loc":["body","input",0,"source"],"msg":"Input should be a valid string","input":12345}]}
-422

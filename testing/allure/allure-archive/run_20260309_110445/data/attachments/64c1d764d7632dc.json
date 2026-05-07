@@ -1,9 +1,0 @@
-Status: 404
-
-{
-  "detail": {
-    "message": "Model with id 'a09aa52e-34db-4723-8f4c-cfb15bc2e852' not found",
-    "code": "NotFound",
-    "timestamp": 1773034521.716767
-  }
-}

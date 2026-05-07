@@ -1,5 +1,0 @@
-Response: {"detail":{"code":"ENDPOINT_RESOLUTION_FAILED","message":"Model Management did not resolve serviceId: non-existent-service-id-12345 and no default endpoint is allowed. Please ensure the service is registered in Model Management database. Error: Model name not found"}}
-✓ Error response schema validation passed for 'invalid_service'
-  Status Code: 500
-  Error Code: ENDPOINT_RESOLUTION_FAILED
-  Error Message: Model Management did not resolve serviceId: non-existent-service-id-12345 and no...

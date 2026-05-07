@@ -1,3 +1,0 @@
-✓ Background token refresh started
-✓ USER role successfully accessed NMT service (status: 200)
-  Translation result: {'output': [{'source': 'आर्टिफिशियल इंटेलिजेंस के क्षेत्र में भारत की तरक्की कमाल की है, जो हेल्थकेय...

@@ -1,8 +1,0 @@
-
-============================================================
-🔍 Test: List Models Filtered by created_by - ADMIN
-============================================================
-📊 Status Code: 200
-📦 Total Models created by '5': 19
-✅ ADMIN successfully filtered by created_by
-🔍 Sample Model Keys: ['modelId', 'uuid', 'name', 'version', 'versionStatus', 'versionStatusUpdatedAt', 'description', 'languages', 'domain', 'submitter', 'license', 'inferenceEndPoint', 'source', 'task', 'createdBy', 'updatedBy']

@@ -1,2 +1,0 @@
-{"detail":[{"type":"missing","loc":["body","input",0,"source"],"msg":"Field required","input":{}},{"type":"missing","loc":["body","input",0,"source"],"msg":"Field required","input":{}}]}
-422

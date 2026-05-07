@@ -12,7 +12,7 @@
 1. **Remove API Key authentication** - Switch to JWT-only (Bearer token)
 2. **Support 6 roles** - Adopter Admin, Admin, Tenant Admin, Moderator, User, Guest
 3. **Complete RBAC test coverage** - All endpoints with positive + negative tests
-4. **Fresh test structure** - New `test_api_01/` directory (preserve old tests)
+4. **Fresh test structure** - New `test_api/` directory (preserve old tests)
 
 ---
 
@@ -58,8 +58,7 @@ Request → APIClient → Headers: {Authorization: Bearer <JWT>}
 
 ```
 testing/
-├── test_api/                    # OLD - Keep as-is for reference
-├── test_api_01/                 # NEW - JWT-based tests
+├── test_api/                    # JWT-based tests (current suite)
 │   ├── conftest.py              # 6 role fixtures (session-scoped)
 │   ├── test_auth/
 │   │   ├── test_login.py        # Login flow for all roles
@@ -125,7 +124,7 @@ testing/
   - Keep: `Authorization: Bearer <token>`
 
 #### **1.3 Test Infrastructure**
-- [ ] **Create `test_api_01/conftest.py`**
+- [ ] **Create `test_api/conftest.py`**
   - Session fixtures for 6 roles:
     - `adopter_admin_client`
     - `admin_client`
@@ -143,17 +142,17 @@ testing/
 **Priority:** HIGH - Validates authentication works before testing other endpoints
 
 **Files to create:**
-1. `test_api_01/test_auth/test_login.py`
+1. `test_api/test_auth/test_login.py`
    - Test login success for all 6 roles
    - Test token refresh for all roles
    - Test invalid credentials return 401
 
-2. `test_api_01/test_auth/test_role_management.py`
+2. `test_api/test_auth/test_role_management.py`
    - **Positive:** Admin/Tenant Admin can assign/remove roles
    - **Negative:** Moderator/User/Guest cannot (403)
    - Test Tenant Admin can only assign roles within their tenant
 
-3. `test_api_01/test_auth/test_user_management.py`
+3. `test_api/test_auth/test_user_management.py`
    - **Positive:** Admin can list all users
    - **Negative:** User/Guest/Moderator cannot list users (403)
    - Test user can view their own profile
@@ -168,7 +167,7 @@ testing/
 #### **Module 2: AI Inference - NMT** (Simple inference test)
 **Priority:** HIGH - Most common use case
 
-**File to create:** `test_api_01/test_inference/test_nmt_rbac.py`
+**File to create:** `test_api/test_inference/test_nmt_rbac.py`
 
 **Test Cases:**
 1. **Positive - All roles can access NMT:**
@@ -214,7 +213,7 @@ testing/
 **Priority:** MEDIUM
 
 **Files to create:**
-1. `test_api_01/test_model_management/test_models_crud_rbac.py`
+1. `test_api/test_model_management/test_models_crud_rbac.py`
 
    **Positive Tests:**
    - Adopter Admin can create/update/delete models
@@ -227,10 +226,10 @@ testing/
    - User **cannot** view model registry (403)
    - Guest **cannot** view model registry (403)
 
-2. `test_api_01/test_model_management/test_services_crud_rbac.py`
+2. `test_api/test_model_management/test_services_crud_rbac.py`
    - Same RBAC as models
 
-3. `test_api_01/test_model_management/test_experiments_rbac.py`
+3. `test_api/test_model_management/test_experiments_rbac.py`
    - Test experiment CRUD with proper role enforcement
 
 ---
@@ -239,7 +238,7 @@ testing/
 **Priority:** MEDIUM
 
 **Files to create:**
-1. `test_api_01/test_multi_tenant/test_tenant_crud_rbac.py`
+1. `test_api/test_multi_tenant/test_tenant_crud_rbac.py`
 
    **Positive:**
    - **Adopter Admin** can create new tenants
@@ -249,7 +248,7 @@ testing/
    - **Admin cannot create tenants** (403) - Only Adopter Admin can
    - User/Guest/Moderator cannot access (403)
 
-2. `test_api_01/test_multi_tenant/test_tenant_users_rbac.py`
+2. `test_api/test_multi_tenant/test_tenant_users_rbac.py`
    - Test user management within tenants
    - Validate Tenant Admin can only manage users in their tenant
 
@@ -270,7 +269,7 @@ Replicate NMT tests for:
 **Priority:** LOW
 
 **Files to create:**
-1. `test_api_01/test_observability/test_logs_rbac.py`
+1. `test_api/test_observability/test_logs_rbac.py`
    - Moderator/Admin can view logs
    - Tenant Admin can view only their tenant's logs
    - User/Guest cannot access (403)
@@ -283,24 +282,24 @@ Replicate NMT tests for:
 ```bash
 cd testing
 python switch_env.py staging
-pytest test_api_01/ --alluredir=allure/allure-results -v
+pytest test_api/ --alluredir=allure/allure-results -v
 ```
 
 ### **Run specific module:**
 ```bash
 # Module 1: Auth
-pytest test_api_01/test_auth/ -v
+pytest test_api/test_auth/ -v
 
 # Module 2: NMT Inference
-pytest test_api_01/test_inference/test_nmt_rbac.py -v
+pytest test_api/test_inference/test_nmt_rbac.py -v
 
 # Module 3: Model Management
-pytest test_api_01/test_model_management/ -v
+pytest test_api/test_model_management/ -v
 ```
 
 ### **Run with Allure report:**
 ```bash
-bash run_test.sh test_api_01/
+bash run_test.sh test_api/
 ```
 
 ---
@@ -318,7 +317,7 @@ bash run_test.sh test_api_01/
 - ✅ JWT-only authentication
 - ✅ 6 role support (Adopter Admin, Admin, Tenant Admin, Moderator, User, Guest)
 - ✅ Comprehensive RBAC negative tests (403 validations)
-- ✅ New test structure (`test_api_01/`)
+- ✅ New test structure (`test_api/`)
 - ✅ Missing AI service tests (Language Detection, Diarization, LLM, Pipeline)
 - ✅ Experiment management tests
 - ✅ Role management tests

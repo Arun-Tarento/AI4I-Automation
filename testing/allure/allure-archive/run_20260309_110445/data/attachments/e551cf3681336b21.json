@@ -1,3 +1,0 @@
-GET https://sandbox.ai4inclusion.org/api/v1/model-management/models?task_type=invalid_task_xyz
-
-(no body)

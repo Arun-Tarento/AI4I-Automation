@@ -1,6 +1,0 @@
-
-============================================================
-🔍 Test: List Models with Filter - USER (Should be DENIED)
-🔍 Filter: task_type = asr
-============================================================
-📊 Status Code: 200

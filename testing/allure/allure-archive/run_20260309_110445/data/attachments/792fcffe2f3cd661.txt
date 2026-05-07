@@ -1,8 +1,0 @@
-
-============================================================
-🔍 Test: List All Models Without Filters - ADMIN
-🔍 Endpoint: /api/v1/model-management/models
-============================================================
-📊 Status Code: 200
-📦 Total Models: 40
-✅ ADMIN can access models list
